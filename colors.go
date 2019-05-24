@@ -56,9 +56,114 @@ func New() Colors {
 	return c
 }
 
+func (c Colors) B03() string {
+	if c.Off {
+		return ""
+	}
+	return Base03
+}
+
+func (c Colors) B02() string {
+	if c.Off {
+		return ""
+	}
+	return Base02
+}
+
+func (c Colors) B01() string {
+	if c.Off {
+		return ""
+	}
+	return Base01
+}
+
+func (c Colors) B00() string {
+	if c.Off {
+		return ""
+	}
+	return Base00
+}
+
+func (c Colors) B0() string {
+	if c.Off {
+		return ""
+	}
+	return Base0
+}
+
+func (c Colors) B1() string {
+	if c.Off {
+		return ""
+	}
+	return Base1
+}
+
+func (c Colors) B2() string {
+	if c.Off {
+		return ""
+	}
+	return Base2
+}
+
+func (c Colors) B3() string {
+	if c.Off {
+		return ""
+	}
+	return Base3
+}
+
 func (c Colors) Y() string {
 	if c.Off {
 		return ""
 	}
 	return Yellow
+}
+
+func (c Colors) O() string {
+	if c.Off {
+		return ""
+	}
+	return Orange
+}
+
+func (c Colors) R() string {
+	if c.Off {
+		return ""
+	}
+	return Red
+}
+
+func (c Colors) M() string {
+	if c.Off {
+		return ""
+	}
+	return Magenta
+}
+
+func (c Colors) V() string {
+	if c.Off {
+		return ""
+	}
+	return Violet
+}
+
+func (c Colors) B() string {
+	if c.Off {
+		return ""
+	}
+	return Blue
+}
+
+func (c Colors) C() string {
+	if c.Off {
+		return ""
+	}
+	return Cyan
+}
+
+func (c Colors) G() string {
+	if c.Off {
+		return ""
+	}
+	return Green
 }
