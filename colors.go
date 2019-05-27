@@ -167,3 +167,10 @@ func (c Colors) G() string {
 	}
 	return Green
 }
+
+func (c Colors) X() string {
+	if c.Off {
+		return ""
+	}
+	return Reset
+}
