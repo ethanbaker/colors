@@ -2,27 +2,29 @@ package colors
 
 import (
 	"math/rand"
+	"strings"
 	"time"
 )
 
 const (
-	// TODO add the non-solarized names as well
-	Base03      = "\033[1;30m"
-	Base02      = "\033[0;30m"
-	Base01      = "\033[1;32m"
-	Base00      = "\033[1;33m"
-	Base0       = "\033[1;34m"
-	Base1       = "\033[1;36m"
-	Base2       = "\033[0;37m"
-	Base3       = "\033[1;37m"
-	Yellow      = "\033[0;33m"
-	Orange      = "\033[1;31m"
-	Red         = "\033[0;31m"
-	Magenta     = "\033[0;35m"
-	Violet      = "\033[1;35m"
-	Blue        = "\033[0;34m"
-	Cyan        = "\033[0;36m"
-	Green       = "\033[0;32m"
+	SolBase03 = "\033[1;30m"
+	SolBase02 = "\033[0;30m"
+	SolBase01 = "\033[1;32m"
+	SolBase00 = "\033[1;33m"
+	SolBase0  = "\033[1;34m"
+	SolBase1  = "\033[1;36m"
+	SolBase2  = "\033[0;37m"
+	SolBase3  = "\033[1;37m"
+
+	SolYellow  = "\033[0;33m"
+	SolOrange  = "\033[1;31m"
+	SolRed     = "\033[0;31m"
+	SolMagenta = "\033[0;35m"
+	SolViolet  = "\033[1;35m"
+	SolBlue    = "\033[0;34m"
+	SolCyan    = "\033[0;36m"
+	SolGreen   = "\033[0;32m"
+
 	Reset       = "\033[0m"
 	ClearScreen = "\033[2J\033[H"
 	ClearLine   = "\033[2K\033[G"
@@ -30,146 +32,68 @@ const (
 	CursorOn    = "\033[?25h"
 )
 
-var SolarizedColors = []string{Yellow, Orange, Red, Magenta, Violet, Blue, Cyan, Green}
+var colorReplacer *strings.Replacer
+var ansiReplacer *strings.Replacer
 
-func RandSolarized() string {
+func init() {
+	colorReplacer = strings.NewReplacer(
+		SolBase03, "",
+		SolBase02, "",
+		SolBase01, "",
+		SolBase00, "",
+		SolBase0, "",
+		SolBase1, "",
+		SolBase2, "",
+		SolBase3, "",
+		SolYellow, "",
+		SolOrange, "",
+		SolRed, "",
+		SolMagenta, "",
+		SolViolet, "",
+		SolBlue, "",
+		SolCyan, "",
+		SolGreen, "",
+		Reset, "",
+	)
+
+	ansiReplacer = strings.NewReplacer(
+		ClearScreen, "",
+		ClearLine, "",
+		CursorOff, "",
+		CursorOn, "",
+	)
+}
+
+// SolarizedColors is a slice of only the Solarized colors (no bases). These
+// are gauranteed to always be visible. The bases are not included because when
+// randomizing from the list there is a chance one or more of the bases will
+// not be visible.
+var SolarizedColors = []string{SolYellow, SolOrange, SolRed, SolMagenta, SolViolet, SolBlue, SolCyan, SolGreen}
+
+var SolarizedBases = []string{SolBase02, SolBase01, SolBase00, SolBase0, SolBase1, SolBase2}
+
+// RandSol returns a random color form SolarizedColors.
+func RandSol() string {
 	rand.Seed(time.Now().UnixNano())
 	return SolarizedColors[rand.Intn(len(SolarizedColors))]
 }
 
-func MultiSolarized(s string) string {
+// MultiSol solarizes ever rune in a string randomly from the SolarizedColors.
+func MultiSol(s string) string {
 	var m string
 	for _, r := range s {
-		m += RandSolarized() + string(r)
+		m += RandSol() + string(r)
 	}
 	m += Reset
 	return m
 }
 
-type Colors struct {
-	Off bool
+// Decolor removes any of the ANSI color escapes known to this package.
+func Decolor(s string) string {
+	return colorReplacer.Replace(s)
 }
 
-func New() Colors {
-	c := Colors{}
-	return c
-}
-
-func (c Colors) B03() string {
-	if c.Off {
-		return ""
-	}
-	return Base03
-}
-
-func (c Colors) B02() string {
-	if c.Off {
-		return ""
-	}
-	return Base02
-}
-
-func (c Colors) B01() string {
-	if c.Off {
-		return ""
-	}
-	return Base01
-}
-
-func (c Colors) B00() string {
-	if c.Off {
-		return ""
-	}
-	return Base00
-}
-
-func (c Colors) B0() string {
-	if c.Off {
-		return ""
-	}
-	return Base0
-}
-
-func (c Colors) B1() string {
-	if c.Off {
-		return ""
-	}
-	return Base1
-}
-
-func (c Colors) B2() string {
-	if c.Off {
-		return ""
-	}
-	return Base2
-}
-
-func (c Colors) B3() string {
-	if c.Off {
-		return ""
-	}
-	return Base3
-}
-
-func (c Colors) Y() string {
-	if c.Off {
-		return ""
-	}
-	return Yellow
-}
-
-func (c Colors) O() string {
-	if c.Off {
-		return ""
-	}
-	return Orange
-}
-
-func (c Colors) R() string {
-	if c.Off {
-		return ""
-	}
-	return Red
-}
-
-func (c Colors) M() string {
-	if c.Off {
-		return ""
-	}
-	return Magenta
-}
-
-func (c Colors) V() string {
-	if c.Off {
-		return ""
-	}
-	return Violet
-}
-
-func (c Colors) B() string {
-	if c.Off {
-		return ""
-	}
-	return Blue
-}
-
-func (c Colors) C() string {
-	if c.Off {
-		return ""
-	}
-	return Cyan
-}
-
-func (c Colors) G() string {
-	if c.Off {
-		return ""
-	}
-	return Green
-}
-
-func (c Colors) X() string {
-	if c.Off {
-		return ""
-	}
-	return Reset
+// Strip strips any ANSI escapes known to this package.
+func Strip(s string) string {
+	return colorReplacer.Replace(ansiReplacer.Replace(s))
 }
