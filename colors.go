@@ -6,6 +6,7 @@ import (
 )
 
 const (
+	// TODO add the non-solarized names as well
 	Base03      = "\033[1;30m"
 	Base02      = "\033[0;30m"
 	Base01      = "\033[1;32m"
@@ -31,17 +32,15 @@ const (
 
 var SolarizedColors = []string{Yellow, Orange, Red, Magenta, Violet, Blue, Cyan, Green}
 
-func RandomSolarized() string {
+func RandSolarized() string {
 	rand.Seed(time.Now().UnixNano())
 	return SolarizedColors[rand.Intn(len(SolarizedColors))]
 }
 
-func RS() string { return RandomSolarized() }
-
-func Multi(s string) string {
+func MultiSolarized(s string) string {
 	var m string
 	for _, r := range s {
-		m += RS() + string(r)
+		m += RandSolarized() + string(r)
 	}
 	m += Reset
 	return m
