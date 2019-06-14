@@ -30,6 +30,7 @@ const (
 	ClearLine   = "\033[2K\033[G"
 	CursorOff   = "\033[?25l"
 	CursorOn    = "\033[?25h"
+	StrikeOut   = "\033[9m"
 )
 
 var colorReplacer *strings.Replacer
