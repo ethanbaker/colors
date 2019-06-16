@@ -62,6 +62,7 @@ func init() {
 		ClearLine, "",
 		CursorOff, "",
 		CursorOn, "",
+		StrikeOut, "",
 	)
 }
 
@@ -69,9 +70,10 @@ func init() {
 // are gauranteed to always be visible. The bases are not included because when
 // randomizing from the list there is a chance one or more of the bases will
 // not be visible.
-var SolarizedColors = []string{SolYellow, SolOrange, SolRed, SolMagenta, SolViolet, SolBlue, SolCyan, SolGreen}
+var SolarizedColors = [...]string{SolYellow, SolOrange, SolRed, SolMagenta, SolViolet, SolBlue, SolCyan, SolGreen}
 
-var SolarizedBases = []string{SolBase02, SolBase01, SolBase00, SolBase0, SolBase1, SolBase2}
+// SolarizedBases is a list of all the Solarized base colors (levels of grey).
+var SolarizedBases = [...]string{SolBase02, SolBase01, SolBase00, SolBase0, SolBase1, SolBase2}
 
 // RandSol returns a random color form SolarizedColors.
 func RandSol() string {
