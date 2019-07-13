@@ -3,7 +3,7 @@
 // your code will be used. These days ANSI color support is standard on all
 // terminals (yes including Windows).
 //
-// Rather that incur even the minimal cost of running a method for ever ANSI
+// Rather that incur even the minimal cost of running a method for every ANSI
 // escape this package uses constants and assumes that when you use them you
 // are reasonably confident you won't have to *not* use them.
 //
