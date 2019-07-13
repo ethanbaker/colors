@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"gitlab.com/skilstak/code/colors/go"
+	"gitlab.com/skilstak/code/go/color/sol"
 )
 
 const usagetxt = `
@@ -25,60 +25,62 @@ func main() {
 	}
 	switch os.Args[1] {
 	case "b02":
-		fmt.Println(colors.SolBase02)
+		fmt.Println(sol.Base02)
 	case "b01":
-		fmt.Println(colors.SolBase01)
+		fmt.Println(sol.Base01)
 	case "b00":
-		fmt.Println(colors.SolBase00)
+		fmt.Println(sol.Base00)
 	case "b0":
-		fmt.Println(colors.SolBase0)
+		fmt.Println(sol.Base0)
 	case "b1":
-		fmt.Println(colors.SolBase1)
+		fmt.Println(sol.Base1)
 	case "b2":
-		fmt.Println(colors.SolBase2)
+		fmt.Println(sol.Base2)
 	case "y":
-		fmt.Println(colors.SolYellow)
+		fmt.Println(sol.Yellow)
 	case "o":
-		fmt.Println(colors.SolOrange)
+		fmt.Println(sol.Orange)
 	case "r":
-		fmt.Println(colors.SolRed)
+		fmt.Println(sol.Red)
 	case "m":
-		fmt.Println(colors.SolMagenta)
+		fmt.Println(sol.Magenta)
 	case "v":
-		fmt.Println(colors.SolViolet)
+		fmt.Println(sol.Violet)
 	case "b":
-		fmt.Println(colors.SolBlue)
+		fmt.Println(sol.Blue)
 	case "c":
-		fmt.Println(colors.SolCyan)
+		fmt.Println(sol.Cyan)
 	case "g":
-		fmt.Println(colors.SolGreen)
+		fmt.Println(sol.Green)
 	case "rnd":
-		fmt.Println(colors.RandSol)
+		fmt.Println(sol.Random)
 	case "x":
-		fmt.Println(colors.Reset)
+		fmt.Println(sol.Reset)
 	case "cl":
-		fmt.Println(colors.ClearScreen)
+		fmt.Println(sol.ClearScreen)
 	case "ln":
-		fmt.Println(colors.ClearLine)
+		fmt.Println(sol.ClearLine)
 	case "invis":
-		fmt.Println(colors.CursorOff)
+		fmt.Println(sol.CursorOff)
 	case "vis":
-		fmt.Println(colors.CursorOn)
+		fmt.Println(sol.CursorOn)
 	case "sample":
-		fmt.Printf("%v%v ", colors.SolBase02, "SolBase02")
-		fmt.Printf("%v%v ", colors.SolBase01, "SolBase01")
-		fmt.Printf("%v%v ", colors.SolBase00, "SolBase00")
-		fmt.Printf("%v%v ", colors.SolBase0, "SolBase0")
-		fmt.Printf("%v%v ", colors.SolBase1, "SolBase1")
-		fmt.Printf("%v%v\n", colors.SolBase2, "SolBase2")
-		fmt.Printf("%v%v ", colors.SolYellow, "SolYellow")
-		fmt.Printf("%v%v ", colors.SolOrange, "SolOrange")
-		fmt.Printf("%v%v ", colors.SolRed, "SolRed")
-		fmt.Printf("%v%v ", colors.SolMagenta, "SolMagenta")
-		fmt.Printf("%v%v ", colors.SolViolet, "SolViolet")
-		fmt.Printf("%v%v ", colors.SolBlue, "SolBlue")
-		fmt.Printf("%v%v ", colors.SolCyan, "SolCyan")
-		fmt.Printf("%v%v\n", colors.SolGreen, "SolGreen")
+		fmt.Printf("%v%v=%v ", sol.Base03, "b03", "Base03")
+		fmt.Printf("%v%v=%v ", sol.Base02, "b02", "Base02")
+		fmt.Printf("%v%v=%v ", sol.Base01, "b01", "Base01")
+		fmt.Printf("%v%v=%v ", sol.Base00, "b00", "Base00")
+		fmt.Printf("%v%v=%v ", sol.Base0, "b0", "Base0")
+		fmt.Printf("%v%v=%v ", sol.Base1, "b1", "Base1")
+		fmt.Printf("%v%v=%v ", sol.Base2, "b2", "Base2")
+		fmt.Printf("%v%v=%v\n", sol.Base3, "b3", "Base3")
+		fmt.Printf("%v%v=%v ", sol.Yellow, "y", "Yellow")
+		fmt.Printf("%v%v=%v ", sol.Orange, "o", "Orange")
+		fmt.Printf("%v%v=%v ", sol.Red, "r", "Red")
+		fmt.Printf("%v%v=%v ", sol.Magenta, "m", "Magenta")
+		fmt.Printf("%v%v=%v ", sol.Violet, "v", "Violet")
+		fmt.Printf("%v%v=%v ", sol.Blue, "b", "Blue")
+		fmt.Printf("%v%v=%v ", sol.Cyan, "c", "Cyan")
+		fmt.Printf("%v%v=%v\n", sol.Green, "g", "Green")
 	default:
 		usage()
 	}

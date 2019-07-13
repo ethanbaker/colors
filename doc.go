@@ -1,6 +1,7 @@
-// The colors package is for commands and applications that support
+// The color package is for commands and applications that support
 // ANSI color escapes. Don't use it unless you are sure that is the only place
-// your code will be used. These days ANSI color support is standard.
+// your code will be used. These days ANSI color support is standard on all
+// terminals (yes including Windows).
 //
 // Rather that incur even the minimal cost of running a method for ever ANSI
 // escape this package uses constants and assumes that when you use them you
@@ -14,4 +15,4 @@
 // Three convience executable commands have been included for testing and can
 // be used in shell scripts (although sourcing a native Bash equivalent is
 // preferred).
-package colors
+package color
