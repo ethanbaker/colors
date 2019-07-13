@@ -1,3 +1,4 @@
+// Package sol provides all the Solarized colors.
 package sol
 
 import (
