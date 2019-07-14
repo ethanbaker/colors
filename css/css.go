@@ -2,6 +2,7 @@ package css
 
 import (
         "math/rand"
+        "time"
 )
 
 const (
@@ -154,5 +155,5 @@ var Colors = [...]string{aliceblue, antiquewhite, aqua, aquamarine, azure, beige
 
 func Random() string {
         rand.Seed(time.Now().UnixNano())
-        return Colors[rand.INtn(len(Colors))]
+        return Colors[rand.Intn(len(Colors))]
 }
