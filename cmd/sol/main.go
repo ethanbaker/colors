@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"gitlab.com/skilstak/code/go/color/sol"
+	"gitlab.com/ethandbaker/color/sol"
 )
 
 const usagetxt = `

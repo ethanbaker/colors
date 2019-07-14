@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"gitlab.com/skilstak/code/go/color"
-	"gitlab.com/skilstak/code/go/color/sol"
+	"gitlab.com/ethandbaker/color"
+	"gitlab.com/ethandbaker/color/sol"
 )
 
 func TestDecolor(t *testing.T) {

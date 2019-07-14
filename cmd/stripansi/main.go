@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"gitlab.com/skilstak/code/go/color"
+	"gitlab.com/ethandbaker/color"
 )
 
 func main() {

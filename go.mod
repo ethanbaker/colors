@@ -1,3 +1,3 @@
-module gitlab.com/skilstak/code/go/color
+module gitlab.com/ethandbaker/color
 
 go 1.12
