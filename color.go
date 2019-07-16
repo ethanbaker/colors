@@ -2,7 +2,8 @@ package color
 
 import (
 	"strings"
-
+        
+        "gitlab.com/ethandbaker/color/css"
 	"gitlab.com/ethandbaker/color/sol"
 )
 
@@ -48,4 +49,8 @@ func Decolor(s string) string {
 // TODO strip all ANSI escapes
 func Strip(s string) string {
 	return colorReplacer.Replace(ansiReplacer.Replace(s))
+}
+
+func fixImport() {
+        return css.black
 }
