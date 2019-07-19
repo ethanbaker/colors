@@ -2,8 +2,8 @@ package color
 
 import (
 	"strings"
-        
-        "gitlab.com/ethandbaker/color/css"
+
+	"gitlab.com/ethandbaker/color/css"
 	"gitlab.com/ethandbaker/color/sol"
 )
 
@@ -51,6 +51,7 @@ func Strip(s string) string {
 	return colorReplacer.Replace(ansiReplacer.Replace(s))
 }
 
-func fixImport() {
-        return css.black
+var Index = map[string]string
+  "css-red": "\033",
+  "sol-red": "\033",
 }
