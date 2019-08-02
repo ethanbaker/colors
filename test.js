@@ -15,7 +15,14 @@ for (let i = 0; i < names.length; i++) {
   console.log('        fmt.Println(css.' + names[i] + ')')
 }
 */
-
+/*
 for (let i = 0; i< names.length; i++) {
   console.log('fmt.Printf("%v%v", ' + `css.${names[i]}, "` + names[i] + '")')
+}
+*/
+
+for (let i =0; i < names.length; i++) {
+  let rgb = rgbs[i].substr(4)
+  let rgbList = rgb.split(", ")
+  console.log(`"css-${names[i]}": "\\x1b[38;2;${rgbList[0]};${rgbList[1]};${rgbList[2].substr(0, rgbList[2].length-1)}m",`)
 }

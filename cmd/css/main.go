@@ -4,7 +4,7 @@ import (
         "fmt"
         "os"
 
-        "gitlab.com/ethandbaker/color/css"
+        "gitlab.com/ethanbaker.dev/color/css"
 )
 
 const usagetxt = `
@@ -24,331 +24,331 @@ func main() {
                 usage()
         }
         switch os.Args[1] {
-        case "aliceblue":
-                fmt.Println(css.aliceblue)
-        case "antiquewhite":
-                fmt.Println(css.antiquewhite)
-        case "aqua":
-                fmt.Println(css.aqua)
-        case "aquamarine":
-                fmt.Println(css.aquamarine)
-        case "azure":
-                fmt.Println(css.azure)
-        case "beige":
-                fmt.Println(css.beige)
-        case "bisque":
-                fmt.Println(css.bisque)
-        case "black":
-                fmt.Println(css.black)
-        case "blanchedalmond":
-                fmt.Println(css.blanchedalmond)
-        case "blue":
-                fmt.Println(css.blue)
-        case "blueviolet":
-                fmt.Println(css.blueviolet)
-        case "brown":
-                fmt.Println(css.brown)
-        case "burlywood":
-                fmt.Println(css.burlywood)
-        case "cadetblue":
-                fmt.Println(css.cadetblue)
-        case "chartreuse":
-                fmt.Println(css.chartreuse)
-        case "chocolate":
-                fmt.Println(css.chocolate)
-        case "coral":
-                fmt.Println(css.coral)
-        case "cornflowerblue":
-                fmt.Println(css.cornflowerblue)
-        case "cornsilk":
-                fmt.Println(css.cornsilk)
-        case "crimson":
-                fmt.Println(css.crimson)
-        case "cyan":
-                fmt.Println(css.cyan)
-        case "darkblue":
-                fmt.Println(css.darkblue)
-        case "darkcyan":
-                fmt.Println(css.darkcyan)
-        case "darkgoldenrod":
-                fmt.Println(css.darkgoldenrod)
-        case "darkgray":
-                fmt.Println(css.darkgray)
-        case "darkgreen":
-                fmt.Println(css.darkgreen)
-        case "darkkhaki":
-                fmt.Println(css.darkkhaki)
-        case "darkmagenta":
-                fmt.Println(css.darkmagenta)
-        case "darkolivegreen":
-                fmt.Println(css.darkolivegreen)
-        case "darkorange":
-                fmt.Println(css.darkorange)
-        case "darkorchid":
-                fmt.Println(css.darkorchid)
-        case "darkred":
-                fmt.Println(css.darkred)
-        case "darksalmon":
-                fmt.Println(css.darksalmon)
-        case "darkseagreen":
-                fmt.Println(css.darkseagreen)
-        case "darkslateblue":
-                fmt.Println(css.darkslateblue)
-        case "darkslategray":
-                fmt.Println(css.darkslategray)
-        case "darkturquoise":
-                fmt.Println(css.darkturquoise)
-        case "darkviolet":
-                fmt.Println(css.darkviolet)
-        case "deeppink":
-                fmt.Println(css.deeppink)
-        case "deepskyblue":
-                fmt.Println(css.deepskyblue)
-        case "dimgray":
-                fmt.Println(css.dimgray)
-        case "dodgerblue":
-                fmt.Println(css.dodgerblue)
-        case "firebrick":
-                fmt.Println(css.firebrick)
-        case "floralwhite":
-                fmt.Println(css.floralwhite)
-        case "forestgreen":
-                fmt.Println(css.forestgreen)
-        case "fuchsia":
-                fmt.Println(css.fuchsia)
-        case "gainsboro":
-                fmt.Println(css.gainsboro)
-        case "ghostwhite":
-                fmt.Println(css.ghostwhite)
-        case "gold":
-                fmt.Println(css.gold)
-        case "goldenrod":
-                fmt.Println(css.goldenrod)
-        case "gray":
-                fmt.Println(css.gray)
-        case "green":
-                fmt.Println(css.green)
-        case "greenyellow":
-                fmt.Println(css.greenyellow)
-        case "honeydew":
-                fmt.Println(css.honeydew)
-        case "hotpink":
-                fmt.Println(css.hotpink)
-        case "indianred":
-                fmt.Println(css.indianred)
-        case "indigo":
-                fmt.Println(css.indigo)
-        case "ivory":
-                fmt.Println(css.ivory)
-        case "khaki":
-                fmt.Println(css.khaki)
-        case "lavender":
-                fmt.Println(css.lavender)
-        case "lavenderblush":
-                fmt.Println(css.lavenderblush)
-        case "lawngreen":
-                fmt.Println(css.lawngreen)
-        case "lemonchiffon":
-                fmt.Println(css.lemonchiffon)
-        case "lightblue":
-                fmt.Println(css.lightblue)
-        case "lightcoral":
-                fmt.Println(css.lightcoral)
-        case "lightcyan":
-                fmt.Println(css.lightcyan)
-        case "lightgoldenrodyellow":
-                fmt.Println(css.lightgoldenrodyellow)
-        case "lightgreen":
-                fmt.Println(css.lightgreen)
-        case "lightgrey":
-                fmt.Println(css.lightgrey)
-        case "lightpink":
-                fmt.Println(css.lightpink)
-        case "lightsalmon":
-                fmt.Println(css.lightsalmon)
-        case "lightseagreen":
-                fmt.Println(css.lightseagreen)
-        case "lightskyblue":
-                fmt.Println(css.lightskyblue)
-        case "lightslategray":
-                fmt.Println(css.lightslategray)
-        case "lightsteelblue":
-                fmt.Println(css.lightsteelblue)
-        case "lightyellow":
-                fmt.Println(css.lightyellow)
-        case "lime":
-                fmt.Println(css.lime)
-        case "limegreen":
-                fmt.Println(css.limegreen)
-        case "linen":
-                fmt.Println(css.linen)
-        case "magenta":
-                fmt.Println(css.magenta)
-        case "maroon":
-                fmt.Println(css.maroon)
-        case "mediumaquamarine":
-                fmt.Println(css.mediumaquamarine)
-        case "mediumblue":
-                fmt.Println(css.mediumblue)
-        case "mediumorchid":
-                fmt.Println(css.mediumorchid)
-        case "mediumpurple":
-                fmt.Println(css.mediumpurple)
-        case "mediumseagreen":
-                fmt.Println(css.mediumseagreen)
-        case "mediumslateblue":
-                fmt.Println(css.mediumslateblue)
-        case "mediumspringgreen":
-                fmt.Println(css.mediumspringgreen)
-        case "mediumturquoise":
-                fmt.Println(css.mediumturquoise)
-        case "mediumvioletred":
-                fmt.Println(css.mediumvioletred)
-        case "midnightblue":
-                fmt.Println(css.midnightblue)
-        case "mintcream":
-                fmt.Println(css.mintcream)
-        case "mistyrose":
-                fmt.Println(css.mistyrose)
-        case "moccasin":
-                fmt.Println(css.moccasin)
-        case "navajowhite":
-                fmt.Println(css.navajowhite)
-        case "navy":
-                fmt.Println(css.navy)
-        case "navyblue":
-                fmt.Println(css.navyblue)
-        case "oldlace":
-                fmt.Println(css.oldlace)
-        case "olive":
-                fmt.Println(css.olive)
-        case "olivedrab":
-                fmt.Println(css.olivedrab)
-        case "orange":
-                fmt.Println(css.orange)
-        case "orangered":
-                fmt.Println(css.orangered)
-        case "orchid":
-                fmt.Println(css.orchid)
-        case "palegoldenrod":
-                fmt.Println(css.palegoldenrod)
-        case "palegreen":
-                fmt.Println(css.palegreen)
-        case "paleturquoise":
-                fmt.Println(css.paleturquoise)
-        case "palevioletred":
-                fmt.Println(css.palevioletred)
-        case "papayawhip":
-                fmt.Println(css.papayawhip)
-        case "peachpuff":
-                fmt.Println(css.peachpuff)
-        case "peru":
-                fmt.Println(css.peru)
-        case "pink":
-                fmt.Println(css.pink)
-        case "plum":
-                fmt.Println(css.plum)
-        case "powderblue":
-                fmt.Println(css.powderblue)
-        case "purple":
-                fmt.Println(css.purple)
-        case "red":
-                fmt.Println(css.red)
-        case "rosybrown":
-                fmt.Println(css.rosybrown)
-        case "royalblue":
-                fmt.Println(css.royalblue)
-        case "saddlebrown":
-                fmt.Println(css.saddlebrown)
-        case "salmon":
-                fmt.Println(css.salmon)
-        case "sandybrown":
-                fmt.Println(css.sandybrown)
-        case "seagreen":
-                fmt.Println(css.seagreen)
-        case "seashell":
-                fmt.Println(css.seashell)
-        case "sienna":
-                fmt.Println(css.sienna)
-        case "silver":
-                fmt.Println(css.silver)
-        case "skyblue":
-                fmt.Println(css.skyblue)
-        case "slateblue":
-                fmt.Println(css.slateblue)
-        case "slategray":
-                fmt.Println(css.slategray)
-        case "snow":
-                fmt.Println(css.snow)
-        case "springgreen":
-                fmt.Println(css.springgreen)
-        case "steelblue":
-                fmt.Println(css.steelblue)
-        case "tan":
-                fmt.Println(css.tan)
-        case "teal":
-                fmt.Println(css.teal)
-        case "thistle":
-                fmt.Println(css.thistle)
-        case "tomato":
-                fmt.Println(css.tomato)
-        case "turquoise":
-                fmt.Println(css.turquoise)
-        case "violet":
-                fmt.Println(css.violet)
-        case "wheat":
-                fmt.Println(css.wheat)
-        case "white":
-                fmt.Println(css.white)
-        case "whitesmoke":
-                fmt.Println(css.whitesmoke)
-        case "yellow":
-                fmt.Println(css.yellow)
-        case "yellowgreen":
-                fmt.Println(css.yellowgreen)
-        case "sample":
-                fmt.Printf("%v%v", css.aliceblue, "aliceblue")
-                fmt.Printf("%v%v", css.antiquewhite, "antiquewhite")
-                fmt.Printf("%v%v", css.aqua, "aqua")
-                fmt.Printf("%v%v", css.aquamarine, "aquamarine")
-                fmt.Printf("%v%v", css.azure, "azure")
-                fmt.Printf("%v%v", css.beige, "beige")
-                fmt.Printf("%v%v", css.bisque, "bisque")
-                fmt.Printf("%v%v", css.black, "black")
-                fmt.Printf("%v%v", css.blanchedalmond, "blanchedalmond")
-                fmt.Printf("%v%v", css.blue, "blue")
-                fmt.Printf("%v%v", css.blueviolet, "blueviolet")
-                fmt.Printf("%v%v", css.brown, "brown")
-                fmt.Printf("%v%v", css.burlywood, "burlywood")
-                fmt.Printf("%v%v", css.cadetblue, "cadetblue")
-                fmt.Printf("%v%v", css.chartreuse, "chartreuse")
-                fmt.Printf("%v%v", css.chocolate, "chocolate")
-                fmt.Printf("%v%v", css.coral, "coral")
-                fmt.Printf("%v%v", css.cornflowerblue, "cornflowerblue")
-                fmt.Printf("%v%v", css.cornsilk, "cornsilk")
-                fmt.Printf("%v%v", css.crimson, "crimson")
-                fmt.Printf("%v%v", css.cyan, "cyan")
-                fmt.Printf("%v%v", css.darkblue, "darkblue")
-                fmt.Printf("%v%v", css.darkcyan, "darkcyan")
-                fmt.Printf("%v%v", css.darkgoldenrod, "darkgoldenrod")
-                fmt.Printf("%v%v", css.darkgray, "darkgray")
-                fmt.Printf("%v%v", css.darkgreen, "darkgreen")
-                fmt.Printf("%v%v", css.darkkhaki, "darkkhaki")
-                fmt.Printf("%v%v", css.darkmagenta, "darkmagenta")
-                fmt.Printf("%v%v", css.darkolivegreen, "darkolivegreen")
-                fmt.Printf("%v%v", css.darkorange, "darkorange")
-                fmt.Printf("%v%v", css.darkorchid, "darkorchid")
-                fmt.Printf("%v%v", css.darkred, "darkred")
-                fmt.Printf("%v%v", css.darksalmon, "darksalmon")
-                fmt.Printf("%v%v", css.darkseagreen, "darkseagreen")
-                fmt.Printf("%v%v", css.darkslateblue, "darkslateblue")
-                fmt.Printf("%v%v", css.darkslategray, "darkslategray")
-                fmt.Printf("%v%v", css.darkturquoise, "darkturquoise")
-                fmt.Printf("%v%v", css.darkviolet, "darkviolet")
-                fmt.Printf("%v%v", css.deeppink, "deeppink")
-                fmt.Printf("%v%v", css.deepskyblue, "deepskyblue")
-                fmt.Printf("%v%v", css.dimgray, "dimgray")
-                fmt.Printf("%v%v", css.dodgerblue, "dodgerblue")
+        case "AliceBlue":
+                fmt.Println(css.AliceBlue)
+        case "AntiqueWhite":
+                fmt.Println(css.AntiqueWhite)
+        case "Aqua":
+                fmt.Println(css.Aqua)
+        case "Aquamarine":
+                fmt.Println(css.Aquamarine)
+        case "Azure":
+                fmt.Println(css.Azure)
+        case "Beige":
+                fmt.Println(css.Beige)
+        case "Bisque":
+                fmt.Println(css.Bisque)
+        case "Black":
+                fmt.Println(css.Black)
+        case "BlanchedAlmond":
+                fmt.Println(css.BlanchedAlmond)
+        case "Blue":
+                fmt.Println(css.Blue)
+        case "BlueViolet":
+                fmt.Println(css.BlueViolet)
+        case "Brown":
+                fmt.Println(css.Brown)
+        case "BurlyWood":
+                fmt.Println(css.BurlyWood)
+        case "CadetBlue":
+                fmt.Println(css.CadetBlue)
+        case "Chartreuse":
+                fmt.Println(css.Chartreuse)
+        case "Chocolate":
+                fmt.Println(css.Chocolate)
+        case "Coral":
+                fmt.Println(css.Coral)
+        case "CornflowerBlue":
+                fmt.Println(css.CornFlowerBlue)
+        case "CornSilk":
+                fmt.Println(css.CornSilk)
+        case "Crimson":
+                fmt.Println(css.Crimson)
+        case "Cyan":
+                fmt.Println(css.Cyan)
+        case "DarkBlue":
+                fmt.Println(css.DarkBlue)
+        case "DarkCyan":
+                fmt.Println(css.DarkCyan)
+        case "DarkGoldenRod":
+                fmt.Println(css.DarkGoldenRod)
+        case "DarkGray":
+                fmt.Println(css.DarkGray)
+        case "DarkGreen":
+                fmt.Println(css.DarkGreen)
+        case "DarkKhaki":
+                fmt.Println(css.DarkKhaki)
+        case "DarkMagenta":
+                fmt.Println(css.DarkMagenta)
+        case "DarkOliveGreen":
+                fmt.Println(css.DarkOliveGreen)
+        case "DarkOrange":
+                fmt.Println(css.DarkOrange)
+        case "DarkOrchid":
+                fmt.Println(css.DarkOrchid)
+        case "DarkRed":
+                fmt.Println(css.DarkRed)
+        case "DarkSalmon":
+                fmt.Println(css.DarkSalmon)
+        case "DarkSeaGreen":
+                fmt.Println(css.DarkSeaGreen)
+        case "DarkSlateBlue":
+                fmt.Println(css.DarkSlateBlue)
+        case "DarkSlateGray":
+                fmt.Println(css.DarkSlateGray)
+        case "DarkTurquoise":
+                fmt.Println(css.DarkTurquoise)
+        case "DarkViolet":
+                fmt.Println(css.DarkViolet)
+        case "DeepPink":
+                fmt.Println(css.DeepPink)
+        case "DeepSkyBlue":
+                fmt.Println(css.DeepSkyBlue)
+        case "DimGray":
+                fmt.Println(css.DimGray)
+        case "DodgerBlue":
+                fmt.Println(css.DodgerBlue)
+        case "Firebrick":
+                fmt.Println(css.Firebrick)
+        case "FloralWhite":
+                fmt.Println(css.FloralWhite)
+        case "ForestGreen":
+                fmt.Println(css.ForestGreen)
+        case "Fuchsia":
+                fmt.Println(css.Fuchsia)
+        case "Gainsboro":
+                fmt.Println(css.Gainsboro)
+        case "GhostWhite":
+                fmt.Println(css.Ghostwhite)
+        case "Gold":
+                fmt.Println(css.Gold)
+        case "GoldenRod":
+                fmt.Println(css.Goldenrod)
+        case "Gray":
+                fmt.Println(css.Gray)
+        case "Green":
+                fmt.Println(css.Green)
+        case "GreenYellow":
+                fmt.Println(css.GreenYellow)
+        case "HoneyDew":
+                fmt.Println(css.HoneyDew)
+        case "HotPink":
+                fmt.Println(css.HotPink)
+        case "IndianRed":
+                fmt.Println(css.IndianRed)
+        case "Indigo":
+                fmt.Println(css.Indigo)
+        case "Ivory":
+                fmt.Println(css.Ivory)
+        case "Khaki":
+                fmt.Println(css.Khaki)
+        case "Lavender":
+                fmt.Println(css.Lavender)
+        case "LavenderBlush":
+                fmt.Println(css.LavenderBlush)
+        case "LawnGreen":
+                fmt.Println(css.LawnGreen)
+        case "LemonChiffon":
+                fmt.Println(css.LemonChiffon)
+        case "LightBlue":
+                fmt.Println(css.LightBlue)
+        case "LightCoral":
+                fmt.Println(css.LightCoral)
+        case "LightCyan":
+                fmt.Println(css.LightCyan)
+        case "LightGoldenRodYellow":
+                fmt.Println(css.LightGoldenRodYellow)
+        case "LightGreen":
+                fmt.Println(css.LightGreen)
+        case "LightGrey":
+                fmt.Println(css.LightGrey)
+        case "LightPink":
+                fmt.Println(css.LightPink)
+        case "LightSalmon":
+                fmt.Println(css.LightSalmon)
+        case "LightSeaGreen":
+                fmt.Println(css.LightSeaGreen)
+        case "LightSkyBlue":
+                fmt.Println(css.LightSkyBlue)
+        case "LightSlateGray":
+                fmt.Println(css.LightSlateGray)
+        case "LightSteelBlue":
+                fmt.Println(css.LightSteelBlue)
+        case "LightYellow":
+                fmt.Println(css.LightYellow)
+        case "Lime":
+                fmt.Println(css.Lime)
+        case "Limegreen":
+                fmt.Println(css.Limegreen)
+        case "Linen":
+                fmt.Println(css.Linen)
+        case "Magenta":
+                fmt.Println(css.Magenta)
+        case "Maroon":
+                fmt.Println(css.Maroon)
+        case "MediumAquamarine":
+                fmt.Println(css.MediumAquamarine)
+        case "MediumBlue":
+                fmt.Println(css.MediumBlue)
+        case "MediumOrchid":
+                fmt.Println(css.MediumOrchid)
+        case "MediumPurple":
+                fmt.Println(css.MediumPurple)
+        case "MediumSeaGreen":
+                fmt.Println(css.MediumSeaGreen)
+        case "MediumSlateBlue":
+                fmt.Println(css.MediumSlateBlue)
+        case "MediumSpringGreen":
+                fmt.Println(css.MediumSpringGreen)
+        case "MediumTurquoise":
+                fmt.Println(css.MediumTurquoise)
+        case "MediumVioletRed":
+                fmt.Println(css.MediumVioletRed)
+        case "MidnightBlue":
+                fmt.Println(css.MidnightBlue)
+        case "MintCream":
+                fmt.Println(css.MintCream)
+        case "MistyRose":
+                fmt.Println(css.MistyRose)
+        case "Moccasin":
+                fmt.Println(css.Moccasin)
+        case "NavajoWhite":
+                fmt.Println(css.NavajoWhite)
+        case "Navy":
+                fmt.Println(css.Navy)
+        case "NavyBlue":
+                fmt.Println(css.Navyblue)
+        case "OldLace":
+                fmt.Println(css.Oldlace)
+        case "Olive":
+                fmt.Println(css.Olive)
+        case "Olivedrab":
+                fmt.Println(css.Olivedrab)
+        case "Orange":
+                fmt.Println(css.Orange)
+        case "OrangeRed":
+                fmt.Println(css.OrangeRed)
+        case "Orchid":
+                fmt.Println(css.Orchid)
+        case "PaleGoldenRod":
+                fmt.Println(css.PaleGoldenRod)
+        case "PaleGreen":
+                fmt.Println(css.PaleGreen)
+        case "PaleTurquoise":
+                fmt.Println(css.PaleTurquoise)
+        case "PaleVioletRed":
+                fmt.Println(css.PaleVioletRed)
+        case "PapayaWhip":
+                fmt.Println(css.PapayaWhip)
+        case "PeachPuff":
+                fmt.Println(css.PeachPuff)
+        case "Peru":
+                fmt.Println(css.Peru)
+        case "Pink":
+                fmt.Println(css.Pink)
+        case "Plum":
+                fmt.Println(css.Plum)
+        case "PowderBlue":
+                fmt.Println(css.PowderBlue)
+        case "Purple":
+                fmt.Println(css.Purple)
+        case "Red":
+                fmt.Println(css.Red)
+        case "RosyBrown":
+                fmt.Println(css.RosyBrown)
+        case "RoyalBlue":
+                fmt.Println(css.RoyalBlue)
+        case "SaddleBrown":
+                fmt.Println(css.SaddleBrown)
+        case "Salmon":
+                fmt.Println(css.Salmon)
+        case "SandyBrown":
+                fmt.Println(css.SandyBrown)
+        case "SeaGreen":
+                fmt.Println(css.SeaGreen)
+        case "SeaShell":
+                fmt.Println(css.SeaShell)
+        case "Sienna":
+                fmt.Println(css.Sienna)
+        case "Silver":
+                fmt.Println(css.Silver)
+        case "SkyBlue":
+                fmt.Println(css.SkyBlue)
+        case "SlateBlue":
+                fmt.Println(css.SlateBlue)
+        case "SlateGray":
+                fmt.Println(css.SlateGray)
+        case "Snow":
+                fmt.Println(css.Snow)
+        case "SpringGreen":
+                fmt.Println(css.SpringGreen)
+        case "SteelBlue":
+                fmt.Println(css.SteelBlue)
+        case "Tan":
+                fmt.Println(css.Tan)
+        case "Teal":
+                fmt.Println(css.Teal)
+        case "Thistle":
+                fmt.Println(css.Thistle)
+        case "Tomato":
+                fmt.Println(css.Tomato)
+        case "Turquoise":
+                fmt.Println(css.Turquoise)
+        case "Violet":
+                fmt.Println(css.Violet)
+        case "Wheat":
+                fmt.Println(css.Wheat)
+        case "White":
+                fmt.Println(css.White)
+        case "Whitesmoke":
+                fmt.Println(css.Whitesmoke)
+        case "Yellow":
+                fmt.Println(css.Yellow)
+        case "Yellowgreen":
+                fmt.Println(css.YellowGreen)
+        case "Sample":
+                fmt.Printf("%v%v", css.Aliceblue, "aliceblue")
+                fmt.Printf("%v%v", css.Antiquewhite, "antiquewhite")
+                fmt.Printf("%v%v", css.Aqua, "aqua")
+                fmt.Printf("%v%v", css.Aquamarine, "aquamarine")
+                fmt.Printf("%v%v", css.Azure, "azure")
+                fmt.Printf("%v%v", css.Beige, "beige")
+                fmt.Printf("%v%v", css.Bisque, "bisque")
+                fmt.Printf("%v%v", css.Black, "black")
+                fmt.Printf("%v%v", css.Blanchedalmond, "blanchedalmond")
+                fmt.Printf("%v%v", css.Blue, "blue")
+                fmt.Printf("%v%v", css.Blueviolet, "blueviolet")
+                fmt.Printf("%v%v", css.Brown, "brown")
+                fmt.Printf("%v%v", css.Burlywood, "burlywood")
+                fmt.Printf("%v%v", css.Cadetblue, "cadetblue")
+                fmt.Printf("%v%v", css.Chartreuse, "chartreuse")
+                fmt.Printf("%v%v", css.Chocolate, "chocolate")
+                fmt.Printf("%v%v", css.Coral, "coral")
+                fmt.Printf("%v%v", css.Cornflowerblue, "cornflowerblue")
+                fmt.Printf("%v%v", css.Cornsilk, "cornsilk")
+                fmt.Printf("%v%v", css.Crimson, "crimson")
+                fmt.Printf("%v%v", css.Cyan, "cyan")
+                fmt.Printf("%v%v", css.Darkblue, "darkblue")
+                fmt.Printf("%v%v", css.Darkcyan, "darkcyan")
+                fmt.Printf("%v%v", css.Darkgoldenrod, "darkgoldenrod")
+                fmt.Printf("%v%v", css.Darkgray, "darkgray")
+                fmt.Printf("%v%v", css.Darkgreen, "darkgreen")
+                fmt.Printf("%v%v", css.Darkkhaki, "darkkhaki")
+                fmt.Printf("%v%v", css.Darkmagenta, "darkmagenta")
+                fmt.Printf("%v%v", css.Darkolivegreen, "darkolivegreen")
+                fmt.Printf("%v%v", css.Darkorange, "darkorange")
+                fmt.Printf("%v%v", css.Darkorchid, "darkorchid")
+                fmt.Printf("%v%v", css.Darkred, "darkred")
+                fmt.Printf("%v%v", css.Darksalmon, "darksalmon")
+                fmt.Printf("%v%v", css.Darkseagreen, "darkseagreen")
+                fmt.Printf("%v%v", css.Darkslateblue, "darkslateblue")
+                fmt.Printf("%v%v", css.Darkslategray, "darkslategray")
+                fmt.Printf("%v%v", css.Darkturquoise, "darkturquoise")
+                fmt.Printf("%v%v", css.Darkviolet, "darkviolet")
+                fmt.Printf("%v%v", css.Deeppink, "deeppink")
+                fmt.Printf("%v%v", css.Deepskyblue, "deepskyblue")
+                fmt.Printf("%v%v", css.Dimgray, "dimgray")
+                fmt.Printf("%v%v", css.dodgerblue, "dodgerblue") //TODO
                 fmt.Printf("%v%v", css.firebrick, "firebrick")
                 fmt.Printf("%v%v", css.floralwhite, "floralwhite")
                 fmt.Printf("%v%v", css.forestgreen, "forestgreen")

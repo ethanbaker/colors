@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"gitlab.com/ethandbaker/color"
-	"gitlab.com/ethandbaker/color/sol"
+	"gitlab.com/ethanbaker.dev/color"
+	"gitlab.com/ethanbaker.dev/color/sol"
+        "gitlab.com/ethanbaker.dev/color/css"
 )
 
 func TestDecolor(t *testing.T) {
@@ -19,10 +20,18 @@ func TestDecolor(t *testing.T) {
 	}
 }
 
-func TestStrip(t *testing.T) {
+func TestStripSol(t *testing.T) {
 	s := sol.Random() + "random" + sol.X + sol.ClearScreen
 	s = color.Strip(s)
 	if len(s) != 6 {
 		t.Errorf("%v has problems with Strip", s)
 	}
+}
+
+func TestStripCss(t *testing.T) {
+        c := sol.Random() + "random" + sol.X + sol.ClearScreen
+        c = color.Strip(c)
+        if len(s) != 6 {
+                t.Errorf("%v has problems with Strip", c)
+        }
 }
