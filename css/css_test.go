@@ -1,13 +1,11 @@
 package sol_test
 
 import (
-        "fmt"
+	"fmt"
 
-        "gitlab.com/ethanbaker.dev/color/css"
+	"gitlab.com/skilstak/code/go/color/css"
 )
 
 func ExampleCyan() {
-        fmt.Print(css.Cyan + "Cyan")
+	fmt.Print(css.Cyan + "Cyan")
 }
-
-ExampleCyan()

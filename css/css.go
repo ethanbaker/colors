@@ -1,10 +1,5 @@
 package css
 
-import (
-	"math/rand"
-	"time"
-)
-
 const (
 	AliceBlue            = "\x1b[38;2;240;248;255m"
 	AntiqueWhite         = "\x1b[38;2;250;235;215m"
@@ -148,12 +143,3 @@ const (
 	Yellow               = "\x1b[38;2;255;255;0m"
 	YellowGreen          = "\x1b[38;2;139;205;50m"
 )
-
-//all of the css named colors are assigned a rbg value using TrueColor
-
-var Colors = []string{}
-
-func Random() string {
-	rand.Seed(time.Now().UnixNano())
-	return Colors[rand.Intn(len(Colors))]
-}

@@ -3,8 +3,7 @@ package color
 import (
 	"strings"
 
-	"gitlab.com/ethanbaker.dev/color/css"
-	"gitlab.com/ethanbaker.dev/color/sol"
+	"gitlab.com/skilstak/code/go/color/sol"
 )
 
 var colorReplacer *strings.Replacer
