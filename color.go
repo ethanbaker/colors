@@ -50,6 +50,18 @@ func Strip(s string) string {
 	return colorReplacer.Replace(ansiReplacer.Replace(s))
 }
 
+func GlobalIndex(s string) string {
+        if val, ok := Index[strings.ToLower(s)]; ok {
+                return val + strings.ToLower(s)
+        } else {
+                return s + " is not a valid color. To see what colors are valid, run the sample? command."
+        }
+}
+
+func RGB(r int g int b int) string {
+        return "\x1b[38;2;" + r + ";" + g + ";" + b ";m"
+}
+
 var Index = map[string]string{
 	"sol-yellow":               "\033[0;33m",
 	"sol-orange":               "\033[1;31m",

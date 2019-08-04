@@ -1,11 +1,15 @@
-package sol_test
+package css_test
 
 import (
 	"fmt"
+        "testing"
 
 	"gitlab.com/skilstak/code/go/color/css"
 )
 
-func ExampleCyan() {
-	fmt.Print(css.Cyan + "Cyan")
+func TestAll(t *testing.T) {
+        for k := range css.Index {
+                    fmt.Printf("%s%s\n", css.Index[k], k)
+        }
 }
+
