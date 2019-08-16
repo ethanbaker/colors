@@ -47,10 +47,10 @@ func TestSearchGlobalIndex(t *testing.T) {
 
 func TestRgb(t *testing.T) {
         s := color.Rgb("0", "255", "255") + "cyan"
-        if len(s) != 29 {
+        if len(s) != 21 {
                 t.Errorf("Rgb() is not working with paramaters \"0\", \"255\", and \"255\"! Output: %v", len(s)) 
         } else {
-                fmt.Printf("# %v made with Rgb()")
+                fmt.Printf("# %v made with Rgb() %v\n", s, css.Reset)
         }
 
 }
