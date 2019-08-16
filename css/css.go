@@ -1,5 +1,10 @@
 package css
 
+import (
+        "math/rand"
+        "time"
+)
+
 const (
 	AliceBlue            = "\x1b[38;2;240;248;255m"
 	AntiqueWhite         = "\x1b[38;2;250;235;215m"
@@ -142,8 +147,16 @@ const (
 	WhiteSmoke           = "\x1b[38;2;245;245;245m"
 	Yellow               = "\x1b[38;2;255;255;0m"
 	YellowGreen          = "\x1b[38;2;139;205;50m"
-)
 
+	Reset = "\033[0m"
+	X     = "\033[0m"
+
+	ClearScreen = "\033[2J\033[H"
+	ClearLine   = "\033[2K\033[G"
+	CursorOff   = "\033[?25l"
+	CursorOn    = "\033[?25h"
+	StrikeOut   = "\033[9m"
+)
 
 var Index = map[string]string{
 	"aliceblue":            "\x1b[38;2;240;248;255m",
@@ -287,4 +300,11 @@ var Index = map[string]string{
 	"whitesmoke":           "\x1b[38;2;245;245;245m",
 	"yellow":               "\x1b[38;2;255;255;0m",
 	"yellowgreen":          "\x1b[38;2;139;205;50m",
+}
+
+var Colors = [...]string{AliceBlue, AntiqueWhite, Aqua, AquaMarine, Azure, Beige, Bisque, Black, BlanchedAlmond, Blue, BlueViolet, Brown, BurlyWood, CadetBlue, Chartreuse, Chocolate, Coral, CornFlowerBlue, CornSilk, Crimson, Cyan, DarkBlue, DarkCyan, DarkGoldenRod, DarkGray, DarkGreen, DarkKhaki, DarkMagenta, DarkOliveGreen, DarkOrange, DarkOrchid, DarkRed, DarkSalmon, DarkSeaGreen, DarkSlateBlue, DarkSlateGray, DarkTurquoise, DarkViolet, DeepPink, DeepSkyBlue, DimGray, DodgerBlue, Firebrick, FloralWhite, ForestGreen, Fuchsia, Gainsboro, GhostWhite, Gold, GoldenRod, Gray, Green, GreenYellow, Honeydew, HotPink, IndianRed, Indigo, Ivory, Khaki, Lavender, LavenderBlush, LawnGreen, LemonChiffon, LightBlue, LightCoral, LightCyan, LightGoldenRodYellow, LightGreen, LightGrey, LightPink, LightSalmon, LightSeaGreen, LightSkyBlue, LightSlateGray, LightSteelBlue, LightYellow, Lime, LimeGreen, Linen, Magenta, Maroon, MediumAquaMarine, MediumBlue, MediumOrchid, MediumPurple, MediumSeaGreen, MediumSlateBlue, MediumSpringGreen, MediumTurquoise, MediumVioletRed, MidnightBlue, MintCream, MistyRose, Moccasin, NavajoWhite, Navy, NavyBlue, OldLace, Olive, OliveDrab, Orange, OrangeRed, Orchid, PaleGoldenRod, PaleGreen, PaleTurquoise, PaleVioletRed, PapayaWhip, PeachPuff, Peru, Pink, Plum, PowderBlue, Purple, Red, RosyBrown, RoyalBlue, SaddleBrown, Salmon, SandyBrown, SeaGreen, SeaShell, Sienna, Silver, SkyBlue, SlateBlue, SlateGray, Snow, SpringGreen, SteelBlue, Tan, Teal, Thistle, Tomato, Turquoise, Violet, Wheat, White, WhiteSmoke, Yellow, YellowGreen}
+
+func Random() string {
+        rand.Seed(time.Now().UnixNano())
+        return Colors[rand.Intn(len(Colors))]
 }
