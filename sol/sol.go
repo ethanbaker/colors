@@ -57,6 +57,7 @@ const (
 // not be visible.
 var Colors = [...]string{Yellow, Orange, Red, Magenta, Violet, Blue, Cyan, Green}
 
+
 // Bases is a list of all the Solarized base colors (levels of grey).
 var Bases = [...]string{Base02, Base01, Base00, Base0, Base1, Base2}
 
