@@ -9,22 +9,14 @@ import (
 	"gitlab.com/skilstak/code/go/color/css"
 )
 
-func TestDecolor(t *testing.T) {
+func TestDecolorSol(t *testing.T) {
 	s := sol.Random() + "random" + sol.X
 	t.Logf("# len(%v) is %v \n", s, len(s))
-	s = color.Decolor(s)
+	s = color.DecolorSol(s)
 	t.Logf("len(%v) is %v \n", s, len(s))
-	s = color.Decolor(s)
+	s = color.DecolorSol(s)
 	if len(s) != 6 {
-		t.Errorf("%v has problems with Decolor", s)
-	}
-}
-
-func TestStripSol(t *testing.T) {
-	s := sol.Random() + "random" + sol.X + sol.ClearScreen
-	s = color.Strip(s)
-	if len(s) != 6 {
-		t.Errorf("%v has problems with Strip", s)
+		t.Errorf("%v has problems with DecolorSol", s)
 	}
 }
 
@@ -53,4 +45,13 @@ func TestRgb(t *testing.T) {
                 fmt.Printf("# %v made with Rgb() %v\n", s, css.Reset)
         }
 
+}
+
+func TestRgbBackground(t *testing.T) {
+        s := color.RgbBackground("0", "255", "255") + "cyan background"
+        if len(s) != 32 {
+                t.Errorf("RgbBackground() is not working with parameters \"0\", \"255\", and \"255\"! Output: %v", len(s)) 
+        } else {
+                fmt.Printf("#%v %v made with RgbBackground() %v\n", css.Black, s, css.Reset)
+        }
 }
