@@ -3,8 +3,8 @@ package color
 import (
         "strings"
 
-        "gitlab.com/skilstak/code/go/color/sol"
-        "gitlab.com/skilstak/code/go/color/css"
+        "gitlab.com/skilstak/go/term/ansi/sol"
+        "gitlab.com/skilstak/go/term/ansi/color/css"
 )
 
 var colorReplacerSol *strings.Replacer

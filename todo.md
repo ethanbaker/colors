@@ -1,5 +1,4 @@
-change library to term-ansii or ansii-term
+change library to term-ansi or ansi-term
 
 add text-format/terminal commands
 
-add decolor css

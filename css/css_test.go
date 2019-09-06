@@ -4,7 +4,7 @@ import (
         "fmt"
         "testing"
 
-	"gitlab.com/skilstak/code/go/color/css"
+	"gitlab.com/skilstak/go/term/ansi/css"
 )
 
 func TestRandom(t *testing.T) {
