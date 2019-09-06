@@ -1,12 +1,12 @@
 package color_test
 
 import (
-        "fmt"
+	"fmt"
 	"testing"
 
-	"gitlab.com/skilstak/go/term/ansi"
-	"gitlab.com/skilstak/go/term/ansi/sol"
-	"gitlab.com/skilstak/go/term/ansi/css"
+	"gitlab.com/skilstak/go/term/ansi/color"
+	"gitlab.com/skilstak/go/term/ansi/color/css"
+	"gitlab.com/skilstak/go/term/ansi/color/sol"
 )
 
 func TestDecolorSol(t *testing.T) {
@@ -21,37 +21,37 @@ func TestDecolorSol(t *testing.T) {
 }
 
 func TestSearchGlobalIndex(t *testing.T) {
-        c := "\x1b[38;2;0;255;255mcss.cyan"
-        sc := color.SearchGlobalIndex("css.cyan")
-        s := "\033[0;36msol.cyan" 
-        ss := color.SearchGlobalIndex("sol.cyan")
-        if sc != c {
-                t.Errorf("%v has problems with SearchGlobalIndex", c)
-        } else {
-                fmt.Printf("%v# %v found SearchGlobalIndex!%v\n", css.Reset, c, css.Reset)
-        }
-        if s != ss {
-                t.Errorf("%v has problems with SearchGlobalIndex", s)
-        } else {
-                fmt.Printf("# %v found in SearchGlobalIndex!%v\n", s, sol.Reset)
-        }
+	c := "\x1b[38;2;0;255;255mcss.cyan"
+	sc := color.SearchGlobalIndex("css.cyan")
+	s := "\033[0;36msol.cyan"
+	ss := color.SearchGlobalIndex("sol.cyan")
+	if sc != c {
+		t.Errorf("%v has problems with SearchGlobalIndex", c)
+	} else {
+		fmt.Printf("%v# %v found SearchGlobalIndex!%v\n", css.Reset, c, css.Reset)
+	}
+	if s != ss {
+		t.Errorf("%v has problems with SearchGlobalIndex", s)
+	} else {
+		fmt.Printf("# %v found in SearchGlobalIndex!%v\n", s, sol.Reset)
+	}
 }
 
 func TestRgb(t *testing.T) {
-        s := color.Rgb("0", "255", "255") + "cyan"
-        if len(s) != 21 {
-                t.Errorf("Rgb() is not working with paramaters \"0\", \"255\", and \"255\"! Output: %v", len(s)) 
-        } else {
-                fmt.Printf("# %v made with Rgb() %v\n", s, css.Reset)
-        }
+	s := color.Rgb("0", "255", "255") + "cyan"
+	if len(s) != 21 {
+		t.Errorf("Rgb() is not working with paramaters \"0\", \"255\", and \"255\"! Output: %v", len(s))
+	} else {
+		fmt.Printf("# %v made with Rgb() %v\n", s, css.Reset)
+	}
 
 }
 
 func TestRgbBackground(t *testing.T) {
-        s := color.RgbBackground("0", "255", "255") + "cyan background"
-        if len(s) != 32 {
-                t.Errorf("RgbBackground() is not working with parameters \"0\", \"255\", and \"255\"! Output: %v", len(s)) 
-        } else {
-                fmt.Printf("#%v %v made with RgbBackground() %v\n", css.Black, s, css.Reset)
-        }
+	s := color.RgbBackground("0", "255", "255") + "cyan background"
+	if len(s) != 32 {
+		t.Errorf("RgbBackground() is not working with parameters \"0\", \"255\", and \"255\"! Output: %v", len(s))
+	} else {
+		fmt.Printf("#%v %v made with RgbBackground() %v\n", css.Black, s, css.Reset)
+	}
 }
