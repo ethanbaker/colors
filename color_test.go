@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"gitlab.com/skilstak/go/term/ansi/color"
-	"gitlab.com/skilstak/go/term/ansi/color/css"
-	"gitlab.com/skilstak/go/term/ansi/color/sol"
+        "github.com/ethanbaker/colors"
+        "github.com/ethanbaker/colors/sol"
+        "github.com/ethanbaker/colors/css"
 )
 
 func TestDecolorSol(t *testing.T) {

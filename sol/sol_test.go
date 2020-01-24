@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"gitlab.com/skilstak/go/term/ansi/sol"
+        "github.com/ethanbaker/colors"
 )
 
 func ExampleCyan() {

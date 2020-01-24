@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"gitlab.com/skilstak/go/term/ansi/color"
+        "github.com/ethanbaker/colors"
 )
 
 func main() {

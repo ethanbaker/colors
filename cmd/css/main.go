@@ -4,7 +4,7 @@ import (
         "fmt"
         "os"
 
-        "gitlab.com/skilstak/go/term/ansi/color/css"
+        "github.com/ethanbaker/colors"
 )
 
 const usagetxt = `
