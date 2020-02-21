@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-        "github.com/ethanbaker/colors"
+	"github.com/ethanbaker/go-colors"
 )
 
 func main() {

@@ -3,8 +3,8 @@ package color
 import (
 	"strings"
 
-        "github.com/ethanbaker/colors/sol"
-        "github.com/ethanbaker/colors/css"
+	"github.com/ethanbaker/go-colors/css"
+	"github.com/ethanbaker/go-colors/sol"
 )
 
 var colorReplacerSol *strings.Replacer

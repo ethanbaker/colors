@@ -1,8 +1,8 @@
 package css
 
 import (
-        "math/rand"
-        "time"
+	"math/rand"
+	"time"
 )
 
 const (
@@ -150,291 +150,291 @@ const (
 	Yellow               = "\033[38;2;255;255;0m"
 	YellowGreen          = "\033[38;2;139;205;50m"
 
-	AliceBlueBackground = "\033[48;2;240;248;255m"
-	AntiqueWhiteBackground = "\033[48;2;250;235;215m"
-	AquaBackground = "\033[48;2;0;255;255m"
-	AquaMarineBackground = "\033[48;2;127;255;212m"
-	AzureBackground = "\033[48;2;1240;255;255m"
-	BeigeBackground = "\033[48;2;245;245;220m"
-	BisqueBackground = "\033[48;2;255;228;196m"
-	BlackBackground = "\033[48;2;0;0;0m"
-	BlanchedAlmondBackground = "\033[48;2;255;235;205m"
-	BlueBackground = "\033[48;2;0;0;255m"
-	BlueVioletBackground = "\033[48;2;138;43;226m"
-	BrownBackground = "\033[48;2;165;42;42m"
-	BurlyWoodBackground = "\033[48;2;222;184;135m"
-	CadetBlueBackground = "\033[48;2;95;158;160m"
-	ChartreuseBackground = "\033[48;2;95;158;160m"
-	ChocolateBackground = "\033[48;2;210;105;30m"
-	CoralBackground = "\033[48;2;255;127;80m"
-	CornFlowerBlueBackground = "\033[48;2;100;149;237m"
-	CornSilkBackground = "\033[48;2;255;248;220m"
-	CrimsonBackground = "\033[48;2;220;20;60m"
-	CyanBackground = "\033[48;2;0;255;255m"
-	DarkBlueBackground = "\033[48;2;0;0;139m"
-	DarkCyanBackground = "\033[48;2;0;139;139m"
-	DarkGoldenRodBackground = "\033[48;2;184;134;11m"
-	DarkGrayBackground = "\033[48;2;169;169;169m"
-	DarkGreenBackground = "\033[48;2;0;100;0m"
-	DarkKhakiBackground = "\033[48;2;189;183;107m"
-	DarkMagentaBackground = "\033[48;2;139;0;139m"
-	DarkOliveGreenBackground = "\033[48;2;85;107;47m"
-	DarkOrangeBackground = "\033[48;2;255;140;0m"
-	DarkOrchidBackground = "\033[48;2;153;50;204m"
-	DarkRedBackground = "\033[48;2;139;0;0m"
-	DarkSalmonBackground = "\033[48;2;233;150;122m"
-	DarkSeaGreenBackground = "\033[48;2;143;188;143m"
-	DarkSlateBlueBackground = "\033[48;2;72;61;139m"
-	DarkSlateGrayBackground = "\033[48;2;47;79;79m"
-	DarkTurquoiseBackground = "\033[48;2;0;206;209m"
-	DarkVioletBackground = "\033[48;2;148;0;211m"
-	DeepPinkBackground = "\033[48;2;255;20;147m"
-	DeepSkyBlueBackground = "\033[48;2;0;191;255m"
-	DimGrayBackground = "\033[48;2;0;191;255m"
-	DodgerBlueBackground = "\033[48;2;30;144;255m"
-	FirebrickBackground = "\033[48;2;178;34;34m"
-	FloralWhiteBackground = "\033[48;2;255;250;240m"
-	ForestGreenBackground = "\033[48;2;34;139;34m"
-	FuchsiaBackground = "\033[48;2;255;0;255m"
-	GainsboroBackground = "\033[48;2;220;220;220m"
-	GhostWhiteBackground = "\033[48;2;248;248;255m"
-	GoldBackground = "\033[48;2;255;215;0m"
-	GoldenRodBackground = "\033[48;2;218;165;32m"
-	GrayBackground = "\033[48;2;127;127;127m"
-	GreenBackground = "\033[48;2;0;128;0m"
-	GreenYellowBackground = "\033[48;2;173;255;47m"
-	HoneydewBackground = "\033[48;2;240;255;240m"
-	HotPinkBackground = "\033[48;2;255;105;180m"
-	IndianRedBackground = "\033[48;2;205;92;92m"
-	IndigoBackground = "\033[48;2;75;0;130m"
-	IvoryBackground = "\033[48;2;255;255;240m"
-	KhakiBackground = "\033[48;2;240;230;140m"
-	LavenderBackground = "\033[48;2;230;230;250m"
-	LavenderBlushBackground = "\033[48;2;255;240;245m"
-	LawnGreenBackground = "\033[48;2;124;252;0m"
-	LemonChiffonBackground = "\033[48;2;255;250;205m"
-	LightBlueBackground = "\033[48;2;173;216;230m"
-	LightCoralBackground = "\033[48;2;240;128;128m"
-	LightCyanBackground = "\033[48;2;224;255;255m"
+	AliceBlueBackground            = "\033[48;2;240;248;255m"
+	AntiqueWhiteBackground         = "\033[48;2;250;235;215m"
+	AquaBackground                 = "\033[48;2;0;255;255m"
+	AquaMarineBackground           = "\033[48;2;127;255;212m"
+	AzureBackground                = "\033[48;2;1240;255;255m"
+	BeigeBackground                = "\033[48;2;245;245;220m"
+	BisqueBackground               = "\033[48;2;255;228;196m"
+	BlackBackground                = "\033[48;2;0;0;0m"
+	BlanchedAlmondBackground       = "\033[48;2;255;235;205m"
+	BlueBackground                 = "\033[48;2;0;0;255m"
+	BlueVioletBackground           = "\033[48;2;138;43;226m"
+	BrownBackground                = "\033[48;2;165;42;42m"
+	BurlyWoodBackground            = "\033[48;2;222;184;135m"
+	CadetBlueBackground            = "\033[48;2;95;158;160m"
+	ChartreuseBackground           = "\033[48;2;95;158;160m"
+	ChocolateBackground            = "\033[48;2;210;105;30m"
+	CoralBackground                = "\033[48;2;255;127;80m"
+	CornFlowerBlueBackground       = "\033[48;2;100;149;237m"
+	CornSilkBackground             = "\033[48;2;255;248;220m"
+	CrimsonBackground              = "\033[48;2;220;20;60m"
+	CyanBackground                 = "\033[48;2;0;255;255m"
+	DarkBlueBackground             = "\033[48;2;0;0;139m"
+	DarkCyanBackground             = "\033[48;2;0;139;139m"
+	DarkGoldenRodBackground        = "\033[48;2;184;134;11m"
+	DarkGrayBackground             = "\033[48;2;169;169;169m"
+	DarkGreenBackground            = "\033[48;2;0;100;0m"
+	DarkKhakiBackground            = "\033[48;2;189;183;107m"
+	DarkMagentaBackground          = "\033[48;2;139;0;139m"
+	DarkOliveGreenBackground       = "\033[48;2;85;107;47m"
+	DarkOrangeBackground           = "\033[48;2;255;140;0m"
+	DarkOrchidBackground           = "\033[48;2;153;50;204m"
+	DarkRedBackground              = "\033[48;2;139;0;0m"
+	DarkSalmonBackground           = "\033[48;2;233;150;122m"
+	DarkSeaGreenBackground         = "\033[48;2;143;188;143m"
+	DarkSlateBlueBackground        = "\033[48;2;72;61;139m"
+	DarkSlateGrayBackground        = "\033[48;2;47;79;79m"
+	DarkTurquoiseBackground        = "\033[48;2;0;206;209m"
+	DarkVioletBackground           = "\033[48;2;148;0;211m"
+	DeepPinkBackground             = "\033[48;2;255;20;147m"
+	DeepSkyBlueBackground          = "\033[48;2;0;191;255m"
+	DimGrayBackground              = "\033[48;2;0;191;255m"
+	DodgerBlueBackground           = "\033[48;2;30;144;255m"
+	FirebrickBackground            = "\033[48;2;178;34;34m"
+	FloralWhiteBackground          = "\033[48;2;255;250;240m"
+	ForestGreenBackground          = "\033[48;2;34;139;34m"
+	FuchsiaBackground              = "\033[48;2;255;0;255m"
+	GainsboroBackground            = "\033[48;2;220;220;220m"
+	GhostWhiteBackground           = "\033[48;2;248;248;255m"
+	GoldBackground                 = "\033[48;2;255;215;0m"
+	GoldenRodBackground            = "\033[48;2;218;165;32m"
+	GrayBackground                 = "\033[48;2;127;127;127m"
+	GreenBackground                = "\033[48;2;0;128;0m"
+	GreenYellowBackground          = "\033[48;2;173;255;47m"
+	HoneydewBackground             = "\033[48;2;240;255;240m"
+	HotPinkBackground              = "\033[48;2;255;105;180m"
+	IndianRedBackground            = "\033[48;2;205;92;92m"
+	IndigoBackground               = "\033[48;2;75;0;130m"
+	IvoryBackground                = "\033[48;2;255;255;240m"
+	KhakiBackground                = "\033[48;2;240;230;140m"
+	LavenderBackground             = "\033[48;2;230;230;250m"
+	LavenderBlushBackground        = "\033[48;2;255;240;245m"
+	LawnGreenBackground            = "\033[48;2;124;252;0m"
+	LemonChiffonBackground         = "\033[48;2;255;250;205m"
+	LightBlueBackground            = "\033[48;2;173;216;230m"
+	LightCoralBackground           = "\033[48;2;240;128;128m"
+	LightCyanBackground            = "\033[48;2;224;255;255m"
 	LightGoldenRodYellowBackground = "\033[48;2;250;250;210m"
-	LightGreenBackground = "\033[48;2;144;238;144m"
-	LightGreyBackground = "\033[48;2;211;211;211m"
-	LightPinkBackground = "\033[48;2;255;182;193m"
-	LightSalmonBackground = "\033[48;2;255;160;122m"
-	LightSeaGreenBackground = "\033[48;2;32;178;170m"
-	LightSkyBlueBackground = "\033[48;2;135;206;250m"
-	LightSlateGrayBackground = "\033[48;2;119;136;153m"
-	LightSteelBlueBackground = "\033[48;2;176;196;222m"
-	LightYellowBackground = "\033[48;2;255;255;224m"
-	LimeBackground = "\033[48;2;0;255;0m"
-	LimeGreenBackground = "\033[48;2;50;205;50m"
-	LinenBackground = "\033[48;2;250;240;230m"
-	MagentaBackground = "\033[48;2;255;0;255m"
-	MaroonBackground = "\033[48;2;128;0;0m"
-	MediumAquaMarineBackground = "\033[48;2;102;205;170m"
-	MediumBlueBackground = "\033[48;2;0;0;205m"
-	MediumOrchidBackground = "\033[48;2;186;85;211m"
-	MediumPurpleBackground = "\033[48;2;147;112;219m"
-	MediumSeaGreenBackground = "\033[48;2;60;179;113m"
-	MediumSlateBlueBackground = "\033[48;2;123;104;238m"
-	MediumSpringGreenBackground = "\033[48;2;0;250;154m"
-	MediumTurquoiseBackground = "\033[48;2;72;209;204m"
-	MediumVioletRedBackground = "\033[48;2;199;21;133m"
-	MidnightBlueBackground = "\033[48;2;25;25;112m"
-	MintCreamBackground = "\033[48;2;245;255;250m"
-	MistyRoseBackground = "\033[48;2;255;228;225m"
-	MoccasinBackground = "\033[48;2;255;228;181m"
-	NavajoWhiteBackground = "\033[48;2;255;222;173m"
-	NavyBackground = "\033[48;2;0;0;128m"
-	NavyBlueBackground = "\033[48;2;159;175;223m"
-	OldLaceBackground = "\033[48;2;253;245;230m"
-	OliveBackground = "\033[48;2;128;128;0m"
-	OliveDrabBackground = "\033[48;2;107;142;35m"
-	OrangeBackground = "\033[48;2;255;165;0m"
-	OrangeRedBackground = "\033[48;2;255;69;0m"
-	OrchidBackground = "\033[48;2;218;112;214m"
-	PaleGoldenRodBackground = "\033[48;2;238;232;170m"
-	PaleGreenBackground = "\033[48;2;152;251;152m"
-	PaleTurquoiseBackground = "\033[48;2;175;238;238m"
-	PaleVioletRedBackground = "\033[48;2;219;112;147m"
-	PapayaWhipBackground = "\033[48;2;255;239;213m"
-	PeachPuffBackground = "\033[48;2;255;218;185m"
-	PeruBackground = "\033[48;2;205;133;63m"
-	PinkBackground = "\033[48;2;255;192;203m"
-	PlumBackground = "\033[48;2;221;160;221m"
-	PowderBlueBackground = "\033[48;2;176;224;230m"
-	PurpleBackground = "\033[48;2;128;0;128m"
-	RedBackground = "\033[48;2;255;0;0m"
-	RosyBrownBackground = "\033[48;2;188;143;143m"
-	RoyalBlueBackground = "\033[48;2;65;105;225m"
-	SaddleBrownBackground = "\033[48;2;139;69;19m"
-	SalmonBackground = "\033[48;2;250;128;114m"
-	SandyBrownBackground = "\033[48;2;244;164;96m"
-	SeaGreenBackground = "\033[48;2;46;139;87m"
-	SeaShellBackground = "\033[48;2;255;245;238m"
-	SiennaBackground = "\033[48;2;160;82;45m"
-	SilverBackground = "\033[48;2;192;192;192m"
-	SkyBlueBackground = "\033[48;2;135;206;235m"
-	SlateBlueBackground = "\033[48;2;106;90;205m"
-	SlateGrayBackground = "\033[48;2;112;128;144m"
-	SnowBackground = "\033[48;2;255;250;250m"
-	SpringGreenBackground = "\033[48;2;0;255;127m"
-	SteelBlueBackground = "\033[48;2;70;130;180m"
-	TanBackground = "\033[48;2;210;180;140m"
-	TealBackground = "\033[48;2;0;128;128m"
-	ThistleBackground = "\033[48;2;216;191;216m"
-	TomatoBackground = "\033[48;2;255;99;71m"
-	TurquoiseBackground = "\033[48;2;64;224;208m"
-	VioletBackground = "\033[48;2;238;130;238m"
-	WheatBackground = "\033[48;2;245;222;179m"
-	WhiteBackground = "\033[48;2;255;255;255m"
-	WhiteSmokeBackground = "\033[48;2;245;245;245m"
-	YellowBackground = "\033[48;2;255;255;0m"
-	YellowGreenBackground = "\033[48;2;139;205;50m"
+	LightGreenBackground           = "\033[48;2;144;238;144m"
+	LightGreyBackground            = "\033[48;2;211;211;211m"
+	LightPinkBackground            = "\033[48;2;255;182;193m"
+	LightSalmonBackground          = "\033[48;2;255;160;122m"
+	LightSeaGreenBackground        = "\033[48;2;32;178;170m"
+	LightSkyBlueBackground         = "\033[48;2;135;206;250m"
+	LightSlateGrayBackground       = "\033[48;2;119;136;153m"
+	LightSteelBlueBackground       = "\033[48;2;176;196;222m"
+	LightYellowBackground          = "\033[48;2;255;255;224m"
+	LimeBackground                 = "\033[48;2;0;255;0m"
+	LimeGreenBackground            = "\033[48;2;50;205;50m"
+	LinenBackground                = "\033[48;2;250;240;230m"
+	MagentaBackground              = "\033[48;2;255;0;255m"
+	MaroonBackground               = "\033[48;2;128;0;0m"
+	MediumAquaMarineBackground     = "\033[48;2;102;205;170m"
+	MediumBlueBackground           = "\033[48;2;0;0;205m"
+	MediumOrchidBackground         = "\033[48;2;186;85;211m"
+	MediumPurpleBackground         = "\033[48;2;147;112;219m"
+	MediumSeaGreenBackground       = "\033[48;2;60;179;113m"
+	MediumSlateBlueBackground      = "\033[48;2;123;104;238m"
+	MediumSpringGreenBackground    = "\033[48;2;0;250;154m"
+	MediumTurquoiseBackground      = "\033[48;2;72;209;204m"
+	MediumVioletRedBackground      = "\033[48;2;199;21;133m"
+	MidnightBlueBackground         = "\033[48;2;25;25;112m"
+	MintCreamBackground            = "\033[48;2;245;255;250m"
+	MistyRoseBackground            = "\033[48;2;255;228;225m"
+	MoccasinBackground             = "\033[48;2;255;228;181m"
+	NavajoWhiteBackground          = "\033[48;2;255;222;173m"
+	NavyBackground                 = "\033[48;2;0;0;128m"
+	NavyBlueBackground             = "\033[48;2;159;175;223m"
+	OldLaceBackground              = "\033[48;2;253;245;230m"
+	OliveBackground                = "\033[48;2;128;128;0m"
+	OliveDrabBackground            = "\033[48;2;107;142;35m"
+	OrangeBackground               = "\033[48;2;255;165;0m"
+	OrangeRedBackground            = "\033[48;2;255;69;0m"
+	OrchidBackground               = "\033[48;2;218;112;214m"
+	PaleGoldenRodBackground        = "\033[48;2;238;232;170m"
+	PaleGreenBackground            = "\033[48;2;152;251;152m"
+	PaleTurquoiseBackground        = "\033[48;2;175;238;238m"
+	PaleVioletRedBackground        = "\033[48;2;219;112;147m"
+	PapayaWhipBackground           = "\033[48;2;255;239;213m"
+	PeachPuffBackground            = "\033[48;2;255;218;185m"
+	PeruBackground                 = "\033[48;2;205;133;63m"
+	PinkBackground                 = "\033[48;2;255;192;203m"
+	PlumBackground                 = "\033[48;2;221;160;221m"
+	PowderBlueBackground           = "\033[48;2;176;224;230m"
+	PurpleBackground               = "\033[48;2;128;0;128m"
+	RedBackground                  = "\033[48;2;255;0;0m"
+	RosyBrownBackground            = "\033[48;2;188;143;143m"
+	RoyalBlueBackground            = "\033[48;2;65;105;225m"
+	SaddleBrownBackground          = "\033[48;2;139;69;19m"
+	SalmonBackground               = "\033[48;2;250;128;114m"
+	SandyBrownBackground           = "\033[48;2;244;164;96m"
+	SeaGreenBackground             = "\033[48;2;46;139;87m"
+	SeaShellBackground             = "\033[48;2;255;245;238m"
+	SiennaBackground               = "\033[48;2;160;82;45m"
+	SilverBackground               = "\033[48;2;192;192;192m"
+	SkyBlueBackground              = "\033[48;2;135;206;235m"
+	SlateBlueBackground            = "\033[48;2;106;90;205m"
+	SlateGrayBackground            = "\033[48;2;112;128;144m"
+	SnowBackground                 = "\033[48;2;255;250;250m"
+	SpringGreenBackground          = "\033[48;2;0;255;127m"
+	SteelBlueBackground            = "\033[48;2;70;130;180m"
+	TanBackground                  = "\033[48;2;210;180;140m"
+	TealBackground                 = "\033[48;2;0;128;128m"
+	ThistleBackground              = "\033[48;2;216;191;216m"
+	TomatoBackground               = "\033[48;2;255;99;71m"
+	TurquoiseBackground            = "\033[48;2;64;224;208m"
+	VioletBackground               = "\033[48;2;238;130;238m"
+	WheatBackground                = "\033[48;2;245;222;179m"
+	WhiteBackground                = "\033[48;2;255;255;255m"
+	WhiteSmokeBackground           = "\033[48;2;245;245;245m"
+	YellowBackground               = "\033[48;2;255;255;0m"
+	YellowGreenBackground          = "\033[48;2;139;205;50m"
 )
 
 var Index = map[string]string{
-	"aliceblue":            "\033[38;2;240;248;255m",
-	"antiquewhite":         "\033[38;2;250;235;215m",
-	"aqua":                 "\033[38;2;0;255;255m",
-	"aquamarine":           "\033[38;2;127;255;212m",
-	"azure":                "\033[38;2;1240;255;255m",
-	"beige":                "\033[38;2;245;245;220m",
-	"bisque":               "\033[38;2;255;228;196m",
-	"black":                "\033[38;2;0;0;0m",
-	"blanchedalmond":       "\033[38;2;255;235;205m",
-	"blue":                 "\033[38;2;0;0;255m",
-	"blueviolet":           "\033[38;2;138;43;226m",
-	"brown":                "\033[38;2;165;42;42m",
-	"burlywood":            "\033[38;2;222;184;135m",
-	"cadetblue":            "\033[38;2;95;158;160m",
-	"chartreuse":           "\033[38;2;95;158;160m",
-	"chocolate":            "\033[38;2;210;105;30m",
-	"coral":                "\033[38;2;255;127;80m",
-	"cornflowerblue":       "\033[38;2;100;149;237m",
-	"cornsilk":             "\033[38;2;255;248;220m",
-	"crimson":              "\033[38;2;220;20;60m",
-	"cyan":                 "\033[38;2;0;255;255m",
-	"darkblue":             "\033[38;2;0;0;139m",
-	"darkcyan":             "\033[38;2;0;139;139m",
-	"darkgoldenrod":        "\033[38;2;184;134;11m",
-	"darkgray":             "\033[38;2;169;169;169m",
-	"darkgreen":            "\033[38;2;0;100;0m",
-	"darkkhaki":            "\033[38;2;189;183;107m",
-	"darkmagenta":          "\033[38;2;139;0;139m",
-	"darkolivegreen":       "\033[38;2;85;107;47m",
-	"darkorange":           "\033[38;2;255;140;0m",
-	"darkorchid":           "\033[38;2;153;50;204m",
-	"darkred":              "\033[38;2;139;0;0m",
-	"darksalmon":           "\033[38;2;233;150;122m",
-	"darkseagreen":         "\033[38;2;143;188;143m",
-	"darkslateblue":        "\033[38;2;72;61;139m",
-	"darkslategray":        "\033[38;2;47;79;79m",
-	"darkturquoise":        "\033[38;2;0;206;209m",
-	"darkviolet":           "\033[38;2;148;0;211m",
-	"deeppink":             "\033[38;2;255;20;147m",
-	"deepskyblue":          "\033[38;2;0;191;255m",
-	"dimgray":              "\033[38;2;0;191;255m",
-	"dodgerblue":           "\033[38;2;30;144;255m",
-	"firebrick":            "\033[38;2;178;34;34m",
-	"floralwhite":          "\033[38;2;255;250;240m",
-	"forestgreen":          "\033[38;2;34;139;34m",
-	"fuchsia":              "\033[38;2;255;0;255m",
-	"gainsboro":            "\033[38;2;220;220;220m",
-	"ghostwhite":           "\033[38;2;248;248;255m",
-	"gold":                 "\033[38;2;255;215;0m",
-	"goldenrod":            "\033[38;2;218;165;32m",
-	"gray":                 "\033[38;2;127;127;127m",
-	"green":                "\033[38;2;0;128;0m",
-	"greenyellow":          "\033[38;2;173;255;47m",
-	"honeydew":             "\033[38;2;240;255;240m",
-	"hotpink":              "\033[38;2;255;105;180m",
-	"indianred":            "\033[38;2;205;92;92m",
-	"indigo":               "\033[38;2;75;0;130m",
-	"ivory":                "\033[38;2;255;255;240m",
-	"khaki":                "\033[38;2;240;230;140m",
-	"lavender":             "\033[38;2;230;230;250m",
-	"lavenderblush":        "\033[38;2;255;240;245m",
-	"lawngreen":            "\033[38;2;124;252;0m",
-	"lemonchiffon":         "\033[38;2;255;250;205m",
-	"lightblue":            "\033[38;2;173;216;230m",
-	"lightcoral":           "\033[38;2;240;128;128m",
-	"lightcyan":            "\033[38;2;224;255;255m",
-	"lightgoldenrodyellow": "\033[38;2;250;250;210m",
-	"lightgreen":           "\033[38;2;144;238;144m",
-	"lightgrey":            "\033[38;2;211;211;211m",
-	"lightpink":            "\033[38;2;255;182;193m",
-	"lightsalmon":          "\033[38;2;255;160;122m",
-	"lightseagreen":        "\033[38;2;32;178;170m",
-	"lightskyblue":         "\033[38;2;135;206;250m",
-	"lightslategray":       "\033[38;2;119;136;153m",
-	"lightsteelblue":       "\033[38;2;176;196;222m",
-	"lightyellow":          "\033[38;2;255;255;224m",
-	"lime":                 "\033[38;2;0;255;0m",
-	"limegreen":            "\033[38;2;50;205;50m",
-	"linen":                "\033[38;2;250;240;230m",
-	"magenta":              "\033[38;2;255;0;255m",
-	"maroon":               "\033[38;2;128;0;0m",
-	"mediumaquamarine":     "\033[38;2;102;205;170m",
-	"mediumblue":           "\033[38;2;0;0;205m",
-	"mediumorchid":         "\033[38;2;186;85;211m",
-	"mediumpurple":         "\033[38;2;147;112;219m",
-	"mediumseagreen":       "\033[38;2;60;179;113m",
-	"mediumslateblue":      "\033[38;2;123;104;238m",
-	"mediumspringgreen":    "\033[38;2;0;250;154m",
-	"mediumturquoise":      "\033[38;2;72;209;204m",
-	"mediumvioletred":      "\033[38;2;199;21;133m",
-	"midnightblue":         "\033[38;2;25;25;112m",
-	"mintcream":            "\033[38;2;245;255;250m",
-	"mistyrose":            "\033[38;2;255;228;225m",
-	"moccasin":             "\033[38;2;255;228;181m",
-	"navajowhite":          "\033[38;2;255;222;173m",
-	"navy":                 "\033[38;2;0;0;128m",
-	"navyblue":             "\033[38;2;159;175;223m",
-	"oldlace":              "\033[38;2;253;245;230m",
-	"olive":                "\033[38;2;128;128;0m",
-	"olivedrab":            "\033[38;2;107;142;35m",
-	"orange":               "\033[38;2;255;165;0m",
-	"orangered":            "\033[38;2;255;69;0m",
-	"orchid":               "\033[38;2;218;112;214m",
-	"palegoldenrod":        "\033[38;2;238;232;170m",
-	"palegreen":            "\033[38;2;152;251;152m",
-	"paleturquoise":        "\033[38;2;175;238;238m",
-	"palevioletred":        "\033[38;2;219;112;147m",
-	"papayawhip":           "\033[38;2;255;239;213m",
-	"peachpuff":            "\033[38;2;255;218;185m",
-	"peru":                 "\033[38;2;205;133;63m",
-	"pink":                 "\033[38;2;255;192;203m",
-	"plum":                 "\033[38;2;221;160;221m",
-	"powderblue":           "\033[38;2;176;224;230m",
-	"purple":               "\033[38;2;128;0;128m",
-	"red":                  "\033[38;2;255;0;0m",
-	"rosybrown":            "\033[38;2;188;143;143m",
-	"royalblue":            "\033[38;2;65;105;225m",
-	"saddlebrown":          "\033[38;2;139;69;19m",
-	"salmon":               "\033[38;2;250;128;114m",
-	"sandybrown":           "\033[38;2;244;164;96m",
-	"seagreen":             "\033[38;2;46;139;87m",
-	"seashell":             "\033[38;2;255;245;238m",
-	"sienna":               "\033[38;2;160;82;45m",
-	"silver":               "\033[38;2;192;192;192m",
-	"skyblue":              "\033[38;2;135;206;235m",
-	"slateblue":            "\033[38;2;106;90;205m",
-	"slategray":            "\033[38;2;112;128;144m",
-	"snow":                 "\033[38;2;255;250;250m",
-	"springgreen":          "\033[38;2;0;255;127m",
-	"steelblue":            "\033[38;2;70;130;180m",
-	"tan":                  "\033[38;2;210;180;140m",
-	"teal":                 "\033[38;2;0;128;128m",
-	"thistle":              "\033[38;2;216;191;216m",
-	"tomato":               "\033[38;2;255;99;71m",
-	"turquoise":            "\033[38;2;64;224;208m",
-	"violet":               "\033[38;2;238;130;238m",
-	"wheat":                "\033[38;2;245;222;179m",
-	"white":                "\033[38;2;255;255;255m",
-	"whitesmoke":           "\033[38;2;245;245;245m",
-	"yellow":               "\033[38;2;255;255;0m",
-	"yellowgreen":          "\033[38;2;139;205;50m",
+	"aliceblue":                      "\033[38;2;240;248;255m",
+	"antiquewhite":                   "\033[38;2;250;235;215m",
+	"aqua":                           "\033[38;2;0;255;255m",
+	"aquamarine":                     "\033[38;2;127;255;212m",
+	"azure":                          "\033[38;2;1240;255;255m",
+	"beige":                          "\033[38;2;245;245;220m",
+	"bisque":                         "\033[38;2;255;228;196m",
+	"black":                          "\033[38;2;0;0;0m",
+	"blanchedalmond":                 "\033[38;2;255;235;205m",
+	"blue":                           "\033[38;2;0;0;255m",
+	"blueviolet":                     "\033[38;2;138;43;226m",
+	"brown":                          "\033[38;2;165;42;42m",
+	"burlywood":                      "\033[38;2;222;184;135m",
+	"cadetblue":                      "\033[38;2;95;158;160m",
+	"chartreuse":                     "\033[38;2;95;158;160m",
+	"chocolate":                      "\033[38;2;210;105;30m",
+	"coral":                          "\033[38;2;255;127;80m",
+	"cornflowerblue":                 "\033[38;2;100;149;237m",
+	"cornsilk":                       "\033[38;2;255;248;220m",
+	"crimson":                        "\033[38;2;220;20;60m",
+	"cyan":                           "\033[38;2;0;255;255m",
+	"darkblue":                       "\033[38;2;0;0;139m",
+	"darkcyan":                       "\033[38;2;0;139;139m",
+	"darkgoldenrod":                  "\033[38;2;184;134;11m",
+	"darkgray":                       "\033[38;2;169;169;169m",
+	"darkgreen":                      "\033[38;2;0;100;0m",
+	"darkkhaki":                      "\033[38;2;189;183;107m",
+	"darkmagenta":                    "\033[38;2;139;0;139m",
+	"darkolivegreen":                 "\033[38;2;85;107;47m",
+	"darkorange":                     "\033[38;2;255;140;0m",
+	"darkorchid":                     "\033[38;2;153;50;204m",
+	"darkred":                        "\033[38;2;139;0;0m",
+	"darksalmon":                     "\033[38;2;233;150;122m",
+	"darkseagreen":                   "\033[38;2;143;188;143m",
+	"darkslateblue":                  "\033[38;2;72;61;139m",
+	"darkslategray":                  "\033[38;2;47;79;79m",
+	"darkturquoise":                  "\033[38;2;0;206;209m",
+	"darkviolet":                     "\033[38;2;148;0;211m",
+	"deeppink":                       "\033[38;2;255;20;147m",
+	"deepskyblue":                    "\033[38;2;0;191;255m",
+	"dimgray":                        "\033[38;2;0;191;255m",
+	"dodgerblue":                     "\033[38;2;30;144;255m",
+	"firebrick":                      "\033[38;2;178;34;34m",
+	"floralwhite":                    "\033[38;2;255;250;240m",
+	"forestgreen":                    "\033[38;2;34;139;34m",
+	"fuchsia":                        "\033[38;2;255;0;255m",
+	"gainsboro":                      "\033[38;2;220;220;220m",
+	"ghostwhite":                     "\033[38;2;248;248;255m",
+	"gold":                           "\033[38;2;255;215;0m",
+	"goldenrod":                      "\033[38;2;218;165;32m",
+	"gray":                           "\033[38;2;127;127;127m",
+	"green":                          "\033[38;2;0;128;0m",
+	"greenyellow":                    "\033[38;2;173;255;47m",
+	"honeydew":                       "\033[38;2;240;255;240m",
+	"hotpink":                        "\033[38;2;255;105;180m",
+	"indianred":                      "\033[38;2;205;92;92m",
+	"indigo":                         "\033[38;2;75;0;130m",
+	"ivory":                          "\033[38;2;255;255;240m",
+	"khaki":                          "\033[38;2;240;230;140m",
+	"lavender":                       "\033[38;2;230;230;250m",
+	"lavenderblush":                  "\033[38;2;255;240;245m",
+	"lawngreen":                      "\033[38;2;124;252;0m",
+	"lemonchiffon":                   "\033[38;2;255;250;205m",
+	"lightblue":                      "\033[38;2;173;216;230m",
+	"lightcoral":                     "\033[38;2;240;128;128m",
+	"lightcyan":                      "\033[38;2;224;255;255m",
+	"lightgoldenrodyellow":           "\033[38;2;250;250;210m",
+	"lightgreen":                     "\033[38;2;144;238;144m",
+	"lightgrey":                      "\033[38;2;211;211;211m",
+	"lightpink":                      "\033[38;2;255;182;193m",
+	"lightsalmon":                    "\033[38;2;255;160;122m",
+	"lightseagreen":                  "\033[38;2;32;178;170m",
+	"lightskyblue":                   "\033[38;2;135;206;250m",
+	"lightslategray":                 "\033[38;2;119;136;153m",
+	"lightsteelblue":                 "\033[38;2;176;196;222m",
+	"lightyellow":                    "\033[38;2;255;255;224m",
+	"lime":                           "\033[38;2;0;255;0m",
+	"limegreen":                      "\033[38;2;50;205;50m",
+	"linen":                          "\033[38;2;250;240;230m",
+	"magenta":                        "\033[38;2;255;0;255m",
+	"maroon":                         "\033[38;2;128;0;0m",
+	"mediumaquamarine":               "\033[38;2;102;205;170m",
+	"mediumblue":                     "\033[38;2;0;0;205m",
+	"mediumorchid":                   "\033[38;2;186;85;211m",
+	"mediumpurple":                   "\033[38;2;147;112;219m",
+	"mediumseagreen":                 "\033[38;2;60;179;113m",
+	"mediumslateblue":                "\033[38;2;123;104;238m",
+	"mediumspringgreen":              "\033[38;2;0;250;154m",
+	"mediumturquoise":                "\033[38;2;72;209;204m",
+	"mediumvioletred":                "\033[38;2;199;21;133m",
+	"midnightblue":                   "\033[38;2;25;25;112m",
+	"mintcream":                      "\033[38;2;245;255;250m",
+	"mistyrose":                      "\033[38;2;255;228;225m",
+	"moccasin":                       "\033[38;2;255;228;181m",
+	"navajowhite":                    "\033[38;2;255;222;173m",
+	"navy":                           "\033[38;2;0;0;128m",
+	"navyblue":                       "\033[38;2;159;175;223m",
+	"oldlace":                        "\033[38;2;253;245;230m",
+	"olive":                          "\033[38;2;128;128;0m",
+	"olivedrab":                      "\033[38;2;107;142;35m",
+	"orange":                         "\033[38;2;255;165;0m",
+	"orangered":                      "\033[38;2;255;69;0m",
+	"orchid":                         "\033[38;2;218;112;214m",
+	"palegoldenrod":                  "\033[38;2;238;232;170m",
+	"palegreen":                      "\033[38;2;152;251;152m",
+	"paleturquoise":                  "\033[38;2;175;238;238m",
+	"palevioletred":                  "\033[38;2;219;112;147m",
+	"papayawhip":                     "\033[38;2;255;239;213m",
+	"peachpuff":                      "\033[38;2;255;218;185m",
+	"peru":                           "\033[38;2;205;133;63m",
+	"pink":                           "\033[38;2;255;192;203m",
+	"plum":                           "\033[38;2;221;160;221m",
+	"powderblue":                     "\033[38;2;176;224;230m",
+	"purple":                         "\033[38;2;128;0;128m",
+	"red":                            "\033[38;2;255;0;0m",
+	"rosybrown":                      "\033[38;2;188;143;143m",
+	"royalblue":                      "\033[38;2;65;105;225m",
+	"saddlebrown":                    "\033[38;2;139;69;19m",
+	"salmon":                         "\033[38;2;250;128;114m",
+	"sandybrown":                     "\033[38;2;244;164;96m",
+	"seagreen":                       "\033[38;2;46;139;87m",
+	"seashell":                       "\033[38;2;255;245;238m",
+	"sienna":                         "\033[38;2;160;82;45m",
+	"silver":                         "\033[38;2;192;192;192m",
+	"skyblue":                        "\033[38;2;135;206;235m",
+	"slateblue":                      "\033[38;2;106;90;205m",
+	"slategray":                      "\033[38;2;112;128;144m",
+	"snow":                           "\033[38;2;255;250;250m",
+	"springgreen":                    "\033[38;2;0;255;127m",
+	"steelblue":                      "\033[38;2;70;130;180m",
+	"tan":                            "\033[38;2;210;180;140m",
+	"teal":                           "\033[38;2;0;128;128m",
+	"thistle":                        "\033[38;2;216;191;216m",
+	"tomato":                         "\033[38;2;255;99;71m",
+	"turquoise":                      "\033[38;2;64;224;208m",
+	"violet":                         "\033[38;2;238;130;238m",
+	"wheat":                          "\033[38;2;245;222;179m",
+	"white":                          "\033[38;2;255;255;255m",
+	"whitesmoke":                     "\033[38;2;245;245;245m",
+	"yellow":                         "\033[38;2;255;255;0m",
+	"yellowgreen":                    "\033[38;2;139;205;50m",
 	"alicebluebackground":            "\033[48;2;240;248;255m",
 	"antiquewhitebackground":         "\033[48;2;250;235;215m",
 	"aquabackground":                 "\033[48;2;0;255;255m",
@@ -583,11 +583,11 @@ var Colors = [...]string{AliceBlue, AntiqueWhite, Aqua, AquaMarine, Azure, Beige
 var BackgroundColors = [...]string{AliceBlueBackground, AntiqueWhiteBackground, AquaBackground, AquaMarineBackground, AzureBackground, BeigeBackground, BisqueBackground, BlackBackground, BlanchedAlmondBackground, BlueBackground, BlueVioletBackground, BrownBackground, BurlyWoodBackground, CadetBlueBackground, ChartreuseBackground, ChocolateBackground, CoralBackground, CornFlowerBlueBackground, CornSilkBackground, CrimsonBackground, CyanBackground, DarkBlueBackground, DarkCyanBackground, DarkGoldenRodBackground, DarkGrayBackground, DarkGreenBackground, DarkKhakiBackground, DarkMagentaBackground, DarkOliveGreenBackground, DarkOrangeBackground, DarkOrchidBackground, DarkRedBackground, DarkSalmonBackground, DarkSeaGreenBackground, DarkSlateBlueBackground, DarkSlateGrayBackground, DarkTurquoiseBackground, DarkVioletBackground, DeepPinkBackground, DeepSkyBlueBackground, DimGrayBackground, DodgerBlueBackground, FirebrickBackground, FloralWhiteBackground, ForestGreenBackground, FuchsiaBackground, GainsboroBackground, GhostWhiteBackground, GoldBackground, GoldenRodBackground, GrayBackground, GreenBackground, GreenYellowBackground, HoneydewBackground, HotPinkBackground, IndianRedBackground, IndigoBackground, IvoryBackground, KhakiBackground, LavenderBackground, LavenderBlushBackground, LawnGreenBackground, LemonChiffonBackground, LightBlueBackground, LightCoralBackground, LightCyanBackground, LightGoldenRodYellowBackground, LightGreenBackground, LightGreyBackground, LightPinkBackground, LightSalmonBackground, LightSeaGreenBackground, LightSkyBlueBackground, LightSlateGrayBackground, LightSteelBlueBackground, LightYellowBackground, LimeBackground, LimeGreenBackground, LinenBackground, MagentaBackground, MaroonBackground, MediumAquaMarineBackground, MediumBlueBackground, MediumOrchidBackground, MediumPurpleBackground, MediumSeaGreenBackground, MediumSlateBlueBackground, MediumSpringGreenBackground, MediumTurquoiseBackground, MediumVioletRedBackground, MidnightBlueBackground, MintCreamBackground, MistyRoseBackground, MoccasinBackground, NavajoWhiteBackground, NavyBackground, NavyBlueBackground, OldLaceBackground, OliveBackground, OliveDrabBackground, OrangeBackground, OrangeRedBackground, OrchidBackground, PaleGoldenRodBackground, PaleGreenBackground, PaleTurquoiseBackground, PaleVioletRedBackground, PapayaWhipBackground, PeachPuffBackground, PeruBackground, PinkBackground, PlumBackground, PowderBlueBackground, PurpleBackground, RedBackground, RosyBrownBackground, RoyalBlueBackground, SaddleBrownBackground, SalmonBackground, SandyBrownBackground, SeaGreenBackground, SeaShellBackground, SiennaBackground, SilverBackground, SkyBlueBackground, SlateBlueBackground, SlateGrayBackground, SnowBackground, SpringGreenBackground, SteelBlueBackground, TanBackground, TealBackground, ThistleBackground, TomatoBackground, TurquoiseBackground, VioletBackground, WheatBackground, WhiteBackground, WhiteSmokeBackground, YellowBackground, YellowGreenBackground}
 
 func RandomColor() string {
-        rand.Seed(time.Now().UnixNano())
-        return Colors[rand.Intn(len(Colors))]
+	rand.Seed(time.Now().UnixNano())
+	return Colors[rand.Intn(len(Colors))]
 }
 
 func RandomBackground() string {
-        rand.Seed(time.Now().UnixNano())
-        return BackgroundColors[rand.Intn(len(BackgroundColors))]
+	rand.Seed(time.Now().UnixNano())
+	return BackgroundColors[rand.Intn(len(BackgroundColors))]
 }

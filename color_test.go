@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-        "github.com/ethanbaker/colors"
-        "github.com/ethanbaker/colors/sol"
-        "github.com/ethanbaker/colors/css"
+	"github.com/ethanbaker/go-colors"
+	"github.com/ethanbaker/go-colors/css"
+	"github.com/ethanbaker/go-colors/sol"
 )
 
 func TestDecolorSol(t *testing.T) {
