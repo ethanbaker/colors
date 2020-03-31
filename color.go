@@ -1,17 +1,19 @@
 package color
 
 import (
+	"strconv"
 	"strings"
 
 	"github.com/ethanbaker/go-colors/css"
 	"github.com/ethanbaker/go-colors/sol"
 )
 
-var colorReplacerSol *strings.Replacer
-var colorReplacerCss *strings.Replacer
+//Ascii Colors
+var colorReplacerAsciiSol *strings.Replacer
+var colorReplacerAsciiCss *strings.Replacer
 
 func init() {
-	colorReplacerSol = strings.NewReplacer(
+	colorReplacerAsciiSol = strings.NewReplacer(
 		sol.Base03, "",
 		sol.Base02, "",
 		sol.Base01, "",
@@ -31,7 +33,7 @@ func init() {
 		sol.Reset, "",
 	)
 
-	colorReplacerCss = strings.NewReplacer(
+	colorReplacerAsciiCss = strings.NewReplacer(
 		css.AliceBlue, "",
 		css.AntiqueWhite, "",
 		css.Aqua, "",
@@ -177,48 +179,52 @@ func init() {
 }
 
 // Decolor removes any of the ANSI color escapes known to this package.
-func DecolorSol(s string) string {
-	return colorReplacerSol.Replace(s)
+func DecolorAsciiSol(s string) string {
+	return colorReplacerAsciiSol.Replace(s)
 }
 
-func SearchGlobalIndex(s string) string {
-	if val, ok := Index[strings.ToLower(s)]; ok {
+func DecolorAsciiCss(s string) string {
+	return colorReplacerAsciiCss.Replace(s)
+}
+
+func SearchAsciiIndex(s string) string {
+	if val, ok := AsciiIndex[strings.ToLower(s)]; ok {
 		return val + strings.ToLower(s)
 	} else {
 		return s + " is not a valid color. To see what colors are valid, run the sample? command."
 	}
 }
 
-func PrintGlobalIndex() string {
+func PrintAsciiIndex() string {
 	s := ""
-	for k, v := range Index {
+	for k, v := range AsciiIndex {
 		s = s + v + k + "\n"
 	}
 	return s
 }
 
-func Rgb(r string, g string, b string) string {
+func AsciiRgb(r string, g string, b string) string {
 	s := "\033[38;2;" + r + ";" + g + ";" + b + "m"
 	return s
 }
 
-func RgbBackground(r string, g string, b string) string {
+func AsciiRgbBackground(r string, g string, b string) string {
 	s := "\033[48;2;" + r + ";" + g + ";" + b + "m"
 	return s
 }
 
-var Index = map[string]string{
-	"sol.yellow":                         "\033[0;33m",
-	"sol.orange":                         "\033[1;31m",
-	"sol.red":                            "\033[0;31m",
-	"sol.magenta":                        "\033[0;35m",
-	"sol.violet":                         "\033[1;35m",
-	"sol.blue":                           "\033[0;34m",
-	"sol.cyan":                           "\033[0;36m",
-	"sol.green":                          "\033[0;32m",
-	"css.aliceblue":                      "\033[38;2;240;248;255m",
-	"css.antiquewhite":                   "\033[38;2;250;235;215m",
-	"css.aqua":                           "\033[38;2;0;255;255m",
+var AsciiIndex = map[string]string{
+	"sol.yellow":                         sol.Yellow,
+	"sol.orange":                         sol.Orange,
+	"sol.red":                            sol.Red,
+	"sol.magenta":                        sol.Magenta,
+	"sol.violet":                         sol.Violet,
+	"sol.blue":                           sol.Blue,
+	"sol.cyan":                           sol.Cyan,
+	"sol.green":                          sol.Green,
+	"css.aliceblue":                      css.AliceBlue,
+	"css.antiquewhite":                   css.AntiqueWhite,
+	"css.aqua":                           css.Aqua,
 	"css.aquamarine":                     "\033[38;2;127;255;212m",
 	"css.azure":                          "\033[38;2;1240;255;255m",
 	"css.beige":                          "\033[38;2;245;245;220m",
@@ -472,6 +478,7 @@ var Index = map[string]string{
 	"css.powderbluebackground":           "\033[48;2;176;224;230m",
 	"css.purplebackground":               "\033[48;2;128;0;128m",
 	"css.redbackground":                  "\033[48;2;255;0;0m",
+	"css.rebeccapurple":                  "\033[48;2;102;51;153m",
 	"css.rosybrownbackground":            "\033[48;2;188;143;143m",
 	"css.royalbluebackground":            "\033[48;2;65;105;225m",
 	"css.saddlebrownbackground":          "\033[48;2;139;69;19m",
@@ -499,3 +506,34 @@ var Index = map[string]string{
 	"css.yellowbackground":               "\033[48;2;255;255;0m",
 	"css.yellowgreenbackground":          "\033[48;2;139;205;50m",
 }
+
+//Hex colors
+func HexRgb(r int, g int, b int) int {
+	return r*65535 + g*256 + b
+}
+
+func HexRgbName(r int, g int, b int) string {
+	s := strconv.FormatInt(int64(r*65535+g*256+b), 16)
+	for len(s) < 6 {
+		s = "0" + s
+	}
+	return "#" + s
+}
+
+func SearchHexIndex(s string) int {
+	if val, ok := HexIndex[strings.ToLower(s)]; ok {
+		return val
+	} else {
+		return 0
+	}
+}
+
+func PrintHexIndex() string {
+	s := ""
+	for k, v := range HexIndex {
+		s = s + "#" + strconv.FormatInt(int64(v), 16) + k + "\n"
+	}
+	return s
+}
+
+var HexIndex = map[string]int{}

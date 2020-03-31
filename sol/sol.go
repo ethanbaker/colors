@@ -51,12 +51,21 @@ const (
 	StrikeOut   = "\033[9m"
 )
 
+/*
+	"sol.yellow":               0xB58900,
+	"sol.orange":               0xCB4B16,
+	"sol.red":                  0xDC322F,
+	"sol.magenta":              0xD33682,
+	"sol.violet":               0x6C71C4,
+	"sol.blue":                 0x268BD2,
+	"sol.cyan":                 0x2AA198,
+	"sol.green":                0x859900,
+*/
 // Colors is a slice of only the Solarized colors (no bases). These
 // are gauranteed to always be visible. The bases are not included because when
 // randomizing from the list there is a chance one or more of the bases will
 // not be visible.
 var Colors = [...]string{Yellow, Orange, Red, Magenta, Violet, Blue, Cyan, Green}
-
 
 // Bases is a list of all the Solarized base colors (levels of grey).
 var Bases = [...]string{Base02, Base01, Base00, Base0, Base1, Base2}
