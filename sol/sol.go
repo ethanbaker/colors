@@ -6,82 +6,165 @@ import (
 	"time"
 )
 
+/* Color Hex Value Constants */
+
 const (
-	Base03 = "\033[1;30m"
-	B03    = "\033[1;30m"
-	Base02 = "\033[0;30m"
-	B02    = "\033[0;30m"
-	Base01 = "\033[1;32m"
-	B01    = "\033[1;32m"
-	Base00 = "\033[1;33m"
-	B00    = "\033[1;33m"
-	Base0  = "\033[1;34m"
-	B0     = "\033[1;34m"
-	Base1  = "\033[1;36m"
-	B1     = "\033[1;36m"
-	Base2  = "\033[0;37m"
-	B2     = "\033[0;37m"
-	Base3  = "\033[1;37m"
-	B3     = "\033[1;37m"
+	Base01 = 0x002b36
+	B01    = 0x002b36
+	Base02 = 0x073642
+	B02    = 0x073642
+	Base03 = 0x586e75
+	B03    = 0x586e75
+	Base00 = 0x657b83
+	B00    = 0x657b83
+	Base0  = 0x839496
+	B0     = 0x839496
+	Base1  = 0x93a1a1
+	B1     = 0x93a1a1
+	Base2  = 0xeee8d5
+	B2     = 0xeee8d5
+	Base3  = 0xfdf6e3
+	B3     = 0xfdf6e3
 
-	Yellow  = "\033[0;33m"
-	Y       = "\033[0;33m"
-	Orange  = "\033[1;31m"
-	O       = "\033[1;31m"
-	Red     = "\033[0;31m"
-	R       = "\033[0;31m"
-	Magenta = "\033[0;35m"
-	M       = "\033[0;35m"
-	Violet  = "\033[1;35m"
-	V       = "\033[1;35m"
-	Blue    = "\033[0;34m"
-	B       = "\033[0;34m"
-	Cyan    = "\033[0;36m"
-	C       = "\033[0;36m"
-	Green   = "\033[0;32m"
-	G       = "\033[0;32m"
+	Yellow  = 0xB58900
+	Y       = 0xB58900
+	Orange  = 0xCB4B16
+	O       = 0xCB4B16
+	Red     = 0xDC322F
+	R       = 0xDC322F
+	Magenta = 0xD33682
+	M       = 0xD33682
+	Violet  = 0x6C71C4
+	V       = 0x6C71C4
+	Blue    = 0x268BD2
+	B       = 0x268BD2
+	Cyan    = 0x2AA198
+	C       = 0x2AA198
+	Green   = 0x859900
+	G       = 0x859900
 
-	Reset = "\033[0m"
-	X     = "\033[0m"
-
-	ClearScreen = "\033[2J\033[H"
-	ClearLine   = "\033[2K\033[G"
-	CursorOff   = "\033[?25l"
-	CursorOn    = "\033[?25h"
-	StrikeOut   = "\033[9m"
+	//Ascii escape codes that have no hex equivalent:
+	AsciiReset = "\033[0m"
+	AsciiX     = "\033[0m"
 )
 
-/*
-	"sol.yellow":               0xB58900,
-	"sol.orange":               0xCB4B16,
-	"sol.red":                  0xDC322F,
-	"sol.magenta":              0xD33682,
-	"sol.violet":               0x6C71C4,
-	"sol.blue":                 0x268BD2,
-	"sol.cyan":                 0x2AA198,
-	"sol.green":                0x859900,
-*/
-// Colors is a slice of only the Solarized colors (no bases). These
-// are gauranteed to always be visible. The bases are not included because when
-// randomizing from the list there is a chance one or more of the bases will
-// not be visible.
-var Colors = [...]string{Yellow, Orange, Red, Magenta, Violet, Blue, Cyan, Green}
+/* Lists of Colors */
 
-// Bases is a list of all the Solarized base colors (levels of grey).
-var Bases = [...]string{Base02, Base01, Base00, Base0, Base1, Base2}
+// HexColors is a slice of only the Solarized colors (no bases) in
+// hexidecimal format. These are gauranteed to always be visible. The bases
+// are not included because when randomizing from the list there is a
+// chance one or more of the bases will not be visible.
+var HexColors = [...]int32{Yellow, Orange, Red, Magenta, Violet, Blue, Cyan, Green}
 
-// Random returns a random color form SolarizedColors.
-func Random() string {
+// HexBases is a slice of all the solarized base colors (levels of grey).
+var HexBases = [...]int32{Base02, Base01, Base00, Base0, Base1, Base2}
+
+// AsciiColors is an array of the solarized colors as ascii escape codes
+var AsciiColors = [...]string{AsciiIndex["yellow"], AsciiIndex["orange"], AsciiIndex["red"], AsciiIndex["magenta"], AsciiIndex["violet"], AsciiIndex["blue"], AsciiIndex["cyan"], AsciiIndex["green"]}
+
+// AsciiBases is an array of all the solarized base colors (levels of grey).
+var AsciiBases = [...]string{AsciiIndex["Base02"], AsciiIndex["Base01"], AsciiIndex["Base00"], AsciiIndex["Base0"], AsciiIndex["Base1"], AsciiIndex["Base2"]}
+
+// ColorNames is a list of all of the solarized color names
+var ColorNames = [...]string{"Yellow", "Orange", "Red", "Magenta", "Violet", "Blue", "Cyan", "Green"}
+
+// BaseNames is a list of all of the solarized base names
+var BaseNames = [...]string{"Base00", "Base01", "Base02", "Base0", "Base1", "Base2"}
+
+/* Color Functions */
+
+// RandomHex returns a random color as a hexidecimal value
+func RandomHex() int32 {
 	rand.Seed(time.Now().UnixNano())
-	return Colors[rand.Intn(len(Colors))]
+	return HexColors[rand.Intn(len(HexColors))]
 }
 
-// MultiSol solarizes ever rune in a string randomly from the Colors.
+// RandomAscii returns a random color as an ascii escape code
+func RandomAscii() string {
+	rand.Seed(time.Now().UnixNano())
+	return AsciiIndex[ColorNames[rand.Intn(len(ColorNames))]]
+}
+
+// Multiple solarizes ever rune in a string randomly from the Colors.
 func Multiple(s string) string {
 	var m string
 	for _, r := range s {
-		m += Random() + string(r)
+		m += RandomAscii() + string(r)
 	}
-	m += Reset
+	m += AsciiReset
 	return m
+}
+
+/* Indexes that match names to colors in different types */
+
+var HexIndex = map[string]int32{
+	"Base01": 0x002b36,
+	"B01":    0x002b36,
+	"Base02": 0x073642,
+	"B02":    0x073642,
+	"Base03": 0x586e75,
+	"B03":    0x586e75,
+	"Base00": 0x657b83,
+	"B00":    0x657b83,
+	"Base0":  0x839496,
+	"B0":     0x839496,
+	"Base1":  0x93a1a1,
+	"B1":     0x93a1a1,
+	"Base2":  0xeee8d5,
+	"B2":     0xeee8d5,
+	"Base3":  0xfdf6e3,
+	"B3":     0xfdf6e3,
+
+	"Yellow":  0xB58900,
+	"Y":       0xB58900,
+	"Orange":  0xCB4B16,
+	"O":       0xCB4B16,
+	"Red":     0xDC322F,
+	"R":       0xDC322F,
+	"Magenta": 0xD33682,
+	"M":       0xD33682,
+	"Violet":  0x6C71C4,
+	"V":       0x6C71C4,
+	"Blue":    0x268BD2,
+	"B":       0x268BD2,
+	"Cyan":    0x2AA198,
+	"C":       0x2AA198,
+	"Green":   0x859900,
+	"G":       0x859900,
+}
+
+var AsciiIndex = map[string]string{
+	"base03": "\033[1;30m",
+	"b03":    "\033[1;30m",
+	"base02": "\033[0;30m",
+	"b02":    "\033[0;30m",
+	"base01": "\033[1;32m",
+	"b01":    "\033[1;32m",
+	"base00": "\033[1;33m",
+	"b00":    "\033[1;33m",
+	"base0":  "\033[1;34m",
+	"b0":     "\033[1;34m",
+	"base1":  "\033[1;36m",
+	"b1":     "\033[1;36m",
+	"base2":  "\033[0;37m",
+	"b2":     "\033[0;37m",
+	"base3":  "\033[1;37m",
+	"b3":     "\033[1;37m",
+
+	"yellow":  "\033[0;33m",
+	"y":       "\033[0;33m",
+	"orange":  "\033[1;31m",
+	"o":       "\033[1;31m",
+	"red":     "\033[0;31m",
+	"r":       "\033[0;31m",
+	"magenta": "\033[0;35m",
+	"m":       "\033[0;35m",
+	"violet":  "\033[1;35m",
+	"v":       "\033[1;35m",
+	"blue":    "\033[0;34m",
+	"b":       "\033[0;34m",
+	"cyan":    "\033[0;36m",
+	"c":       "\033[0;36m",
+	"green":   "\033[0;32m",
+	"g":       "\033[0;32m",
 }
