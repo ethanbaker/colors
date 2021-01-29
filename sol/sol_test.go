@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ethanbaker/colors/sol"
+	"gitlab.com/ethanbakerdev/colors/sol"
 )
 
 func ExampleCyan() {
