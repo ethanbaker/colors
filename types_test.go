@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ethanbaker/go-colors"
+	"github.com/ethanbaker/colors"
 )
 
 //Test TYPEtoRGB

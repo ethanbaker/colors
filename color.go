@@ -4,8 +4,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ethanbaker/go-colors/css"
-	"github.com/ethanbaker/go-colors/sol"
+	"github.com/ethanbaker/colors/css"
+	"github.com/ethanbaker/colors/sol"
 )
 
 /*

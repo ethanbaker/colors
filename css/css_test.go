@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ethanbaker/go-colors/css"
+	"github.com/ethanbaker/colors/css"
 )
 
 func TestRandom(t *testing.T) {

@@ -28,6 +28,7 @@ package color
  */
 
 import (
+	"fmt"
 	"math"
 	"strconv"
 )
@@ -344,19 +345,19 @@ func CMYKtoHexVal(c int, m int, y int, k int) int {
 
 //Ascii Conversions
 func RGBtoAscii(r int, g int, b int) string {
-	str := "\033[38;2;" + string(r) + ";" + string(g) + ";" + string(b) + "m"
+	str := "\033[38;2;" + fmt.Sprint(r) + ";" + fmt.Sprint(g) + ";" + fmt.Sprint(b) + "m"
 	return str
 }
 
 func HSVtoAscii(h int, s int, v int) string {
 	r, g, b := HSVtoRGB(h, s, v)
-	str := "\033[38;2;" + string(r) + ";" + string(g) + ";" + string(b) + "m"
+	str := "\033[38;2;" + fmt.Sprint(r) + ";" + fmt.Sprint(g) + ";" + fmt.Sprint(b) + "m"
 	return str
 }
 
 func HSLtoAscii(h int, s int, l int) string {
 	r, g, b := HSLtoRGB(h, s, l)
-	str := "\033[38;2;" + string(r) + ";" + string(g) + ";" + string(b) + "m"
+	str := "\033[38;2;" + fmt.Sprint(r) + ";" + fmt.Sprint(g) + ";" + fmt.Sprint(b) + "m"
 	return str
 }
 
@@ -368,12 +369,12 @@ func HexValtoAscii(hex int) string {
 
 func HexNametoAscii(hex string) string {
 	r, g, b := HexNametoRGB(hex)
-	str := "\033[38;2;" + string(r) + ";" + string(g) + ";" + string(b) + "m"
+	str := "\033[38;2;" + fmt.Sprint(r) + ";" + fmt.Sprint(g) + ";" + fmt.Sprint(b) + "m"
 	return str
 }
 
 func CMYKtoAscii(c int, m int, y int, k int) string {
 	r, g, b := CMYKtoRGB(c, m, y, k)
-	str := "\033[38;2;" + string(r) + ";" + string(g) + ";" + string(b) + "m"
+	str := "\033[38;2;" + fmt.Sprint(r) + ";" + fmt.Sprint(g) + ";" + fmt.Sprint(b) + "m"
 	return str
 }

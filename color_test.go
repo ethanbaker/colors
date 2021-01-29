@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ethanbaker/go-colors"
-	"github.com/ethanbaker/go-colors/css"
-	"github.com/ethanbaker/go-colors/sol"
+	"github.com/ethanbaker/colors"
+	"github.com/ethanbaker/colors/css"
+	"github.com/ethanbaker/colors/sol"
 )
 
 func TestDecolorAsciiSol(t *testing.T) {
@@ -26,7 +26,7 @@ func TestSearchAsciiIndex(t *testing.T) {
 	s := color.HexValtoAscii(sol.Cyan) + "sol.cyan"
 	ss := color.SearchAsciiIndex("sol.cyan")
 	if sc != c {
-		t.Errorf("css.cyan has problems with SearchAsciiIndex! Returned: %v %v%v", c, sol.AsciiReset)
+		t.Errorf("css.cyan has problems with SearchAsciiIndex! Returned: %v %v", c, sol.AsciiReset)
 	} else {
 		fmt.Printf("# %v found SearchAsciiIndex!%v\n", c, css.AsciiReset)
 	}

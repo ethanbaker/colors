@@ -1,3 +1,3 @@
-module github.com/ethanbaker/go-colors
+module github.com/ethanbaker/colors
 
-go 1.13
+go 1.15

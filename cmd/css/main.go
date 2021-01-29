@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ethanbaker/go-colors"
+	"github.com/ethanbaker/colors"
 )
 
 const usagetxt = `
