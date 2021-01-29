@@ -4,204 +4,204 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ethanbaker/colors"
+	"gitlab.com/ethanbakerdev/colors"
 )
 
 //Test TYPEtoRGB
 func TestHSVtoRGB(t *testing.T) {
-	var r, g, b int
+	var rgb color.RGB
 
-	r, g, b = color.HSVtoRGB(0, 0, 0) //black
-	if r == 0 && g == 0 && b == 0 {
+	rgb = color.HSVtoRGB(color.HSV{0, 0, 0}) //black
+	if rgb.R == 0 && rgb.G == 0 && rgb.B == 0 {
 		fmt.Println("# Black (HSV: 0, 0, 0) is working with HSVtoRGB()")
 	} else {
-		t.Errorf("Black (HSV: 0, 0, 0) not working with HSVtoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", r, b, g)
+		t.Errorf("Black (HSV: 0, 0, 0) not working with HSVtoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HSVtoRGB(0, 0, 100) //white
-	if r == 255 && g == 255 && b == 255 {
+	rgb = color.HSVtoRGB(color.HSV{0, 0, 100}) //white
+	if rgb.R == 255 && rgb.G == 255 && rgb.B == 255 {
 		fmt.Println("# White (HSV: 0, 0, 100) is working with HSVtoRGB()")
 	} else {
-		t.Errorf("White (HSV: 0, 0, 100) not working with HSVtoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", r, g, b)
+		t.Errorf("White (HSV: 0, 0, 100) not working with HSVtoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HSVtoRGB(120, 100, 50) //green
-	if r == 0 && g == 128 && b == 0 {
+	rgb = color.HSVtoRGB(color.HSV{120, 100, 50}) //green
+	if rgb.R == 0 && rgb.G == 128 && rgb.B == 0 {
 		fmt.Println("# Green (HSV: 120, 100, 50) is working with HSVtoRGB()")
 	} else {
-		t.Errorf("Green (HSV: 120, 100, 50) not working with HSVtoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", r, g, b)
+		t.Errorf("Green (HSV: 120, 100, 50) not working with HSVtoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", rgb.R, rgb.G, rgb.B)
 	}
 }
 
 func TestHSLtoRGB(t *testing.T) {
-	var r, g, b int
+	var rgb color.RGB
 
-	r, g, b = color.HSLtoRGB(0, 0, 0) //black
-	if r == 0 && g == 0 && b == 0 {
+	rgb = color.HSLtoRGB(color.HSL{0, 0, 0}) //black
+	if rgb.R == 0 && rgb.G == 0 && rgb.B == 0 {
 		fmt.Println("# Black (HSL: 0, 0, 0) is working with HSLtoRGB()")
 	} else {
-		t.Errorf("Black (HSL: 0, 0, 0) has a problem with HSLtoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", r, g, b)
+		t.Errorf("Black (HSL: 0, 0, 0) has a problem with HSLtoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HSLtoRGB(0, 0, 100) //white
-	if r == 255 && g == 255 && b == 255 {
+	rgb = color.HSLtoRGB(color.HSL{0, 0, 100}) //white
+	if rgb.R == 255 && rgb.G == 255 && rgb.B == 255 {
 		fmt.Println("# White (HSL: 0, 0, 100) is working with HSLtoRGB()")
 	} else {
-		t.Errorf("White (HSL: 0, 0, 100) has a problem with HSLtoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", r, g, b)
+		t.Errorf("White (HSL: 0, 0, 100) has a problem with HSLtoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HSLtoRGB(120, 100, 25) //green
-	if r == 0 && g == 128 && b == 0 {
+	rgb = color.HSLtoRGB(color.HSL{120, 100, 25}) //green
+	if rgb.R == 0 && rgb.G == 128 && rgb.B == 0 {
 		fmt.Println("# Green (HSL: 120, 100, 25) is working with HSLtoRGB()")
 	} else {
-		t.Errorf("Green (HSL: 120, 100, 25) has a problem with HSLtoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", r, g, b)
+		t.Errorf("Green (HSL: 120, 100, 25) has a problem with HSLtoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", rgb.R, rgb.G, rgb.B)
 	}
 }
 
-func TestHexNametoRGB(t *testing.T) {
-	var r, g, b int
+func TestHextoRGB(t *testing.T) {
+	var rgb color.RGB
 
-	r, g, b = color.HexNametoRGB("#000000") //black
-	if r == 0 && g == 0 && b == 0 {
+	rgb = color.HextoRGB(color.Hex("#000000")) //black
+	if rgb.R == 0 && rgb.G == 0 && rgb.B == 0 {
 		fmt.Println("# Black (Hex: #000000) is working with HextoRGB()")
 	} else {
-		t.Errorf("Black (Hex: #000000) has a problem with HextoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", r, g, b)
+		t.Errorf("Black (Hex: #000000) has a problem with HextoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HexNametoRGB("#ffffff") //white
-	if r == 255 && g == 255 && b == 255 {
+	rgb = color.HextoRGB(color.Hex("#ffffff")) //white
+	if rgb.R == 255 && rgb.G == 255 && rgb.B == 255 {
 		fmt.Println("# White (Hex: #ffffff) is working with HextoRGB()")
 	} else {
-		t.Errorf("White (Hex: #ffffff) has a problem with HextoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", r, g, b)
+		t.Errorf("White (Hex: #ffffff) has a problem with HextoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HexNametoRGB("008000") //green
-	if r == 0 && g == 128 && b == 0 {
+	rgb = color.HextoRGB(color.Hex("008000")) //green
+	if rgb.R == 0 && rgb.G == 128 && rgb.B == 0 {
 		fmt.Println("# Green (Hex: #008000) is working with HextoRGB()")
 	} else {
-		t.Errorf("Green (Hex: #008000) has a problem with HextoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", r, g, b)
+		t.Errorf("Green (Hex: #008000) has a problem with HextoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", rgb.R, rgb.G, rgb.B)
 	}
 }
 
-func TestHexValtoRGB(t *testing.T) {
-	var r, g, b int
+func TestDecimaltoRGB(t *testing.T) {
+	var rgb color.RGB
 
-	r, g, b = color.HexValtoRGB(0) //black
-	if r == 0 && g == 0 && b == 0 {
-		fmt.Println("# Black (Hex: #000000) is working with HextoRGB()")
+	rgb = color.DecimaltoRGB(color.Decimal(0)) //black
+	if rgb.R == 0 && rgb.G == 0 && rgb.B == 0 {
+		fmt.Println("# Black (Hex: #000000) is working with DecimaltoRGB()")
 	} else {
-		t.Errorf("Black (Hex: #000000) has a problem with HextoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", r, g, b)
+		t.Errorf("Black (Hex: #000000) has a problem with DecimaltoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HexValtoRGB(16777215) //white
-	if r == 255 && g == 255 && b == 255 {
-		fmt.Println("# White (Hex: #ffffff) is working with HextoRGB()")
+	rgb = color.DecimaltoRGB(color.Decimal(16777215)) //white
+	if rgb.R == 255 && rgb.G == 255 && rgb.B == 255 {
+		fmt.Println("# White (Hex: 16777215) is working with DecimaltoRGB()")
 	} else {
-		t.Errorf("White (Hex: #ffffff) has a problem with HextoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", r, g, b)
+		t.Errorf("White (Hex: 16777215) has a problem with DecimaltoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.HexValtoRGB(32768) //green
-	if r == 0 && g == 128 && b == 0 {
-		fmt.Println("# Green (Hex: #008000) is working with HextoRGB()")
+	rgb = color.DecimaltoRGB(color.Decimal(32768)) //green
+	if rgb.R == 0 && rgb.G == 128 && rgb.B == 0 {
+		fmt.Println("# Green (Hex: 32768) is working with DecimaltoRGB()")
 	} else {
-		t.Errorf("Green (Hex: #008000) has a problem with HextoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", r, g, b)
+		t.Errorf("Green (Hex: 32768) has a problem with DecimaltoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", rgb.R, rgb.G, rgb.B)
 	}
 }
 
 func TestCMYKtoRGB(t *testing.T) {
-	var r, g, b int
+	var rgb color.RGB
 
-	r, g, b = color.CMYKtoRGB(0, 0, 0, 100) //black
-	if r == 0 && g == 0 && b == 0 {
+	rgb = color.CMYKtoRGB(color.CMYK{0, 0, 0, 100}) //black
+	if rgb.R == 0 && rgb.G == 0 && rgb.B == 0 {
 		fmt.Println("# Black (CMYK: 0, 0, 0, 100) is working with CMYKtoRGB()")
 	} else {
-		t.Errorf("Black (CMYK: 0, 0, 0, 100) has a problem with CMYKtoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", r, g, b)
+		t.Errorf("Black (CMYK: 0, 0, 0, 100) has a problem with CMYKtoRGB()! Returned %v, %v, %v instead of 0, 0, 0.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.CMYKtoRGB(0, 0, 0, 0) //white
-	if r == 255 && g == 255 && b == 255 {
+	rgb = color.CMYKtoRGB(color.CMYK{0, 0, 0, 0}) //white
+	if rgb.R == 255 && rgb.G == 255 && rgb.B == 255 {
 		fmt.Println("# White (CMYK: 0, 0, 0, 0) is working with CMYKtoRGB()")
 	} else {
-		t.Errorf("White (CMYK: 0, 0, 0, 100) has a problem with CMYKtoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", r, g, b)
+		t.Errorf("White (CMYK: 0, 0, 0, 100) has a problem with CMYKtoRGB()! Returned %v, %v, %v instead of 255, 255, 255.", rgb.R, rgb.G, rgb.B)
 	}
 
-	r, g, b = color.CMYKtoRGB(100, 0, 100, 50) //green
-	if r == 0 && g == 128 && b == 0 {
+	rgb = color.CMYKtoRGB(color.CMYK{100, 0, 100, 50}) //green
+	if rgb.R == 0 && rgb.G == 128 && rgb.B == 0 {
 		fmt.Println("# Green (CMYK: 100, 0, 100, 50) is working with CMYKtoRGB()")
 	} else {
-		t.Errorf("Green (CMYK: 100, 0, 100, 50) has a problem with CMYKtoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", r, g, b)
+		t.Errorf("Green (CMYK: 100, 0, 100, 50) has a problem with CMYKtoRGB()! Returned %v, %v, %v instead of 0, 128, 0.", rgb.R, rgb.G, rgb.B)
 	}
 }
 
 //Test RGBtoTYPE
 func TestRGBtoHSV(t *testing.T) {
-	var h, s, v int
+	var hsv color.HSV
 
-	h, s, v = color.RGBtoHSV(0, 0, 0) //black
-	if h == 0 && s == 0 && v == 0 {
+	hsv = color.RGBtoHSV(color.RGB{0, 0, 0}) //black
+	if hsv.H == 0 && hsv.S == 0 && hsv.V == 0 {
 		fmt.Println("# Black (RGB: 0, 0, 0) is working with RGBtoHSV()")
 	} else {
-		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoHSV()! Returned %v, %v, %v instead of 0, 0, 0.", h, s, v)
+		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoHSV()! Returned %v, %v, %v instead of 0, 0, 0.", hsv.H, hsv.S, hsv.V)
 	}
 
-	h, s, v = color.RGBtoHSV(255, 255, 255) //white
-	if h == 0 && s == 0 && v == 100 {
+	hsv = color.RGBtoHSV(color.RGB{255, 255, 255}) //white
+	if hsv.H == 0 && hsv.S == 0 && hsv.V == 100 {
 		fmt.Println("# White (RGB: 255, 255, 255) is working with RGBtoHSV()")
 	} else {
-		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoHSV()! Returned %v, %v, %v instead of 0, 0, 100.", h, s, v)
+		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoHSV()! Returned %v, %v, %v instead of 0, 0, 100.", hsv.H, hsv.S, hsv.V)
 	}
 
-	h, s, v = color.RGBtoHSV(0, 128, 0) //green
-	if h == 120 && s == 100 && v == 50 {
+	hsv = color.RGBtoHSV(color.RGB{0, 128, 0}) //green
+	if hsv.H == 120 && hsv.S == 100 && hsv.V == 50 {
 		fmt.Println("# Green (RGB: 0, 128, 0) is working with RGBtoHSV()")
 	} else {
-		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoHSV()! Returned %v, %v, %v instead of 120, 100, 50.", h, s, v)
+		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoHSV()! Returned %v, %v, %v instead of 120, 100, 50.", hsv.H, hsv.S, hsv.V)
 	}
 }
 
 func TestRGBtoHSL(t *testing.T) {
-	var h, s, l int
+	var hsl color.HSL
 
-	h, s, l = color.RGBtoHSL(0, 0, 0) //black
-	if h == 0 && s == 0 && l == 0 {
+	hsl = color.RGBtoHSL(color.RGB{0, 0, 0}) //black
+	if hsl.H == 0 && hsl.S == 0 && hsl.L == 0 {
 		fmt.Println("# Black (RGB: 0, 0, 0) is working with RGBtoHSL()")
 	} else {
-		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoHSL()! Returned %v, %v, %v instead of 0, 0, 0.", h, s, l)
+		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoHSL()! Returned %v, %v, %v instead of 0, 0, 0.", hsl.H, hsl.S, hsl.L)
 	}
 
-	h, s, l = color.RGBtoHSL(255, 255, 255) //white
-	if h == 0 && s == 0 && l == 100 {
+	hsl = color.RGBtoHSL(color.RGB{255, 255, 255}) //white
+	if hsl.H == 0 && hsl.S == 0 && hsl.L == 100 {
 		fmt.Println("# White (RGB: 255, 255, 255) is working with RGBtoHSL()")
 	} else {
-		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoHSL()! Returned %v, %v, %v instead of 0, 0, 100.", h, s, l)
+		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoHSL()! Returned %v, %v, %v instead of 0, 0, 100.", hsl.H, hsl.S, hsl.L)
 	}
 
-	h, s, l = color.RGBtoHSL(0, 128, 0) //green
-	if h == 120 && s == 100 && l == 25 {
+	hsl = color.RGBtoHSL(color.RGB{0, 128, 0}) //green
+	if hsl.H == 120 && hsl.S == 100 && hsl.L == 25 {
 		fmt.Println("# Green (RGB: 0, 128, 0) is working with RGBtoHSL()")
 	} else {
-		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoHSL()! Returned %v, %v, %v instead of 120, 100, 25.", h, s, l)
+		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoHSL()! Returned %v, %v, %v instead of 120, 100, 25.", hsl.H, hsl.S, hsl.L)
 	}
 }
 
-func TestRGBtoHexName(t *testing.T) {
-	var hex string
+func TestRGBtoHex(t *testing.T) {
+	var hex color.Hex
 
-	hex = color.RGBtoHexName(0, 0, 0) //black
+	hex = color.RGBtoHex(color.RGB{0, 0, 0}) //black
 	if hex == "000000" {
 		fmt.Println("# Black (RGB: 0, 0, 0) is working with RGBtoHex()")
 	} else {
 		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoHex()! Returned %v instead of 000000.", hex)
 	}
 
-	hex = color.RGBtoHexName(255, 255, 255) //white
+	hex = color.RGBtoHex(color.RGB{255, 255, 255}) //white
 	if hex == "ffffff" {
 		fmt.Println("# White (RGB: 255, 255, 255) is working with RGBtoHex()")
 	} else {
 		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoHex()! Returned %v instead of ffffff.", hex)
 	}
 
-	hex = color.RGBtoHexName(0, 128, 0) //green
+	hex = color.RGBtoHex(color.RGB{0, 128, 0}) //green
 	if hex == "008000" {
 		fmt.Println("# Green (RGB: 0, 128, 0) is working with RGBtoHex()")
 	} else {
@@ -209,78 +209,78 @@ func TestRGBtoHexName(t *testing.T) {
 	}
 }
 
-func TestRGBtoHexVal(t *testing.T) {
-	var hex int
+func TestRGBtoDecimal(t *testing.T) {
+	var decimal color.Decimal
 
-	hex = color.RGBtoHexVal(0, 0, 0) //black
-	if hex == 0 {
-		fmt.Println("# Black (RGB: 0, 0, 0) is working with RGBtoHex()")
+	decimal = color.RGBtoDecimal(color.RGB{0, 0, 0}) //black
+	if decimal == 0 {
+		fmt.Println("# Black (RGB: 0, 0, 0) is working with RGBtoDecimal()")
 	} else {
-		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoHex()! Returned %v instead of 000000.", hex)
+		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoDecimal()! Returned %v instead of 000000.", decimal)
 	}
 
-	hex = color.RGBtoHexVal(255, 255, 255) //white
-	if hex == 16777215 {
+	decimal = color.RGBtoDecimal(color.RGB{255, 255, 255}) //white
+	if decimal == 16777215 {
 		fmt.Println("# White (RGB: 255, 255, 255) is working with RGBtoHex()")
 	} else {
-		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoHex()! Returned %v instead of ffffff.", hex)
+		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoHex()! Returned %v instead of ffffff.", decimal)
 	}
 
-	hex = color.RGBtoHexVal(0, 128, 0) //green
-	if hex == 32768 {
+	decimal = color.RGBtoDecimal(color.RGB{0, 128, 0}) //green
+	if decimal == 32768 {
 		fmt.Println("# Green (RGB: 0, 128, 0) is working with RGBtoHex()")
 	} else {
-		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoHex()! Returned %v instead of 008000", hex)
+		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoHex()! Returned %v instead of 008000", decimal)
 	}
 }
 
 func TestRGBtoCMYK(t *testing.T) {
-	var c, m, y, k int
+	var cmyk color.CMYK
 
-	c, m, y, k = color.RGBtoCMYK(0, 0, 0) //black
-	if c == 0 && m == 0 && y == 0 && k == 100 {
+	cmyk = color.RGBtoCMYK(color.RGB{0, 0, 0}) //black
+	if cmyk.C == 0 && cmyk.M == 0 && cmyk.Y == 0 && cmyk.K == 100 {
 		fmt.Println("# Black (RGB: 0, 0, 0) is working with RGBtoCMYK()")
 	} else {
-		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoCMYK()! Returned %v, %v, %v, %v instead of 0, 0, 0, 100.", c, m, y, k)
+		t.Errorf("Black (RGB: 0, 0, 0) has a problem with RGBtoCMYK()! Returned %v, %v, %v, %v instead of 0, 0, 0, 100.", cmyk.C, cmyk.M, cmyk.Y, cmyk.K)
 	}
 
-	c, m, y, k = color.RGBtoCMYK(255, 255, 255) //white
-	if c == 0 && m == 0 && y == 0 && k == 0 {
+	cmyk = color.RGBtoCMYK(color.RGB{255, 255, 255}) //white
+	if cmyk.C == 0 && cmyk.M == 0 && cmyk.Y == 0 && cmyk.K == 0 {
 		fmt.Println("# White (RGB: 255, 255, 255) is working with RGBtoCMYK()")
 	} else {
-		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoCMYK()! Returned %v, %v, %v, %v instead of 0, 0, 0, 0.", c, m, y, k)
+		t.Errorf("White (RGB: 255, 255, 255) has a problem with RGBtoCMYK()! Returned %v, %v, %v, %v instead of 0, 0, 0, 0.", cmyk.C, cmyk.M, cmyk.Y, cmyk.K)
 	}
 
-	c, m, y, k = color.RGBtoCMYK(0, 128, 0) //green
-	if c == 100 && m == 0 && y == 100 && k == 50 {
+	cmyk = color.RGBtoCMYK(color.RGB{0, 128, 0}) //green
+	if cmyk.C == 100 && cmyk.M == 0 && cmyk.Y == 100 && cmyk.K == 50 {
 		fmt.Println("# Green (RGB: 0, 128, 0) is working with RGBtoCMYK()")
 	} else {
-		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoCMYK()! Returned %v, %v, %v, %v instead of 100, 0, 100, 50.", c, m, y, k)
+		t.Errorf("Green (RGB: 0, 128, 0) has a problem with RGBtoCMYK()! Returned %v, %v, %v, %v instead of 100, 0, 100, 50.", cmyk.C, cmyk.M, cmyk.Y, cmyk.K)
 	}
 }
 
 //Test HSVtoHSL and HSLtoHSV
 func TestHSVtoHSL(t *testing.T) {
-	var h, s, l int
+	var hsl color.HSL
 
-	h, s, l = color.RGBtoHSL(0, 0, 0) //black
-	if h == 0 && s == 0 && l == 0 {
+	hsl = color.HSVtoHSL(color.HSV{0, 0, 0}) //black
+	if hsl.H == 0 && hsl.S == 0 && hsl.L == 0 {
 		fmt.Println("# Black (HSV: 0, 0, 0) is working with HSVtoHSL()")
 	} else {
-		t.Errorf("Black (HSV: 0, 0, 0) has a problem with HSVtoHSL()! Returned %v, %v, %v instead of 0, 0, 0.", h, s, l)
+		t.Errorf("Black (HSV: 0, 0, 0) has a problem with HSVtoHSL()! Returned %v, %v, %v instead of 0, 0, 0.", hsl.H, hsl.S, hsl.L)
 	}
 
-	h, s, l = color.HSVtoHSL(0, 0, 100) //white
-	if h == 0 && s == 0 && l == 100 {
+	hsl = color.HSVtoHSL(color.HSV{0, 0, 100}) //white
+	if hsl.H == 0 && hsl.S == 0 && hsl.L == 100 {
 		fmt.Println("# White (RGB: 0, 0, 100) is working with HSVtoHSL()")
 	} else {
-		t.Errorf("White (RGB: 0, 0, 100) has a problem with HSVtoHSL()! Returned %v, %v, %v instead of 0, 0, 100.", h, s, l)
+		t.Errorf("White (RGB: 0, 0, 100) has a problem with HSVtoHSL()! Returned %v, %v, %v instead of 0, 0, 100.", hsl.H, hsl.S, hsl.L)
 	}
 
-	h, s, l = color.HSVtoHSL(120, 100, 50) //green
-	if h == 120 && s == 100 && l == 25 {
+	hsl = color.HSVtoHSL(color.HSV{120, 100, 50}) //green
+	if hsl.H == 120 && hsl.S == 100 && hsl.L == 25 {
 		fmt.Println("# Green (HSV: 120, 100, 50) is working with HSVtoHSL()")
 	} else {
-		t.Errorf("Green (HSV: 120, 100, 50) has a problem with HSVtoHSL()! Returned %v, %v, %v instead of 120, 100, 50.", h, s, l)
+		t.Errorf("Green (HSV: 120, 100, 50) has a problem with HSVtoHSL()! Returned %v, %v, %v instead of 120, 100, 50.", hsl.H, hsl.S, hsl.L)
 	}
 }
