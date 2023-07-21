@@ -228,7 +228,7 @@ func RGBtoHSV(rgb RGB) HSV {
 
 	var H float64
 	switch {
-	case 0 == cmax || d == 0:
+	case cmax == 0 || d == 0:
 		H = 0
 	case r == cmax:
 		H = math.Round(60 * math.Mod((g-b)/d, 6))

@@ -3,223 +3,305 @@ package css
 
 import (
 	"math/rand"
-	"time"
 )
 
-/* Color Hex Value Constants */
+/* ANSI Color Value Constants */
 
-//
 const (
-	AliceBlue            = 0xF0F8FF
-	AntiqueWhite         = 0xFAEBD7
-	Aqua                 = 0x00FFFF
-	AquaMarine           = 0x7FFFD4
-	Azure                = 0xF0FFFF
-	Beige                = 0xF5F5DC
-	Bisque               = 0x000000
-	Black                = 0xFFE4C4
-	BlanchedAlmond       = 0xFFEBCD
-	Blue                 = 0x0000FF
-	BlueViolet           = 0x8A2BE2
-	Brown                = 0xA52A2A
-	BurlyWood            = 0xDEB887
-	CadetBlue            = 0x5F9EA0
-	Chartreuse           = 0x7FFF00
-	Chocolate            = 0xD2691E
-	Coral                = 0xFF7F50
-	CornFlowerBlue       = 0x6495ED
-	CornSilk             = 0xFFF8DC
-	Crimson              = 0xDC143C
-	Cyan                 = 0x00FFFF
-	DarkBlue             = 0x00008B
-	DarkCyan             = 0x008B8B
-	DarkGoldenRod        = 0xB8860B
-	DarkGray             = 0xA9A9A9
-	DarkGreen            = 0x006400
-	DarkKhaki            = 0xBDB76B
-	DarkMagenta          = 0x8B008B
-	DarkOliveGreen       = 0x556B2F
-	DarkOrange           = 0xFF8C00
-	DarkOrchid           = 0x9932CC
-	DarkRed              = 0x8B0000
-	DarkSalmon           = 0xE9967A
-	DarkSeaGreen         = 0x8FBC8F
-	DarkSlateBlue        = 0x483D8B
-	DarkSlateGray        = 0x2F4F4F
-	DarkTurquoise        = 0x00CED1
-	DarkViolet           = 0x9400D3
-	DeepPink             = 0xFF1493
-	DeepSkyBlue          = 0x00BFFF
-	DimGray              = 0x696969
-	DodgerBlue           = 0x1E90FF
-	Firebrick            = 0xB22222
-	FloralWhite          = 0xFFFAF0
-	ForestGreen          = 0x228B22
-	Fuchsia              = 0xFF00FF
-	Gainsboro            = 0xDCDCDC
-	GhostWhite           = 0xF8F8FF
-	Gold                 = 0xFFD700
-	GoldenRod            = 0xDAA520
-	Gray                 = 0x808080
-	Green                = 0x008000
-	GreenYellow          = 0xADFF2F
-	Honeydew             = 0xF0FFF0
-	HotPink              = 0xFF69B4
-	IndianRed            = 0xCD5C5C
-	Indigo               = 0x4B0082
-	Ivory                = 0xFFFFF0
-	Khaki                = 0xF0E68C
-	Lavender             = 0xE6E6FA
-	LavenderBlush        = 0xFFF0F5
-	LawnGreen            = 0x7CFC00
-	LemonChiffon         = 0xFFFACD
-	LightBlue            = 0xADD8E6
-	LightCoral           = 0xF08080
-	LightCyan            = 0xE0FFFF
-	LightGoldenRodYellow = 0xFAFAD2
-	LightGreen           = 0xD3D3D3
-	LightGray            = 0x90EE90
-	LightPink            = 0xFFB6C1
-	LightSalmon          = 0xFFA07A
-	LightSeaGreen        = 0x20B2AA
-	LightSkyBlue         = 0x87CEFA
-	LightSlateGray       = 0x778899
-	LightSteelBlue       = 0xB0C4DE
-	LightYellow          = 0xFFFFE0
-	Lime                 = 0x00FF00
-	LimeGreen            = 0x32CD32
-	Linen                = 0xFAF0E6
-	Magenta              = 0xFF00FF
-	Maroon               = 0x800000
-	MediumAquaMarine     = 0x66CDAA
-	MediumBlue           = 0x0000CD
-	MediumOrchid         = 0xBA55D3
-	MediumPurple         = 0x9370DB
-	MediumSeaGreen       = 0x3CB371
-	MediumSlateBlue      = 0x7B68EE
-	MediumSpringGreen    = 0x00FA9A
-	MediumTurquoise      = 0x48D1CC
-	MediumVioletRed      = 0xC71585
-	MidnightBlue         = 0x191970
-	MintCream            = 0xF5FFFA
-	MistyRose            = 0xFFE4E1
-	Moccasin             = 0xFFE4B5
-	NavajoWhite          = 0xFFDEAD
-	Navy                 = 0x000080
-	NavyBlue             = 0x9FAFDF
-	OldLace              = 0xFDF5E6
-	Olive                = 0x808000
-	OliveDrab            = 0x6B8E23
-	Orange               = 0xFFA500
-	OrangeRed            = 0xFF4500
-	Orchid               = 0xDA70D6
-	PaleGoldenRod        = 0xEEE8AA
-	PaleGreen            = 0x98FB98
-	PaleTurquoise        = 0xAFEEEE
-	PaleVioletRed        = 0xDB7093
-	PapayaWhip           = 0xFFEFD5
-	PeachPuff            = 0xFFDAB9
-	Peru                 = 0xCD853F
-	Pink                 = 0xFFC0CB
-	Plum                 = 0xDDA0DD
-	PowderBlue           = 0xB0E0E6
-	Purple               = 0x800080
-	RebeccaPurple        = 0xFF0000
-	Red                  = 0x663399
-	RosyBrown            = 0xBC8F8F
-	RoyalBlue            = 0x4169E1
-	SaddleBrown          = 0x8B4513
-	Salmon               = 0xFA8072
-	SandyBrown           = 0xF4A460
-	SeaGreen             = 0x2E8B57
-	SeaShell             = 0xFFF5EE
-	Sienna               = 0xA0522D
-	Silver               = 0xC0C0C0
-	SkyBlue              = 0x87CEEB
-	SlateBlue            = 0x6A5ACD
-	SlateGray            = 0x708090
-	Snow                 = 0xFFFAFA
-	SpringGreen          = 0x00FF7F
-	SteelBlue            = 0x4682B4
-	Tan                  = 0xD2B48C
-	Teal                 = 0x008080
-	Thistle              = 0xD8BFD8
-	Tomato               = 0xFF6347
-	Turquoise            = 0x40E0D0
-	Violet               = 0xEE82EE
-	Wheat                = 0xF5DEB3
-	White                = 0xFFFFFF
-	WhiteSmoke           = 0xF5F5F5
-	Yellow               = 0xFFFF00
-	YellowGreen          = 0x9ACD32
+	AliceBlue            = "\x1b[38;2;240;248;255m"
+	AntiqueWhite         = "\x1b[38;2;250;235;215m"
+	Aqua                 = "\x1b[38;2;0;255;255m"
+	Aquamarine           = "\x1b[38;2;127;255;212m"
+	Azure                = "\x1b[38;2;1240;255;255m"
+	Beige                = "\x1b[38;2;245;245;220m"
+	Bisque               = "\x1b[38;2;255;228;196m"
+	Black                = "\x1b[38;2;0;0;0m"
+	BlanchedAlmond       = "\x1b[38;2;255;235;205m"
+	Blue                 = "\x1b[38;2;0;0;255m"
+	BlueViolet           = "\x1b[38;2;138;43;226m"
+	Brown                = "\x1b[38;2;165;42;42m"
+	BurlyWood            = "\x1b[38;2;222;184;135m"
+	CadetBlue            = "\x1b[38;2;95;158;160m"
+	Chartreuse           = "\x1b[38;2;95;158;160m"
+	Chocolate            = "\x1b[38;2;210;105;30m"
+	Coral                = "\x1b[38;2;255;127;80m"
+	CornflowerBlue       = "\x1b[38;2;100;149;237m"
+	Cornsilk             = "\x1b[38;2;255;248;220m"
+	Crimson              = "\x1b[38;2;220;20;60m"
+	Cyan                 = "\x1b[38;2;0;255;255m"
+	DarkBlue             = "\x1b[38;2;0;0;139m"
+	DarkCyan             = "\x1b[38;2;0;139;139m"
+	DarkGoldenrod        = "\x1b[38;2;184;134;11m"
+	DarkGray             = "\x1b[38;2;169;169;169m"
+	DarkGreen            = "\x1b[38;2;0;100;0m"
+	DarkKhaki            = "\x1b[38;2;189;183;107m"
+	DarkMagenta          = "\x1b[38;2;139;0;139m"
+	DarkOliveGreen       = "\x1b[38;2;85;107;47m"
+	DarkOrange           = "\x1b[38;2;255;140;0m"
+	DarkOrchid           = "\x1b[38;2;153;50;204m"
+	DarkRed              = "\x1b[38;2;139;0;0m"
+	DarkSalmon           = "\x1b[38;2;233;150;122m"
+	DarkSeagreen         = "\x1b[38;2;143;188;143m"
+	DarkSlateBlue        = "\x1b[38;2;72;61;139m"
+	DarkSlateGray        = "\x1b[38;2;47;79;79m"
+	DarkTurquoise        = "\x1b[38;2;0;206;209m"
+	DarkViolet           = "\x1b[38;2;148;0;211m"
+	DeepPink             = "\x1b[38;2;255;20;147m"
+	DeepSkyBlue          = "\x1b[38;2;0;191;255m"
+	DimGray              = "\x1b[38;2;0;191;255m"
+	DodgerBlue           = "\x1b[38;2;30;144;255m"
+	FireBrick            = "\x1b[38;2;178;34;34m"
+	FloralWhite          = "\x1b[38;2;255;250;240m"
+	ForestGreen          = "\x1b[38;2;34;139;34m"
+	Fuchsia              = "\x1b[38;2;255;0;255m"
+	Gainsboro            = "\x1b[38;2;220;220;220m"
+	GhostWhite           = "\x1b[38;2;248;248;255m"
+	Gold                 = "\x1b[38;2;255;215;0m"
+	GoldenRod            = "\x1b[38;2;218;165;32m"
+	Gray                 = "\x1b[38;2;127;127;127m"
+	Green                = "\x1b[38;2;0;128;0m"
+	GreenYellow          = "\x1b[38;2;173;255;47m"
+	Honeydew             = "\x1b[38;2;240;255;240m"
+	HotPink              = "\x1b[38;2;255;105;180m"
+	IndianRed            = "\x1b[38;2;205;92;92m"
+	Indigo               = "\x1b[38;2;75;0;130m"
+	Ivory                = "\x1b[38;2;255;255;240m"
+	Khaki                = "\x1b[38;2;240;230;140m"
+	Lavender             = "\x1b[38;2;230;230;250m"
+	LavenderBlush        = "\x1b[38;2;255;240;245m"
+	LawnGreen            = "\x1b[38;2;124;252;0m"
+	LemonChiffon         = "\x1b[38;2;255;250;205m"
+	LightBlue            = "\x1b[38;2;173;216;230m"
+	LightCoral           = "\x1b[38;2;240;128;128m"
+	LightCyan            = "\x1b[38;2;224;255;255m"
+	LightGoldenRodYellow = "\x1b[38;2;250;250;210m"
+	LightGreen           = "\x1b[38;2;144;238;144m"
+	LightGray            = "\x1b[38;2;211;211;211m"
+	LightPink            = "\x1b[38;2;255;182;193m"
+	LightSalmon          = "\x1b[38;2;255;160;122m"
+	LightSeaGreen        = "\x1b[38;2;32;178;170m"
+	LightSkyBlue         = "\x1b[38;2;135;206;250m"
+	LightSlateGray       = "\x1b[38;2;119;136;153m"
+	LightSteelBlue       = "\x1b[38;2;176;196;222m"
+	LightYellow          = "\x1b[38;2;255;255;224m"
+	Lime                 = "\x1b[38;2;0;255;0m"
+	LimeGreen            = "\x1b[38;2;50;205;50m"
+	Linen                = "\x1b[38;2;250;240;230m"
+	Magenta              = "\x1b[38;2;255;0;255m"
+	Maroon               = "\x1b[38;2;128;0;0m"
+	MediumAquamarine     = "\x1b[38;2;102;205;170m"
+	MediumBlue           = "\x1b[38;2;0;0;205m"
+	MediumOrchid         = "\x1b[38;2;186;85;211m"
+	MediumPurple         = "\x1b[38;2;147;112;219m"
+	MediumSeaGreen       = "\x1b[38;2;60;179;113m"
+	MediumSlateBlue      = "\x1b[38;2;123;104;238m"
+	MediumSpringGreen    = "\x1b[38;2;0;250;154m"
+	MediumTurquoise      = "\x1b[38;2;72;209;204m"
+	MediumVioletRed      = "\x1b[38;2;199;21;133m"
+	MidnightBlue         = "\x1b[38;2;25;25;112m"
+	MintCream            = "\x1b[38;2;245;255;250m"
+	MistyRose            = "\x1b[38;2;255;228;225m"
+	Moccasin             = "\x1b[38;2;255;228;181m"
+	NavajoWhite          = "\x1b[38;2;255;222;173m"
+	Navy                 = "\x1b[38;2;0;0;128m"
+	NavyBlue             = "\x1b[38;2;159;175;223m"
+	OldLace              = "\x1b[38;2;253;245;230m"
+	Olive                = "\x1b[38;2;128;128;0m"
+	OliveDrab            = "\x1b[38;2;107;142;35m"
+	Orange               = "\x1b[38;2;255;165;0m"
+	OrangeRed            = "\x1b[38;2;255;69;0m"
+	Orchid               = "\x1b[38;2;218;112;214m"
+	PaleGoldenRod        = "\x1b[38;2;238;232;170m"
+	PaleGreen            = "\x1b[38;2;152;251;152m"
+	PaleTurquoise        = "\x1b[38;2;175;238;238m"
+	PaleVioletRed        = "\x1b[38;2;219;112;147m"
+	PapayaWhip           = "\x1b[38;2;255;239;213m"
+	PeachPuff            = "\x1b[38;2;255;218;185m"
+	Peru                 = "\x1b[38;2;205;133;63m"
+	Pink                 = "\x1b[38;2;255;192;203m"
+	Plum                 = "\x1b[38;2;221;160;221m"
+	PowderBlue           = "\x1b[38;2;176;224;230m"
+	Purple               = "\x1b[38;2;128;0;128m"
+	RebeccaPurple        = "\x1b[38:2;102;51;153m"
+	Red                  = "\x1b[38;2;255;0;0m"
+	RosyBrown            = "\x1b[38;2;188;143;143m"
+	RoyalBlue            = "\x1b[38;2;65;105;225m"
+	SaddleBrown          = "\x1b[38;2;139;69;19m"
+	Salmon               = "\x1b[38;2;250;128;114m"
+	SandyBrown           = "\x1b[38;2;244;164;96m"
+	SeaGreen             = "\x1b[38;2;46;139;87m"
+	Seashell             = "\x1b[38;2;255;245;238m"
+	Sienna               = "\x1b[38;2;160;82;45m"
+	Silver               = "\x1b[38;2;192;192;192m"
+	SkyBlue              = "\x1b[38;2;135;206;235m"
+	SlateBlue            = "\x1b[38;2;106;90;205m"
+	SlateGray            = "\x1b[38;2;112;128;144m"
+	Snow                 = "\x1b[38;2;255;250;250m"
+	SpringGreen          = "\x1b[38;2;0;255;127m"
+	SteelBlue            = "\x1b[38;2;70;130;180m"
+	Tan                  = "\x1b[38;2;210;180;140m"
+	Teal                 = "\x1b[38;2;0;128;128m"
+	Thistle              = "\x1b[38;2;216;191;216m"
+	Tomato               = "\x1b[38;2;255;99;71m"
+	Turquoise            = "\x1b[38;2;64;224;208m"
+	Violet               = "\x1b[38;2;238;130;238m"
+	Wheat                = "\x1b[38;2;245;222;179m"
+	White                = "\x1b[38;2;255;255;255m"
+	WhiteSmoke           = "\x1b[38;2;245;245;245m"
+	Yellow               = "\x1b[38;2;255;255;0m"
+	YellowGreen          = "\x1b[38;2;139;205;50m"
 
-	// Ansi escape codes that have no hex equivalent:
-	AnsiReset = "\x1b[0m"
-	AnsiX     = "\x1b[0m"
+	AliceBlueBackground            = "\x1b[48;2;240;248;255m"
+	AntiqueWhiteBackground         = "\x1b[48;2;250;235;215m"
+	AquaBackground                 = "\x1b[48;2;0;255;255m"
+	AquamarineBackground           = "\x1b[48;2;127;255;212m"
+	AzureBackground                = "\x1b[48;2;1240;255;255m"
+	BeigeBackground                = "\x1b[48;2;245;245;220m"
+	BisqueBackground               = "\x1b[48;2;255;228;196m"
+	BlackBackground                = "\x1b[48;2;0;0;0m"
+	BlanchedAlmondBackground       = "\x1b[48;2;255;235;205m"
+	BlueBackground                 = "\x1b[48;2;0;0;255m"
+	BlueVioletBackground           = "\x1b[48;2;138;43;226m"
+	BrownBackground                = "\x1b[48;2;165;42;42m"
+	BurlyWoodBackground            = "\x1b[48;2;222;184;135m"
+	CadetBlueBackground            = "\x1b[48;2;95;158;160m"
+	ChartreuseBackground           = "\x1b[48;2;95;158;160m"
+	ChocolateBackground            = "\x1b[48;2;210;105;30m"
+	CoralBackground                = "\x1b[48;2;255;127;80m"
+	CornflowerBlueBackground       = "\x1b[48;2;100;149;237m"
+	CornsilkBackground             = "\x1b[48;2;255;248;220m"
+	CrimsonBackground              = "\x1b[48;2;220;20;60m"
+	CyanBackground                 = "\x1b[48;2;0;255;255m"
+	DarkBlueBackground             = "\x1b[48;2;0;0;139m"
+	DarkCyanBackground             = "\x1b[48;2;0;139;139m"
+	DarkGoldenrodBackground        = "\x1b[48;2;184;134;11m"
+	DarkGrayBackground             = "\x1b[48;2;169;169;169m"
+	DarkGreenBackground            = "\x1b[48;2;0;100;0m"
+	DarkKhakiBackground            = "\x1b[48;2;189;183;107m"
+	DarkMagentaBackground          = "\x1b[48;2;139;0;139m"
+	DarkOliveGreenBackground       = "\x1b[48;2;85;107;47m"
+	DarkOrangeBackground           = "\x1b[48;2;255;140;0m"
+	DarkOrchidBackground           = "\x1b[48;2;153;50;204m"
+	DarkRedBackground              = "\x1b[48;2;139;0;0m"
+	DarkSalmonBackground           = "\x1b[48;2;233;150;122m"
+	DarkSeagreenBackground         = "\x1b[48;2;143;188;143m"
+	DarkSlateBlueBackground        = "\x1b[48;2;72;61;139m"
+	DarkSlateGrayBackground        = "\x1b[48;2;47;79;79m"
+	DarkTurquoiseBackground        = "\x1b[48;2;0;206;209m"
+	DarkVioletBackground           = "\x1b[48;2;148;0;211m"
+	DeepPinkBackground             = "\x1b[48;2;255;20;147m"
+	DeepSkyBlueBackground          = "\x1b[48;2;0;191;255m"
+	DimGrayBackground              = "\x1b[48;2;0;191;255m"
+	DodgerBlueBackground           = "\x1b[48;2;30;144;255m"
+	FireBrickBackground            = "\x1b[48;2;178;34;34m"
+	FloralWhiteBackground          = "\x1b[48;2;255;250;240m"
+	ForestGreenBackground          = "\x1b[48;2;34;139;34m"
+	FuchsiaBackground              = "\x1b[48;2;255;0;255m"
+	GainsboroBackground            = "\x1b[48;2;220;220;220m"
+	GhostWhiteBackground           = "\x1b[48;2;248;248;255m"
+	GoldBackground                 = "\x1b[48;2;255;215;0m"
+	GoldenRodBackground            = "\x1b[48;2;218;165;32m"
+	GrayBackground                 = "\x1b[48;2;127;127;127m"
+	GreenBackground                = "\x1b[48;2;0;128;0m"
+	GreenYellowBackground          = "\x1b[48;2;173;255;47m"
+	HoneydewBackground             = "\x1b[48;2;240;255;240m"
+	HotPinkBackground              = "\x1b[48;2;255;105;180m"
+	IndianRedBackground            = "\x1b[48;2;205;92;92m"
+	IndigoBackground               = "\x1b[48;2;75;0;130m"
+	IvoryBackground                = "\x1b[48;2;255;255;240m"
+	KhakiBackground                = "\x1b[48;2;240;230;140m"
+	LavenderBackground             = "\x1b[48;2;230;230;250m"
+	LavenderBlushBackground        = "\x1b[48;2;255;240;245m"
+	LawnGreenBackground            = "\x1b[48;2;124;252;0m"
+	LemonChiffonBackground         = "\x1b[48;2;255;250;205m"
+	LightBlueBackground            = "\x1b[48;2;173;216;230m"
+	LightCoralBackground           = "\x1b[48;2;240;128;128m"
+	LightCyanBackground            = "\x1b[48;2;224;255;255m"
+	LightGoldenRodYellowBackground = "\x1b[48;2;250;250;210m"
+	LightGreenBackground           = "\x1b[48;2;144;238;144m"
+	LightGrayBackground            = "\x1b[48;2;211;211;211m"
+	LightPinkBackground            = "\x1b[48;2;255;182;193m"
+	LightSalmonBackground          = "\x1b[48;2;255;160;122m"
+	LightSeaGreenBackground        = "\x1b[48;2;32;178;170m"
+	LightSkyBlueBackground         = "\x1b[48;2;135;206;250m"
+	LightSlateGrayBackground       = "\x1b[48;2;119;136;153m"
+	LightSteelBlueBackground       = "\x1b[48;2;176;196;222m"
+	LightYellowBackground          = "\x1b[48;2;255;255;224m"
+	LimeBackground                 = "\x1b[48;2;0;255;0m"
+	LimeGreenBackground            = "\x1b[48;2;50;205;50m"
+	LinenBackground                = "\x1b[48;2;250;240;230m"
+	MagentaBackground              = "\x1b[48;2;255;0;255m"
+	MaroonBackground               = "\x1b[48;2;128;0;0m"
+	MediumAquamarineBackground     = "\x1b[48;2;102;205;170m"
+	MediumBlueBackground           = "\x1b[48;2;0;0;205m"
+	MediumOrchidBackground         = "\x1b[48;2;186;85;211m"
+	MediumPurpleBackground         = "\x1b[48;2;147;112;219m"
+	MediumSeaGreenBackground       = "\x1b[48;2;60;179;113m"
+	MediumSlateBlueBackground      = "\x1b[48;2;123;104;238m"
+	MediumSpringGreenBackground    = "\x1b[48;2;0;250;154m"
+	MediumTurquoiseBackground      = "\x1b[48;2;72;209;204m"
+	MediumVioletRedBackground      = "\x1b[48;2;199;21;133m"
+	MidnightBlueBackground         = "\x1b[48;2;25;25;112m"
+	MintCreamBackground            = "\x1b[48;2;245;255;250m"
+	MistyRoseBackground            = "\x1b[48;2;255;228;225m"
+	MoccasinBackground             = "\x1b[48;2;255;228;181m"
+	NavajoWhiteBackground          = "\x1b[48;2;255;222;173m"
+	NavyBackground                 = "\x1b[48;2;0;0;128m"
+	NavyBlueBackground             = "\x1b[48;2;159;175;223m"
+	OldLaceBackground              = "\x1b[48;2;253;245;230m"
+	OliveBackground                = "\x1b[48;2;128;128;0m"
+	OliveDrabBackground            = "\x1b[48;2;107;142;35m"
+	OrangeBackground               = "\x1b[48;2;255;165;0m"
+	OrangeRedBackground            = "\x1b[48;2;255;69;0m"
+	OrchidBackground               = "\x1b[48;2;218;112;214m"
+	PaleGoldenRodBackground        = "\x1b[48;2;238;232;170m"
+	PaleGreenBackground            = "\x1b[48;2;152;251;152m"
+	PaleTurquoiseBackground        = "\x1b[48;2;175;238;238m"
+	PaleVioletRedBackground        = "\x1b[48;2;219;112;147m"
+	PapayaWhipBackground           = "\x1b[48;2;255;239;213m"
+	PeachPuffBackground            = "\x1b[48;2;255;218;185m"
+	PeruBackground                 = "\x1b[48;2;205;133;63m"
+	PinkBackground                 = "\x1b[48;2;255;192;203m"
+	PlumBackground                 = "\x1b[48;2;221;160;221m"
+	PowderBlueBackground           = "\x1b[48;2;176;224;230m"
+	PurpleBackground               = "\x1b[48;2;128;0;128m"
+	RebeccaPurpleBackground        = "\x1b[38:2;102;51;153m"
+	RedBackground                  = "\x1b[48;2;255;0;0m"
+	RosyBrownBackground            = "\x1b[48;2;188;143;143m"
+	RoyalBlueBackground            = "\x1b[48;2;65;105;225m"
+	SaddleBrownBackground          = "\x1b[48;2;139;69;19m"
+	SalmonBackground               = "\x1b[48;2;250;128;114m"
+	SandyBrownBackground           = "\x1b[48;2;244;164;96m"
+	SeaGreenBackground             = "\x1b[48;2;46;139;87m"
+	SeashellBackground             = "\x1b[48;2;255;245;238m"
+	SiennaBackground               = "\x1b[48;2;160;82;45m"
+	SilverBackground               = "\x1b[48;2;192;192;192m"
+	SkyBlueBackground              = "\x1b[48;2;135;206;235m"
+	SlateBlueBackground            = "\x1b[48;2;106;90;205m"
+	SlateGrayBackground            = "\x1b[48;2;112;128;144m"
+	SnowBackground                 = "\x1b[48;2;255;250;250m"
+	SpringGreenBackground          = "\x1b[48;2;0;255;127m"
+	SteelBlueBackground            = "\x1b[48;2;70;130;180m"
+	TanBackground                  = "\x1b[48;2;210;180;140m"
+	TealBackground                 = "\x1b[48;2;0;128;128m"
+	ThistleBackground              = "\x1b[48;2;216;191;216m"
+	TomatoBackground               = "\x1b[48;2;255;99;71m"
+	TurquoiseBackground            = "\x1b[48;2;64;224;208m"
+	VioletBackground               = "\x1b[48;2;238;130;238m"
+	WheatBackground                = "\x1b[48;2;245;222;179m"
+	WhiteBackground                = "\x1b[48;2;255;255;255m"
+	WhiteSmokeBackground           = "\x1b[48;2;245;245;245m"
+	YellowBackground               = "\x1b[48;2;255;255;0m"
+	YellowGreenBackground          = "\x1b[48;2;139;205;50m"
+
+	// Extra ANSI escape codes
+	Reset = "\x1b[0m"
+	X     = "\x1b[0m"
 )
 
-/* Lists of Colors */
-
-// HexColors is an array of all of the css colors in hexadecimal format.
-var HexColors = [...]int32{AliceBlue, AntiqueWhite, Aqua, AquaMarine, Azure, Beige, Bisque, Black, BlanchedAlmond, Blue, BlueViolet, Brown, BurlyWood, CadetBlue, Chartreuse, Chocolate, Coral, CornFlowerBlue, CornSilk, Crimson, Cyan, DarkBlue, DarkCyan, DarkGoldenRod, DarkGray, DarkGreen, DarkKhaki, DarkMagenta, DarkOliveGreen, DarkOrange, DarkOrchid, DarkRed, DarkSalmon, DarkSeaGreen, DarkSlateBlue, DarkSlateGray, DarkTurquoise, DarkViolet, DeepPink, DeepSkyBlue, DimGray, DodgerBlue, Firebrick, FloralWhite, ForestGreen, Fuchsia, Gainsboro, GhostWhite, Gold, GoldenRod, Gray, Green, GreenYellow, Honeydew, HotPink, IndianRed, Indigo, Ivory, Khaki, Lavender, LavenderBlush, LawnGreen, LemonChiffon, LightBlue, LightCoral, LightCyan, LightGoldenRodYellow, LightGreen, LightGray, LightPink, LightSalmon, LightSeaGreen, LightSkyBlue, LightSlateGray, LightSteelBlue, LightYellow, Lime, LimeGreen, Linen, Magenta, Maroon, MediumAquaMarine, MediumBlue, MediumOrchid, MediumPurple, MediumSeaGreen, MediumSlateBlue, MediumSpringGreen, MediumTurquoise, MediumVioletRed, MidnightBlue, MintCream, MistyRose, Moccasin, NavajoWhite, Navy, NavyBlue, OldLace, Olive, OliveDrab, Orange, OrangeRed, Orchid, PaleGoldenRod, PaleGreen, PaleTurquoise, PaleVioletRed, PapayaWhip, PeachPuff, Peru, Pink, Plum, PowderBlue, Purple, RebeccaPurple, Red, RosyBrown, RoyalBlue, SaddleBrown, Salmon, SandyBrown, SeaGreen, SeaShell, Sienna, Silver, SkyBlue, SlateBlue, SlateGray, Snow, SpringGreen, SteelBlue, Tan, Teal, Thistle, Tomato, Turquoise, Violet, Wheat, White, WhiteSmoke, Yellow, YellowGreen}
-
-// AnsiColors is an array of all the css colors as ANSI escape codes.
-var AnsiColors = [...]string{AnsiIndex["sol.yellow"], AnsiIndex["sol.orange"], AnsiIndex["sol.red"], AnsiIndex["sol.magenta"], AnsiIndex["sol.violet"], AnsiIndex["sol.blue"], AnsiIndex["sol.cyan"], AnsiIndex["sol.green"], AnsiIndex["aliceblue"], AnsiIndex["antiquewhite"], AnsiIndex["aqua"], AnsiIndex["aquamarine"], AnsiIndex["azure"], AnsiIndex["beige"], AnsiIndex["bisque"], AnsiIndex["black"], AnsiIndex["blanchedalmond"], AnsiIndex["blue"], AnsiIndex["blueviolet"], AnsiIndex["brown"], AnsiIndex["burlywood"], AnsiIndex["cadetblue"], AnsiIndex["chartreuse"], AnsiIndex["chocolate"], AnsiIndex["coral"], AnsiIndex["cornflowerblue"], AnsiIndex["cornsilk"], AnsiIndex["crimson"], AnsiIndex["cyan"], AnsiIndex["darkblue"], AnsiIndex["darkcyan"], AnsiIndex["darkgoldenrod"], AnsiIndex["darkgray"], AnsiIndex["darkgreen"], AnsiIndex["darkkhaki"], AnsiIndex["darkmagenta"], AnsiIndex["darkolivegreen"], AnsiIndex["darkorange"], AnsiIndex["darkorchid"], AnsiIndex["darkred"], AnsiIndex["darksalmon"], AnsiIndex["darkseagreen"], AnsiIndex["darkslateblue"], AnsiIndex["darkslategray"], AnsiIndex["darkturquoise"], AnsiIndex["darkviolet"], AnsiIndex["deeppink"], AnsiIndex["deepskyblue"], AnsiIndex["dimgray"], AnsiIndex["dodgerblue"], AnsiIndex["firebrick"], AnsiIndex["floralwhite"], AnsiIndex["forestgreen"], AnsiIndex["fuchsia"], AnsiIndex["gainsboro"], AnsiIndex["ghostwhite"], AnsiIndex["gold"], AnsiIndex["goldenrod"], AnsiIndex["gray"], AnsiIndex["green"], AnsiIndex["greenyellow"], AnsiIndex["honeydew"], AnsiIndex["hotpink"], AnsiIndex["indianred"], AnsiIndex["indigo"], AnsiIndex["ivory"], AnsiIndex["khaki"], AnsiIndex["lavender"], AnsiIndex["lavenderblush"], AnsiIndex["lawngreen"], AnsiIndex["lemonchiffon"], AnsiIndex["lightblue"], AnsiIndex["lightcoral"], AnsiIndex["lightcyan"], AnsiIndex["lightgoldenrodyellow"], AnsiIndex["lightgreen"], AnsiIndex["lightgray"], AnsiIndex["lightpink"], AnsiIndex["lightsalmon"], AnsiIndex["lightseagreen"], AnsiIndex["lightskyblue"], AnsiIndex["lightslategray"], AnsiIndex["lightsteelblue"], AnsiIndex["lightyellow"], AnsiIndex["lime"], AnsiIndex["limegreen"], AnsiIndex["linen"], AnsiIndex["magenta"], AnsiIndex["maroon"], AnsiIndex["mediumaquamarine"], AnsiIndex["mediumblue"], AnsiIndex["mediumorchid"], AnsiIndex["mediumpurple"], AnsiIndex["mediumseagreen"], AnsiIndex["mediumslateblue"], AnsiIndex["mediumspringgreen"], AnsiIndex["mediumturquoise"], AnsiIndex["mediumvioletred"], AnsiIndex["midnightblue"], AnsiIndex["mintcream"], AnsiIndex["mistyrose"], AnsiIndex["moccasin"], AnsiIndex["navajowhite"], AnsiIndex["navy"], AnsiIndex["navyblue"], AnsiIndex["oldlace"], AnsiIndex["olive"], AnsiIndex["olivedrab"], AnsiIndex["orange"], AnsiIndex["orangered"], AnsiIndex["orchid"], AnsiIndex["palegoldenrod"], AnsiIndex["palegreen"], AnsiIndex["paleturquoise"], AnsiIndex["palevioletred"], AnsiIndex["papayawhip"], AnsiIndex["peachpuff"], AnsiIndex["peru"], AnsiIndex["pink"], AnsiIndex["plum"], AnsiIndex["powderblue"], AnsiIndex["purple"], AnsiIndex["red"], AnsiIndex["rosybrown"], AnsiIndex["royalblue"], AnsiIndex["saddlebrown"], AnsiIndex["salmon"], AnsiIndex["sandybrown"], AnsiIndex["seagreen"], AnsiIndex["seashell"], AnsiIndex["sienna"], AnsiIndex["silver"], AnsiIndex["skyblue"], AnsiIndex["slateblue"], AnsiIndex["slategray"], AnsiIndex["snow"], AnsiIndex["springgreen"], AnsiIndex["steelblue"], AnsiIndex["tan"], AnsiIndex["teal"], AnsiIndex["thistle"], AnsiIndex["tomato"], AnsiIndex["turquoise"], AnsiIndex["violet"], AnsiIndex["wheat"], AnsiIndex["white"], AnsiIndex["whitesmoke"], AnsiIndex["yellow"], AnsiIndex["yellowgreen"]}
-
-// AnsiBackgrounds is an array of all the css colors as ANSI background escape codes
-var AnsiBackgrounds = [...]string{AnsiIndex["antiquewhitebackground"], AnsiIndex["aquabackground"], AnsiIndex["aquamarinebackground"], AnsiIndex["azurebackground"], AnsiIndex["beigebackground"], AnsiIndex["bisquebackground"], AnsiIndex["blackbackground"], AnsiIndex["blanchedalmondbackground"], AnsiIndex["bluebackground"], AnsiIndex["bluevioletbackground"], AnsiIndex["brownbackground"], AnsiIndex["burlywoodbackground"], AnsiIndex["cadetbluebackground"], AnsiIndex["chartreusebackground"], AnsiIndex["chocolatebackground"], AnsiIndex["coralbackground"], AnsiIndex["cornflowerbluebackground"], AnsiIndex["cornsilkbackground"], AnsiIndex["crimsonbackground"], AnsiIndex["cyanbackground"], AnsiIndex["darkbluebackground"], AnsiIndex["darkcyanbackground"], AnsiIndex["darkgoldenrodbackground"], AnsiIndex["darkgraybackground"], AnsiIndex["darkgreenbackground"], AnsiIndex["darkkhakibackground"], AnsiIndex["darkmagentabackground"], AnsiIndex["darkolivegreenbackground"], AnsiIndex["darkorangebackground"], AnsiIndex["darkorchidbackground"], AnsiIndex["darkredbackground"], AnsiIndex["darksalmonbackground"], AnsiIndex["darkseagreenbackground"], AnsiIndex["darkslatebluebackground"], AnsiIndex["darkslategraybackground"], AnsiIndex["darkturquoisebackground"], AnsiIndex["darkvioletbackground"], AnsiIndex["deeppinkbackground"], AnsiIndex["deepskybluebackground"], AnsiIndex["dimgraybackground"], AnsiIndex["dodgerbluebackground"], AnsiIndex["firebrickbackground"], AnsiIndex["floralwhitebackground"], AnsiIndex["forestgreenbackground"], AnsiIndex["fuchsiabackground"], AnsiIndex["gainsborobackground"], AnsiIndex["ghostwhitebackground"], AnsiIndex["goldbackground"], AnsiIndex["goldenrodbackground"], AnsiIndex["graybackground"], AnsiIndex["greenbackground"], AnsiIndex["greenyellowbackground"], AnsiIndex["honeydewbackground"], AnsiIndex["hotpinkbackground"], AnsiIndex["indianredbackground"], AnsiIndex["indigobackground"], AnsiIndex["ivorybackground"], AnsiIndex["khakibackground"], AnsiIndex["lavenderbackground"], AnsiIndex["lavenderblushbackground"], AnsiIndex["lawngreenbackground"], AnsiIndex["lemonchiffonbackground"], AnsiIndex["lightbluebackground"], AnsiIndex["lightcoralbackground"], AnsiIndex["lightcyanbackground"], AnsiIndex["lightgoldenrodyellowbackground"], AnsiIndex["lightgreenbackground"], AnsiIndex["lightgraybackground"], AnsiIndex["lightpinkbackground"], AnsiIndex["lightsalmonbackground"], AnsiIndex["lightseagreenbackground"], AnsiIndex["lightskybluebackground"], AnsiIndex["lightslategraybackground"], AnsiIndex["lightsteelbluebackground"], AnsiIndex["lightyellowbackground"], AnsiIndex["limebackground"], AnsiIndex["limegreenbackground"], AnsiIndex["linenbackground"], AnsiIndex["magentabackground"], AnsiIndex["maroonbackground"], AnsiIndex["mediumaquamarinebackground"], AnsiIndex["mediumbluebackground"], AnsiIndex["mediumorchidbackground"], AnsiIndex["mediumpurplebackground"], AnsiIndex["mediumseagreenbackground"], AnsiIndex["mediumslatebluebackground"], AnsiIndex["mediumspringgreenbackground"], AnsiIndex["mediumturquoisebackground"], AnsiIndex["mediumvioletredbackground"], AnsiIndex["midnightbluebackground"], AnsiIndex["mintcreambackground"], AnsiIndex["mistyrosebackground"], AnsiIndex["moccasinbackground"], AnsiIndex["navajowhitebackground"], AnsiIndex["navybackground"], AnsiIndex["navybluebackground"], AnsiIndex["oldlacebackground"], AnsiIndex["olivebackground"], AnsiIndex["olivedrabbackground"], AnsiIndex["orangebackground"], AnsiIndex["orangeredbackground"], AnsiIndex["orchidbackground"], AnsiIndex["palegoldenrodbackground"], AnsiIndex["palegreenbackground"], AnsiIndex["paleturquoisebackground"], AnsiIndex["palevioletredbackground"], AnsiIndex["papayawhipbackground"], AnsiIndex["peachpuffbackground"], AnsiIndex["perubackground"], AnsiIndex["pinkbackground"], AnsiIndex["plumbackground"], AnsiIndex["powderbluebackground"], AnsiIndex["purplebackground"], AnsiIndex["redbackground"], AnsiIndex["rosybrownbackground"], AnsiIndex["royalbluebackground"], AnsiIndex["saddlebrownbackground"], AnsiIndex["salmonbackground"], AnsiIndex["sandybrownbackground"], AnsiIndex["seagreenbackground"], AnsiIndex["seashellbackground"], AnsiIndex["siennabackground"], AnsiIndex["silverbackground"], AnsiIndex["skybluebackground"], AnsiIndex["slatebluebackground"], AnsiIndex["slategraybackground"], AnsiIndex["snowbackground"], AnsiIndex["springgreenbackground"], AnsiIndex["steelbluebackground"], AnsiIndex["tanbackground"], AnsiIndex["tealbackground"], AnsiIndex["thistlebackground"], AnsiIndex["tomatobackground"], AnsiIndex["turquoisebackground"], AnsiIndex["violetbackground"], AnsiIndex["wheatbackground"], AnsiIndex["whitebackground"], AnsiIndex["whitesmokebackground"], AnsiIndex["yellowbackground"], AnsiIndex["yellowgreenbackground"], AnsiIndex["alicebluebackgroundbackground"], AnsiIndex["antiquewhitebackgroundbackground"], AnsiIndex["aquabackgroundbackground"], AnsiIndex["aquamarinebackgroundbackground"], AnsiIndex["azurebackgroundbackground"], AnsiIndex["beigebackgroundbackground"], AnsiIndex["bisquebackgroundbackground"], AnsiIndex["blackbackgroundbackground"], AnsiIndex["blanchedalmondbackgroundbackground"], AnsiIndex["bluebackgroundbackground"], AnsiIndex["bluevioletbackgroundbackground"], AnsiIndex["brownbackgroundbackground"], AnsiIndex["burlywoodbackgroundbackground"], AnsiIndex["cadetbluebackgroundbackground"], AnsiIndex["chartreusebackgroundbackground"], AnsiIndex["chocolatebackgroundbackground"], AnsiIndex["coralbackgroundbackground"], AnsiIndex["cornflowerbluebackgroundbackground"], AnsiIndex["cornsilkbackgroundbackground"], AnsiIndex["crimsonbackgroundbackground"], AnsiIndex["cyanbackgroundbackground"], AnsiIndex["darkbluebackgroundbackground"], AnsiIndex["darkcyanbackgroundbackground"], AnsiIndex["darkgoldenrodbackgroundbackground"], AnsiIndex["darkgraybackgroundbackground"], AnsiIndex["darkgreenbackgroundbackground"], AnsiIndex["darkkhakibackgroundbackground"], AnsiIndex["darkolivegreenbackgroundbackground"], AnsiIndex["darkorangebackgroundbackground"], AnsiIndex["darkorchidbackgroundbackground"], AnsiIndex["darkredbackgroundbackground"], AnsiIndex["darksalmonbackgroundbackground"], AnsiIndex["darkseagreenbackgroundbackground"], AnsiIndex["darkslatebluebackgroundbackground"], AnsiIndex["darkslategraybackgroundbackground"], AnsiIndex["darkturquoisebackgroundbackground"], AnsiIndex["darkvioletbackgroundbackground"], AnsiIndex["deeppinkbackgroundbackground"], AnsiIndex["deepskybluebackgroundbackground"], AnsiIndex["dimgraybackgroundbackground"], AnsiIndex["dodgerbluebackgroundbackground"], AnsiIndex["firebrickbackgroundbackground"], AnsiIndex["floralwhitebackgroundbackground"], AnsiIndex["forestgreenbackgroundbackground"], AnsiIndex["fuchsiabackgroundbackground"], AnsiIndex["gainsborobackgroundbackground"], AnsiIndex["ghostwhitebackgroundbackground"], AnsiIndex["goldbackgroundbackground"], AnsiIndex["goldenrodbackgroundbackground"], AnsiIndex["graybackgroundbackground"], AnsiIndex["greenbackgroundbackground"], AnsiIndex["greenyellowbackgroundbackground"], AnsiIndex["honeydewbackgroundbackground"], AnsiIndex["hotpinkbackgroundbackground"], AnsiIndex["indianredbackgroundbackground"], AnsiIndex["indigobackgroundbackground"], AnsiIndex["ivorybackgroundbackground"], AnsiIndex["khakibackgroundbackground"], AnsiIndex["lavenderbackgroundbackground"], AnsiIndex["lavenderblushbackgroundbackground"], AnsiIndex["lawngreenbackgroundbackground"], AnsiIndex["lemonchiffonbackgroundbackground"], AnsiIndex["lightbluebackgroundbackground"], AnsiIndex["lightcoralbackgroundbackground"], AnsiIndex["lightcyanbackgroundbackground"], AnsiIndex["lightgoldenrodyellowbackgroundbackground"], AnsiIndex["lightgreenbackgroundbackground"], AnsiIndex["lightgraybackgroundbackground"], AnsiIndex["lightpinkbackgroundbackground"], AnsiIndex["lightsalmonbackgroundbackground"], AnsiIndex["lightseagreenbackgroundbackground"], AnsiIndex["lightskybluebackgroundbackground"], AnsiIndex["lightslategraybackgroundbackground"], AnsiIndex["lightsteelbluebackgroundbackground"], AnsiIndex["lightyellowbackgroundbackground"], AnsiIndex["limebackgroundbackground"], AnsiIndex["limegreenbackgroundbackground"], AnsiIndex["linenbackgroundbackground"], AnsiIndex["magentabackgroundbackground"], AnsiIndex["maroonbackgroundbackground"], AnsiIndex["mediumaquamarinebackgroundbackground"], AnsiIndex["mediumbluebackgroundbackground"], AnsiIndex["mediumorchidbackgroundbackground"], AnsiIndex["mediumpurplebackgroundbackground"], AnsiIndex["mediumseagreenbackgroundbackground"], AnsiIndex["mediumslatebluebackgroundbackground"], AnsiIndex["mediumspringgreenbackgroundbackground"], AnsiIndex["mediumturquoisebackgroundbackground"], AnsiIndex["mediumvioletredbackgroundbackground"], AnsiIndex["midnightbluebackgroundbackground"], AnsiIndex["mintcreambackgroundbackground"], AnsiIndex["mistyrosebackgroundbackground"], AnsiIndex["moccasinbackgroundbackground"], AnsiIndex["navajowhitebackgroundbackground"], AnsiIndex["navybackgroundbackground"], AnsiIndex["navybluebackgroundbackground"], AnsiIndex["oldlacebackgroundbackground"], AnsiIndex["olivebackgroundbackground"], AnsiIndex["olivedrabbackgroundbackground"], AnsiIndex["orangebackgroundbackground"], AnsiIndex["orangeredbackgroundbackground"], AnsiIndex["orchidbackgroundbackground"], AnsiIndex["palegoldenrodbackgroundbackground"], AnsiIndex["palegreenbackgroundbackground"], AnsiIndex["paleturquoisebackgroundbackground"], AnsiIndex["palevioletredbackgroundbackground"], AnsiIndex["papayawhipbackgroundbackground"], AnsiIndex["peachpuffbackgroundbackground"], AnsiIndex["perubackgroundbackground"], AnsiIndex["pinkbackgroundbackground"], AnsiIndex["plumbackgroundbackground"], AnsiIndex["powderbluebackgroundbackground"], AnsiIndex["purplebackgroundbackground"], AnsiIndex["redbackgroundbackground"], AnsiIndex["rosybrownbackgroundbackground"], AnsiIndex["royalbluebackgroundbackground"], AnsiIndex["saddlebrownbackgroundbackground"], AnsiIndex["salmonbackgroundbackground"], AnsiIndex["sandybrownbackgroundbackground"], AnsiIndex["seagreenbackgroundbackground"], AnsiIndex["seashellbackgroundbackground"], AnsiIndex["siennabackgroundbackground"], AnsiIndex["silverbackgroundbackground"], AnsiIndex["skybluebackgroundbackground"], AnsiIndex["slatebluebackgroundbackground"], AnsiIndex["slategraybackgroundbackground"], AnsiIndex["snowbackgroundbackground"], AnsiIndex["springgreenbackgroundbackground"], AnsiIndex["steelbluebackgroundbackground"], AnsiIndex["tanbackgroundbackground"], AnsiIndex["tealbackgroundbackground"], AnsiIndex["thistlebackgroundbackground"], AnsiIndex["tomatobackgroundbackground"], AnsiIndex["turquoisebackgroundbackground"], AnsiIndex["violetbackgroundbackground"], AnsiIndex["wheatbackgroundbackground"], AnsiIndex["whitebackgroundbackground"], AnsiIndex["whitesmokebackgroundbackground"], AnsiIndex["yellowbackgroundbackground"], AnsiIndex["yellowgreenbackgroundbackground"]}
-
-// ColorNames is an array of all the css color names
-var ColorNames = [...]string{"AliceBlue", "AntiqueWhite", "Aqua", "AquaMarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornFlowerBlue", "CornSilk", "Crimson", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "DarkOrange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DodgerBlue", "Firebrick", "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Green", "GreenYellow", "Honeydew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGreen", "LightGray", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "NavyBlue", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "RebeccaPurple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"}
-
-// BackgroundNames is an array of all the css background color names
-var BackgroundNames = [...]string{"AliceBlueBackground", "AntiqueWhiteBackground", "AquaBackground", "AquaMarineBackground", "AzureBackground", "BeigeBackground", "BisqueBackground", "BlackBackground", "BlanchedAlmondBackground", "BlueBackground", "BlueVioletBackground", "BrownBackground", "BurlyWoodBackground", "CadetBlueBackground", "ChartreuseBackground", "ChocolateBackground", "CoralBackground", "CornFlowerBlueBackground", "CornSilkBackground", "CrimsonBackground", "DarkBlueBackground", "DarkCyanBackground", "DarkGoldenRodBackground", "DarkGrayBackground", "DarkGreenBackground", "DarkKhakiBackground", "DarkMagentaBackground", "DarkOliveGreenBackground", "DarkOrangeBackground", "DarkOrchidBackground", "DarkRedBackground", "DarkSalmonBackground", "DarkSeaGreenBackground", "DarkSlateBlueBackground", "DarkSlateGrayBackground", "DarkTurquoiseBackground", "DarkVioletBackground", "DeepPinkBackground", "DeepSkyBlueBackground", "DimGrayBackground", "DodgerBlueBackground", "FirebrickBackground", "FloralWhiteBackground", "ForestGreenBackground", "FuchsiaBackground", "GainsboroBackground", "GhostWhiteBackground", "GoldBackground", "GoldenRodBackground", "GrayBackground", "GreenBackground", "GreenYellowBackground", "HoneydewBackground", "HotPinkBackground", "IndianRedBackground", "IndigoBackground", "IvoryBackground", "KhakiBackground", "LavenderBackground", "LavenderBlushBackground", "LawnGreenBackground", "LemonChiffonBackground", "LightBlueBackground", "LightCoralBackground", "LightCyanBackground", "LightGoldenRodYellowBackground", "LightGreenBackground", "LightGrayBackground", "LightPinkBackground", "LightSalmonBackground", "LightSeaGreenBackground", "LightSkyBlueBackground", "LightSlateGrayBackground", "LightSteelBlueBackground", "LightYellowBackground", "LimeBackground", "LimeGreenBackground", "LinenBackground", "MagentaBackground", "MaroonBackground", "MediumAquaMarineBackground", "MediumBlueBackground", "MediumOrchidBackground", "MediumPurpleBackground", "MediumSeaGreenBackground", "MediumSlateBlueBackground", "MediumSpringGreenBackground", "MediumTurquoiseBackground", "MediumVioletRedBackground", "MidnightBlueBackground", "MintCreamBackground", "MistyRoseBackground", "MoccasinBackground", "NavajoWhiteBackground", "NavyBackground", "NavyBlueBackground", "OldLaceBackground", "OliveBackground", "OliveDrabBackground", "OrangeBackground", "OrangeRedBackground", "OrchidBackground", "PaleGoldenRodBackground", "PaleGreenBackground", "PaleTurquoiseBackground", "PaleVioletRedBackground", "PapayaWhipBackground", "PeachPuffBackground", "PeruBackground", "PinkBackground", "PlumBackground", "PowderBlueBackground", "PurpleBackground", "RebeccaPurpleBackground", "RedBackground", "RosyBrownBackground", "RoyalBlueBackground", "SaddleBrownBackground", "SalmonBackground", "SandyBrownBackground", "SeaGreenBackground", "SeaShellBackground", "SiennaBackground", "SilverBackground", "SkyBlueBackground", "SlateBlueBackground", "SlateGrayBackground", "SnowBackground", "SpringGreenBackground", "SteelBlueBackground", "TanBackground", "TealBackground", "ThistleBackground", "TomatoBackground", "TurquoiseBackground", "VioletBackground", "WheatBackground", "WhiteBackground", "WhiteSmokeBackground", "YellowBackground", "YellowGreen"}
-
-/* Color Functions */
-
-// RandomHex returns a random css color as a hexadecimal value
-func RandomHex() int32 {
-	rand.Seed(time.Now().UnixNano())
-	return HexColors[rand.Intn(len(HexColors))]
-}
-
-// RandomAnsi returns a random css color as an ANSI escape code
-func RandomAnsi() string {
-	rand.Seed(time.Now().UnixNano())
-	return AnsiColors[rand.Intn(len(AnsiColors))]
-}
-
-// RandomAnsiBackground returns a random css color as an ANSI background escape code
-func RandomAnsiBackground() string {
-	rand.Seed(time.Now().UnixNano())
-	return AnsiBackgrounds[rand.Intn(len(AnsiBackgrounds))]
-}
-
-// MultipleColor colorizes every rune in a string randomly from the AnsiColors
-func MultipleColor(s string) string {
-	var m string
-	for _, r := range s {
-		m += RandomAnsi() + string(r)
-	}
-	m += AnsiReset
-	return m
-}
-
-// MultipleBackground colorizes every rune's background in a string randomly from the AnsiColors
-func MultipleBackground(s string) string {
-	var m string
-	for _, r := range s {
-		m += RandomAnsiBackground() + string(r)
-	}
-	m += AnsiReset
-	return m
-}
-
-/* Indexes that match names to colors in different types */
-
-// HexIndex is a map of all css colors matched with their corresponding
+// HexMap is a map of all css colors matched with their corresponding
 // decimal values
-var HexIndex = map[string]int32{
+var HexMap = map[string]int32{
 	"aliceblue":            0xF0F8FF,
 	"antiquewhite":         0xFAEBD7,
 	"aqua":                 0x00FFFF,
@@ -364,9 +446,9 @@ var HexIndex = map[string]int32{
 	"yellowgreen":          0x9ACD32,
 }
 
-// AnsiIndex is a map that contains all of the css color names and their
+// AnsiMap is a map that contains all of the css color names and their
 // corresponding ansi escape codes for text color
-var AnsiIndex = map[string]string{
+var AnsiMap = map[string]string{
 	"aliceblue":            "\x1b[38;2;240;248;255m",
 	"antiquewhite":         "\x1b[38;2;250;235;215m",
 	"aqua":                 "\x1b[38;2;0;255;255m",
@@ -510,9 +592,9 @@ var AnsiIndex = map[string]string{
 	"yellowgreen":          "\x1b[38;2;139;205;50m",
 }
 
-// AnsiBackgroundIndex is a map of all css color names matched with their
+// AnsiBackgroundMap is a map of all css color names matched with their
 // corresponding ansi escape codes for backgrounds
-var AnsiBackgroundIndex = map[string]string{
+var AnsiBackgroundMap = map[string]string{
 	"alicebluebackground":            "\x1b[48;2;240;248;255m",
 	"antiquewhitebackground":         "\x1b[48;2;250;235;215m",
 	"aquabackground":                 "\x1b[48;2;0;255;255m",
@@ -654,4 +736,56 @@ var AnsiBackgroundIndex = map[string]string{
 	"whitesmokebackground":           "\x1b[48;2;245;245;245m",
 	"yellowbackground":               "\x1b[48;2;255;255;0m",
 	"yellowgreenbackground":          "\x1b[48;2;139;205;50m",
+}
+
+/* Color Functions */
+
+// Random returns a random css color as an ANSI escape code
+func Random() string {
+	return pick(AnsiMap)
+}
+
+// RandomBackground returns a random css color as an ANSI background escape code
+func RandomBackground() string {
+	return pick(AnsiBackgroundMap)
+}
+
+// RandomHex returns a random css color as a hexadecimal value
+func RandomHex() int32 {
+	return pick(HexMap)
+}
+
+// Multiple colorizes every rune in a string randomly from the AnsiColors
+func Multiple(s string) string {
+	var m string
+	for _, r := range s {
+		m += Random() + string(r)
+	}
+	m += Reset
+	return m
+}
+
+// MultipleBackground colorizes every rune's background in a string randomly from the AnsiColors
+func MultipleBackground(s string) string {
+	var m string
+	for _, r := range s {
+		m += RandomBackground() + string(r)
+	}
+	m += Reset
+	return m
+}
+
+// Helper function to choose a random element from a map
+func pick[K comparable, V any](m map[K]V) V {
+	k := rand.Intn(len(m))
+	i := 0
+
+	for _, x := range m {
+		if i == k {
+			return x
+		}
+		i++
+	}
+
+	panic("unreachable")
 }

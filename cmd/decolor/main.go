@@ -6,13 +6,13 @@ import (
 	"log"
 	"os"
 
-	"github.com/ethanbaker/colors"
+	color "github.com/ethanbaker/colors"
 )
 
 func main() {
 	s := bufio.NewScanner(os.Stdin)
 	for s.Scan() {
-		fmt.Println(color.Decolor(s.Text()))
+		fmt.Println(color.DecolorAnsiSol(color.DecolorAnsiCss(s.Text())))
 	}
 	if err := s.Err(); err != nil {
 		log.Println(err)
