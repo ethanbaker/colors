@@ -132,7 +132,7 @@ _For more examples, please refer to the [documentation][documentation-url]._
 
 - [x] CSS Colors
 - [x] Color converting utils
-- [ ] Xterm Colors
+- [x] Xterm Colors
 
 See the [open issues][issues-url] for a full list of proposed features (and known issues).
 
